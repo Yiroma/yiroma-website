@@ -5,7 +5,7 @@
 **Sous-titre :** "Des projets concrets, du code propre, des résultats mesurables."
 
 [ FILTRES ]
-Tous · Site vitrine · Application · SEO
+Tous · Site web · Application · En cours
 
 [ CARTES PROJETS — grille ]
 **Chaque carte :**
