@@ -52,7 +52,7 @@ Remote : toute la France
 
 ---
 
-`[ Malt ]` `[ LinkedIn ]` `[ GitHub ]`
+`[ Malt ]` `[ LinkedIn ]` `[ GitHub ]` `[ Whatsapp ]`
 
 ---
 
