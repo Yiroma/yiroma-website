@@ -1,6 +1,6 @@
 # CLAUDE.md — Projet Yiroma
 
-> Ce fichier est la source de vérité du projet. Il doit être lu en priorité avant toute intervention sur le code ou le contenu.
+> Ce fichier est la source de vérité du projet. Il doit être lu en priorité avant toute intervention sur le code ou le contenu. Ce fichier doit être mise à jour à chaque étape importante et/ou quand de nouvelles informations/étapes sont ajouter au projet.
 
 ---
 
@@ -13,6 +13,21 @@
 - **Localisation :** Châteauneuf-sur-Loire (45) — présentiel région orléanaise, remote toute la France
 - **Contact :** yiromaric@gmail.com · 06 95 38 60 99
 - **Liens :** [GitHub](https://github.com/Yiroma) · [LinkedIn](https://linkedin.com/in/yiromaric) · [Malt](#) · [Site](https://yiroma.fr)
+
+---
+
+## 📂 Documents de référence
+
+| Document                   | Lien                                                           |
+| -------------------------- | -------------------------------------------------------------- |
+| Brainstorm & plan de route | [docs/brainstorm.md](docs/brainstorm.md)                       |
+| Copywriting Home           | [docs/copywrights/home.md](docs/copywrights/home.md)           |
+| Copywriting Services       | [docs/copywrights/services.md](docs/copywrights/services.md)   |
+| Copywriting Portfolio      | [docs/copywrights/portfolio.md](docs/copywrights/portfolio.md) |
+| Copywriting Tarifs         | [docs/copywrights/tarifs.md](docs/copywrights/tarifs.md)       |
+| Copywriting Contact        | [docs/copywrights/contact.md](docs/copywrights/contact.md)     |
+
+> Les fichiers de copywriting sont la référence pour tout le contenu des pages.
 
 ---
 
@@ -43,7 +58,7 @@
 | Framework   | Next.js (App Router) |
 | Langage     | TypeScript           |
 | Style       | Tailwind CSS         |
-| Déploiement | Vercel               |
+| Déploiement | VPS                  |
 | Qualité     | ESLint · Prettier    |
 
 ---
@@ -209,7 +224,7 @@
 - 📞 06 95 38 60 99
 - 📍 Châteauneuf-sur-Loire (45) — présentiel région orléanaise · remote toute la France
 
-**Liens :** Malt · LinkedIn · GitHub
+**Liens :** Malt · LinkedIn · GitHub · WhatsApp
 
 ---
 
