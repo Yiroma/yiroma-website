@@ -7,7 +7,7 @@
 
 ## 1. Palette de couleurs
 
-Direction choisie : **Marine & Bleu Indigo** — sobre, tech, rassurant.
+Direction choisie : **Marine & Bleu Pur** — sobre, tech, rassurant.
 
 ### Tokens sémantiques
 
@@ -27,32 +27,32 @@ Les couleurs sont définies en tant que variables CSS au format **OKLCH** (utili
 | `--muted-foreground`           | `#64748B` | `oklch(0.554 0.046 257.417)` | Texte secondaire, labels, placeholders     |
 | `--card`                       | `#FFFFFF` | `oklch(1 0 0)`               | Fond des cards                             |
 | `--card-foreground`            | `#0F172A` | `oklch(0.208 0.042 264.695)` | Texte dans les cards                       |
-| `--primary`                    | `#4F46E5` | `oklch(0.511 0.262 276.966)` | CTA principaux, liens actifs, highlights   |
+| `--primary`                    | `#2563eb` | `oklch(0.546 0.245 262.881)` | CTA principaux, liens actifs, highlights   |
 | `--primary-foreground`         | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur fond primary                     |
 | `--secondary`                  | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Boutons secondaires, fonds légers          |
 | `--secondary-foreground`       | `#1E293B` | `oklch(0.279 0.041 260.031)` | Texte sur fond secondary                   |
 | `--border`                     | `#E2E8F0` | `oklch(0.929 0.013 255.508)` | Bordures, séparateurs                      |
 | `--input`                      | `#E2E8F0` | `oklch(0.929 0.013 255.508)` | Bordure des champs de formulaire           |
-| `--ring`                       | `#4F46E5` | `oklch(0.511 0.262 276.966)` | Focus ring (accessibilité)                 |
+| `--ring`                       | `#2563eb` | `oklch(0.546 0.245 262.881)` | Focus ring (accessibilité)                 |
 | `--destructive`                | `#EF4444` | `oklch(0.637 0.237 25.331)`  | Erreurs, actions destructives              |
 | `--destructive-foreground`     | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur fond destructive                 |
 | `--accent`                     | `#F1F5F9` | `oklch(0.968 0.007 247.896)` | Hover sur ghost buttons, items de menu     |
 | `--accent-foreground`          | `#0F172A` | `oklch(0.208 0.042 264.695)` | Texte sur fond accent                      |
 | `--popover`                    | `#FFFFFF` | `oklch(1 0 0)`               | Fond dropdowns, tooltips, popovers         |
 | `--popover-foreground`         | `#0F172A` | `oklch(0.208 0.042 264.695)` | Texte dans les popovers                    |
-| `--chart-1`                    | `#4F46E5` | `oklch(0.511 0.262 276.966)` | Série 1 — indigo (couleur primaire)        |
+| `--chart-1`                    | `#2563eb` | `oklch(0.546 0.245 262.881)` | Série 1 — blue (couleur primaire)          |
 | `--chart-2`                    | `#0EA5E9` | `oklch(0.685 0.169 237.323)` | Série 2 — sky blue                         |
 | `--chart-3`                    | `#10B981` | `oklch(0.696 0.17 162.48)`   | Série 3 — emerald                          |
 | `--chart-4`                    | `#F59E0B` | `oklch(0.769 0.188 70.08)`   | Série 4 — amber                            |
 | `--chart-5`                    | `#8B5CF6` | `oklch(0.606 0.25 292.717)`  | Série 5 — violet                           |
 | `--sidebar`                    | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Fond de la sidebar                         |
 | `--sidebar-foreground`         | `#0F172A` | `oklch(0.208 0.042 264.695)` | Texte dans la sidebar                      |
-| `--sidebar-primary`            | `#4F46E5` | `oklch(0.511 0.262 276.966)` | Item actif / sélectionné dans la sidebar   |
+| `--sidebar-primary`            | `#2563eb` | `oklch(0.546 0.245 262.881)` | Item actif / sélectionné dans la sidebar   |
 | `--sidebar-primary-foreground` | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur item actif sidebar               |
 | `--sidebar-accent`             | `#F1F5F9` | `oklch(0.968 0.007 247.896)` | Hover sur items de la sidebar              |
 | `--sidebar-accent-foreground`  | `#0F172A` | `oklch(0.208 0.042 264.695)` | Texte sur hover sidebar                    |
 | `--sidebar-border`             | `#E2E8F0` | `oklch(0.929 0.013 255.508)` | Bordure de la sidebar                      |
-| `--sidebar-ring`               | `#4F46E5` | `oklch(0.511 0.262 276.966)` | Focus ring dans la sidebar                 |
+| `--sidebar-ring`               | `#2563eb` | `oklch(0.546 0.245 262.881)` | Focus ring dans la sidebar                 |
 
 ### Mode Sombre (Dark)
 
@@ -64,32 +64,32 @@ Les couleurs sont définies en tant que variables CSS au format **OKLCH** (utili
 | `--muted-foreground`           | `#94A3B8` | `oklch(0.704 0.04 256.788)`  | Texte secondaire                       |
 | `--card`                       | `#1E293B` | `oklch(0.279 0.041 260.031)` | Fond des cards                         |
 | `--card-foreground`            | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte dans les cards                   |
-| `--primary`                    | `#6366F1` | `oklch(0.585 0.233 277.117)` | CTA principaux (légèrement plus clair) |
+| `--primary`                    | `#3b82f6` | `oklch(0.661 0.214 264.052)` | CTA principaux (légèrement plus clair) |
 | `--primary-foreground`         | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur fond primary                 |
 | `--secondary`                  | `#1E293B` | `oklch(0.279 0.041 260.031)` | Boutons secondaires                    |
 | `--secondary-foreground`       | `#E2E8F0` | `oklch(0.929 0.013 255.508)` | Texte sur fond secondary               |
 | `--border`                     | `#334155` | `oklch(0.372 0.044 257.287)` | Bordures, séparateurs                  |
 | `--input`                      | `#334155` | `oklch(0.372 0.044 257.287)` | Bordure des champs de formulaire       |
-| `--ring`                       | `#6366F1` | `oklch(0.585 0.233 277.117)` | Focus ring                             |
+| `--ring`                       | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Focus ring                             |
 | `--destructive`                | `#EF4444` | `oklch(0.637 0.237 25.331)`  | Erreurs                                |
 | `--destructive-foreground`     | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur fond destructive             |
 | `--accent`                     | `#1E293B` | `oklch(0.279 0.041 260.031)` | Hover sur ghost buttons, items de menu |
 | `--accent-foreground`          | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte sur fond accent                  |
 | `--popover`                    | `#1E293B` | `oklch(0.279 0.041 260.031)` | Fond dropdowns, tooltips, popovers     |
 | `--popover-foreground`         | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte dans les popovers                |
-| `--chart-1`                    | `#6366F1` | `oklch(0.585 0.233 277.117)` | Série 1 — indigo (plus clair)          |
+| `--chart-1`                    | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Série 1 — blue-500                     |
 | `--chart-2`                    | `#38BDF8` | `oklch(0.769 0.133 223.603)` | Série 2 — sky-400                      |
 | `--chart-3`                    | `#34D399` | `oklch(0.797 0.154 163.223)` | Série 3 — emerald-400                  |
 | `--chart-4`                    | `#FCD34D` | `oklch(0.879 0.169 91.605)`  | Série 4 — amber-300                    |
 | `--chart-5`                    | `#A78BFA` | `oklch(0.702 0.183 293.541)` | Série 5 — violet-400                   |
 | `--sidebar`                    | `#1E293B` | `oklch(0.279 0.041 260.031)` | Fond de la sidebar                     |
 | `--sidebar-foreground`         | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte dans la sidebar                  |
-| `--sidebar-primary`            | `#6366F1` | `oklch(0.585 0.233 277.117)` | Item actif / sélectionné               |
+| `--sidebar-primary`            | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Item actif / sélectionné               |
 | `--sidebar-primary-foreground` | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur item actif sidebar           |
 | `--sidebar-accent`             | `#334155` | `oklch(0.372 0.044 257.287)` | Hover sur items de la sidebar          |
 | `--sidebar-accent-foreground`  | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte sur hover sidebar                |
 | `--sidebar-border`             | `#334155` | `oklch(0.372 0.044 257.287)` | Bordure de la sidebar                  |
-| `--sidebar-ring`               | `#6366F1` | `oklch(0.585 0.233 277.117)` | Focus ring dans la sidebar             |
+| `--sidebar-ring`               | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Focus ring dans la sidebar             |
 
 ### Couleurs utilitaires (Tailwind custom)
 
@@ -98,7 +98,7 @@ Les couleurs sont définies en tant que variables CSS au format **OKLCH** (utili
 | Nom           | Hex light | Hex dark  | Usage                        |
 | ------------- | --------- | --------- | ---------------------------- |
 | `navy`        | `#0F172A` | `#F8FAFC` | Couleur de marque principale |
-| `indigo`      | `#4F46E5` | `#6366F1` | Couleur d'accent principale  |
+| `blue`        | `#2563eb` | `#3b82f6` | Couleur d'accent principale  |
 | `slate-muted` | `#64748B` | `#94A3B8` | Texte secondaire             |
 
 ---
