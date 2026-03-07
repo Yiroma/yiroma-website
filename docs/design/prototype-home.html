@@ -22,9 +22,9 @@
         --fg-muted: #64748b;
         --card: #ffffff;
         --border: #e2e8f0;
-        --primary: #2f3be3;
+        --primary: #2563eb;
         --primary-fg: #ffffff;
-        --violet: #8b5cf6;
+        --bleu: #60a5fa;
         --radius: 6px;
         --radius-card: 12px;
         --radius-pill: 999px;
@@ -37,9 +37,9 @@
         --fg-muted: #94a3b8;
         --card: #1e293b;
         --border: #334155;
-        --primary: #6366f1;
+        --primary: #3b82f6;
         --primary-fg: #ffffff;
-        --violet: #a78bfa;
+        --bleu: #93c5fd;
       }
 
       /* =====================
@@ -112,10 +112,10 @@
         background: linear-gradient(
           90deg,
           var(--primary) 0%,
-          var(--violet) 30%,
-          #c4b5fd 48%,
-          #ddd6fe 52%,
-          var(--violet) 70%,
+          var(--bleu) 30%,
+          #bfdbfe 48%,
+          #dbeafe 52%,
+          var(--bleu) 70%,
           var(--primary) 100%
         );
         background-size: 300% auto;
@@ -130,14 +130,16 @@
       ===================== */
       .section-num {
         position: absolute;
-        top: 24px;
+        top: 0;
+        margin: 0;
+        padding: 0;
         right: 16px;
         font-family: "Plus Jakarta Sans", sans-serif;
         font-weight: 800;
-        font-size: clamp(8rem, 18vw, 16rem);
+        font-size: clamp(3rem, 18vw, 16rem);
         line-height: 1;
         color: var(--fg);
-        opacity: 0.045;
+        opacity: 0.033;
         pointer-events: none;
         user-select: none;
         letter-spacing: -0.04em;
@@ -209,6 +211,15 @@
         font-size: 1.25rem;
         color: var(--fg);
         letter-spacing: -0.02em;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-logo .logo-icon {
+        color: var(--primary);
+        flex-shrink: 0;
+        transition: color 0.25s;
       }
 
       .nav-links {
@@ -450,16 +461,16 @@
         width: 100%;
         /* max-width: 540px; */
         border-radius: 24px;
-        filter: drop-shadow(0 20px 48px rgba(79, 70, 229, 0.18));
+        filter: drop-shadow(0 20px 48px rgba(37, 99, 235, 0.18));
         transition: filter 0.25s;
       }
 
       body.dark .hero-visual img {
-        filter: drop-shadow(0 20px 60px rgba(99, 102, 241, 0.35)) brightness(0.92) saturate(0.9);
+        filter: drop-shadow(0 20px 60px rgba(59, 130, 246, 0.35)) brightness(0.92) saturate(0.9);
       }
 
       /* =====================
-         C — SERVICE CARDS (border animée)
+         C — BENTO SERVICES
       ===================== */
       .grid-3 {
         display: grid;
@@ -467,66 +478,116 @@
         gap: 24px;
       }
 
-      .service-card {
+      /* Bento grid — sections services */
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+          "creation creation seo"
+          "refonte  devapp  seo"
+          "charte   charte  charte";
+        gap: 16px;
+      }
+
+      .bento-card {
         background: var(--card);
         border: 1px solid var(--border);
         border-radius: var(--radius-card);
         padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
         transition:
+          background 0.2s,
+          border-color 0.2s,
           box-shadow 0.2s,
           transform 0.2s;
         position: relative;
-        /* overflow: hidden pour que le ::before épouse le border-radius de la card */
         overflow: hidden;
+        cursor: pointer;
       }
 
-      /* C — Gradient animé en haut de chaque card */
-      .service-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(
-          90deg,
-          var(--primary) 0%,
-          var(--violet) 50%,
-          var(--primary) 100%
-        );
-        background-size: 200% auto;
-        /* Légèrement décalé par rapport au H1 pour éviter la synchronisation */
-        animation: shimmer 5s ease-in-out 0.8s infinite;
+      .bento-card:hover {
+        background: var(--primary);
+        border-color: transparent;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
       }
 
-      .service-card:hover {
-        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-        transform: translateY(-3px);
+      .bento-card:hover h3 {
+        color: #fff;
+      }
+
+      .bento-card:hover p {
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .bento-card:hover .link-more {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .bento-card:hover .icon-wrap {
+        background: rgba(255, 255, 255, 0.18);
+        color: #fff;
+      }
+
+      /* Placement bento */
+      .bento-featured {
+        grid-area: creation;
+      }
+      .bento-seo {
+        grid-area: seo;
+      }
+      .bento-refonte {
+        grid-area: refonte;
+      }
+      .bento-devapp {
+        grid-area: devapp;
+      }
+      .bento-charte {
+        grid-area: charte;
+        flex-direction: row;
+        align-items: center;
+        gap: 28px;
+        padding: 24px 32px;
+      }
+
+      .bento-charte .bento-charte-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+      }
+
+      .bento-charte h3 {
+        margin-bottom: 0;
       }
 
       .icon-wrap {
         width: 48px;
         height: 48px;
         border-radius: 10px;
-        background: color-mix(in oklch, var(--primary) 10%, transparent);
+        background: color-mix(in oklch, #e5887c 10%, transparent);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--primary);
-        margin-bottom: 20px;
+        color: #e5887c;
+        flex-shrink: 0;
+        transition:
+          background 0.2s,
+          color 0.2s;
       }
 
-      .service-card h3 {
+      .bento-card h3 {
         font-size: 1.0625rem;
         font-weight: 600;
-        margin-bottom: 10px;
       }
 
-      .service-card p {
+      .bento-card p {
         font-size: 0.875rem;
         color: var(--fg-muted);
         line-height: 1.65;
-        margin-bottom: 20px;
+        flex: 1;
       }
 
       .link-more {
@@ -536,39 +597,78 @@
         display: inline-flex;
         align-items: center;
         gap: 5px;
-        transition: gap 0.15s;
+        transition:
+          gap 0.15s,
+          color 0.2s;
+        margin-top: auto;
       }
       .link-more:hover {
         gap: 9px;
       }
 
       /* =====================
-         POURQUOI
+         POURQUOI — ARTICLES ALTERNÉS
       ===================== */
-      .why-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-      }
-
-      .why-item {
+      .why-articles {
         display: flex;
         flex-direction: column;
-        gap: 14px;
       }
-      .why-item .icon-wrap {
-        width: 44px;
-        height: 44px;
+
+      .why-article {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
+        align-items: center;
+        padding: 56px 0;
+        border-bottom: 1px solid var(--border);
       }
-      .why-item h3 {
-        font-size: 1rem;
-        font-weight: 600;
-        line-height: 1.35;
+
+      .why-article:last-child {
+        border-bottom: none;
       }
-      .why-item p {
-        font-size: 0.875rem;
+
+      /* Alternance — article pair : visuel à droite */
+      .why-article:nth-child(even) .why-visual {
+        order: 2;
+      }
+
+      .why-article:nth-child(even) .why-text {
+        order: 1;
+      }
+
+      .why-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .why-illustration {
+        width: 100%;
+        max-width: 400px;
+        filter: drop-shadow(0 8px 24px rgba(37, 99, 235, 0.12));
+        transition: filter 0.25s;
+      }
+
+      body.dark .why-illustration {
+        filter: drop-shadow(0 8px 32px rgba(59, 130, 246, 0.25)) brightness(0.92) saturate(0.9);
+      }
+
+      .why-text {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .why-text h3 {
+        font-size: clamp(1.125rem, 2vw, 1.375rem);
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .why-text p {
+        font-size: 0.9375rem;
         color: var(--fg-muted);
-        line-height: 1.65;
+        line-height: 1.75;
       }
 
       /* =====================
@@ -585,7 +685,23 @@
         transition:
           box-shadow 0.2s,
           transform 0.2s;
+        position: relative;
+        overflow: hidden;
       }
+
+      /* Gradient top border animé (shimmer) */
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary) 0%, var(--bleu) 50%, var(--primary) 100%);
+        background-size: 200% auto;
+        animation: shimmer 5s ease-in-out 0.8s infinite;
+      }
+
       .project-card:hover {
         box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
         transform: translateY(-3px);
@@ -650,6 +766,20 @@
       .cta-section > .container {
         position: relative;
         z-index: 1;
+      }
+
+      /* Grille de fond sur la section CTA (même pattern que le hero) */
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(to right, var(--border) 1px, transparent 1px),
+          linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+        background-size: 48px 48px;
+        opacity: 0.35;
+        pointer-events: none;
+        z-index: 0;
       }
 
       .cta-box {
@@ -721,6 +851,9 @@
         font-weight: 800;
         letter-spacing: -0.02em;
         margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
       .footer-brand p {
         font-size: 0.8125rem;
@@ -816,7 +949,37 @@
     <nav>
       <div class="container">
         <div class="nav-inner">
-          <a href="#" class="nav-logo">Yiroma</a>
+          <a href="#" class="nav-logo">
+            <svg
+              class="logo-icon"
+              width="32"
+              height="24"
+              viewBox="0 0 381 287"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M104.435 276.388L256.989 11.1829C257.373 10.5163 256.892 9.6843 256.122 9.6843H11.359C10.4702 9.6843 10.023 10.757 10.6487 11.3883L106.515 108.104C106.834 108.425 106.897 108.921 106.669 109.312L9.83648 275.385C9.44777 276.052 9.92866 276.889 10.7004 276.889H103.568C103.926 276.889 104.257 276.698 104.435 276.388Z"
+                fill="currentColor"
+              />
+              <path
+                d="M371.152 100.343C371.152 41.4702 314.657 13.4598 307.255 10.0425C306.795 9.83001 306.268 10.0157 306.016 10.4554L153.889 275.391C153.507 276.058 153.988 276.889 154.757 276.889H368.776C369.661 276.889 370.11 275.823 369.491 275.19L292.629 196.597C292.089 196.045 292.332 195.117 293.077 194.913C316.981 188.358 371.152 161.868 371.152 100.343Z"
+                fill="currentColor"
+              />
+              <path
+                d="M104.435 276.388L256.989 11.1829C257.373 10.5163 256.892 9.6843 256.122 9.6843H11.359C10.4702 9.6843 10.023 10.757 10.6487 11.3883L106.515 108.104C106.834 108.425 106.897 108.921 106.669 109.312L9.83648 275.385C9.44777 276.052 9.92866 276.889 10.7004 276.889H103.568C103.926 276.889 104.257 276.698 104.435 276.388Z"
+                stroke="currentColor"
+                stroke-width="19.3686"
+              />
+              <path
+                d="M371.152 100.343C371.152 41.4702 314.657 13.4598 307.255 10.0425C306.795 9.83001 306.268 10.0157 306.016 10.4554L153.889 275.391C153.507 276.058 153.988 276.889 154.757 276.889H368.776C369.661 276.889 370.11 275.823 369.491 275.19L292.629 196.597C292.089 196.045 292.332 195.117 293.077 194.913C316.981 188.358 371.152 161.868 371.152 100.343Z"
+                stroke="currentColor"
+                stroke-width="19.3686"
+              />
+            </svg>
+            Yiroma
+          </a>
           <ul class="nav-links">
             <li><a href="#">Services</a></li>
             <li><a href="#">Portfolio</a></li>
@@ -891,48 +1054,82 @@
           <h2 class="section-title">Des services digitaux taillés<br />pour votre activité</h2>
           <div class="accent-bar"></div>
         </div>
-        <div class="grid-3">
-          <!-- C — border-top animée via ::before -->
-          <div class="service-card">
+        <div class="bento-grid">
+          <!-- Création de site — featured -->
+          <div class="bento-card bento-featured">
             <div class="icon-wrap">
               <i data-lucide="globe" width="22" height="22"></i>
             </div>
-            <h3>Création &amp; Refonte de site</h3>
+            <h3>Création de site web</h3>
             <p>
-              Un site professionnel, rapide et pensé pour convertir. Vitrine, portfolio, e-commerce
-              — adapté à votre secteur et à vos clients.
+              Landing page, site vitrine, portfolio ou e-commerce — un site professionnel, rapide et
+              pensé pour convertir, taillé pour votre secteur et vos clients.
             </p>
             <a href="#" class="link-more"
               >En savoir plus <i data-lucide="arrow-right" width="14" height="14"></i
             ></a>
           </div>
 
-          <div class="service-card">
+          <!-- Audit SEO & GEO — tall -->
+          <div class="bento-card bento-seo">
             <div class="icon-wrap">
               <i data-lucide="search" width="22" height="22"></i>
             </div>
-            <h3>Audit SEO &amp; Visibilité locale</h3>
+            <h3>Audit SEO &amp; Visibilité GEO</h3>
             <p>
               Votre site existe, mais personne ne le trouve ? J'analyse, je diagnostique et je vous
-              donne un plan d'action concret pour remonter sur Google — et sur les IA.
+              donne un plan d'action concret pour remonter sur Google — et dans les IA génératives.
             </p>
             <a href="#" class="link-more"
               >En savoir plus <i data-lucide="arrow-right" width="14" height="14"></i
             ></a>
           </div>
 
-          <div class="service-card">
+          <!-- Refonte de site -->
+          <div class="bento-card bento-refonte">
+            <div class="icon-wrap">
+              <i data-lucide="refresh-cw" width="22" height="22"></i>
+            </div>
+            <h3>Refonte de site</h3>
+            <p>
+              Votre site vieillit mal ou ne convertit plus ? Je modernise, j'accélère et je
+              repositionne votre présence en ligne.
+            </p>
+            <a href="#" class="link-more"
+              >En savoir plus <i data-lucide="arrow-right" width="14" height="14"></i
+            ></a>
+          </div>
+
+          <!-- Développement applicatif -->
+          <div class="bento-card bento-devapp">
             <div class="icon-wrap">
               <i data-lucide="code-2" width="22" height="22"></i>
             </div>
             <h3>Développement applicatif</h3>
             <p>
-              Vous avez besoin de plus qu'un site : un outil métier, une API, un back-office. Je
-              conçois des applications robustes, testées et documentées.
+              Outil métier, API, back-office sur mesure — des applications robustes, testées et
+              documentées.
             </p>
             <a href="#" class="link-more"
               >En savoir plus <i data-lucide="arrow-right" width="14" height="14"></i
             ></a>
+          </div>
+
+          <!-- Identité visuelle — wide -->
+          <div class="bento-card bento-charte">
+            <div class="icon-wrap">
+              <i data-lucide="palette" width="22" height="22"></i>
+            </div>
+            <div class="bento-charte-content">
+              <h3>Identité visuelle &amp; Charte graphique</h3>
+              <p>
+                Logo, couleurs, typographies, règles d'usage — une identité cohérente qui rend votre
+                marque reconnaissable sur tous vos supports.
+              </p>
+              <a href="#" class="link-more"
+                >En savoir plus <i data-lucide="arrow-right" width="14" height="14"></i
+              ></a>
+            </div>
           </div>
         </div>
       </div>
@@ -950,39 +1147,64 @@
           <h2 class="section-title">Un développeur qui pense<br />avant de coder.</h2>
           <div class="accent-bar"></div>
         </div>
-        <div class="why-grid">
-          <div class="why-item">
-            <div class="icon-wrap">
-              <i data-lucide="graduation-cap" width="20" height="20"></i>
+        <div class="why-articles">
+          <!-- Article 1 — visuel gauche, texte droite -->
+          <div class="why-article">
+            <div class="why-visual">
+              <img
+                src="assets/brainstrom.svg"
+                class="why-illustration"
+                alt="Illustration conception et architecture"
+              />
             </div>
-            <h3>Un concepteur, pas seulement un développeur</h3>
-            <p>
-              Diplômé Concepteur Développeur d'Application (Bac+4), je pense vos projets en amont —
-              architecture, sécurité, expérience utilisateur — avant d'écrire la première ligne de
-              code.
-            </p>
+            <div class="why-text">
+              <span class="label">Conception</span>
+              <h3>Un concepteur, pas seulement un développeur</h3>
+              <p>
+                Diplômé Concepteur Développeur d'Application (Bac+4), je pense vos projets en amont
+                — architecture, sécurité, expérience utilisateur — avant d'écrire la première ligne
+                de code.
+              </p>
+            </div>
           </div>
 
-          <div class="why-item">
-            <div class="icon-wrap">
-              <i data-lucide="users" width="20" height="20"></i>
+          <!-- Article 2 — visuel droite, texte gauche (inversé via CSS nth-child) -->
+          <div class="why-article">
+            <div class="why-visual">
+              <img
+                src="assets/checking.svg"
+                class="why-illustration"
+                alt="Illustration communication et relation client"
+              />
             </div>
-            <h3>Je parle votre langue, pas que celle de la technique</h3>
-            <p>
-              10 ans de management et de relation client me permettent de comprendre vos vrais
-              besoins, d'expliquer les choix sans jargon et de livrer ce qui était vraiment demandé.
-            </p>
+            <div class="why-text">
+              <span class="label">Communication</span>
+              <h3>Je parle votre langue, pas que celle de la technique</h3>
+              <p>
+                10 ans de management et de relation client me permettent de comprendre vos vrais
+                besoins, d'expliquer les choix sans jargon et de livrer ce qui était vraiment
+                demandé.
+              </p>
+            </div>
           </div>
 
-          <div class="why-item">
-            <div class="icon-wrap">
-              <i data-lucide="shield-check" width="20" height="20"></i>
+          <!-- Article 3 — visuel gauche, texte droite -->
+          <div class="why-article">
+            <div class="why-visual">
+              <img
+                src="assets/setup.svg"
+                class="why-illustration"
+                alt="Illustration qualité et rigueur technique"
+              />
             </div>
-            <h3>Du code propre, livré dans les temps</h3>
-            <p>
-              Architecture structurée, tests automatisés, documentation soignée. Vous recevez un
-              projet maintenable — pas une boîte noire que personne ne peut faire évoluer.
-            </p>
+            <div class="why-text">
+              <span class="label">Qualité</span>
+              <h3>Du code propre, livré dans les temps</h3>
+              <p>
+                Architecture structurée, tests automatisés, documentation soignée. Vous recevez un
+                projet maintenable — pas une boîte noire que personne ne peut faire évoluer.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1090,7 +1312,36 @@
       <div class="container">
         <div class="footer-top">
           <div class="footer-brand">
-            <h3>Yiroma</h3>
+            <h3>
+              <svg
+                width="27"
+                height="20"
+                viewBox="0 0 381 287"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M104.435 276.388L256.989 11.1829C257.373 10.5163 256.892 9.6843 256.122 9.6843H11.359C10.4702 9.6843 10.023 10.757 10.6487 11.3883L106.515 108.104C106.834 108.425 106.897 108.921 106.669 109.312L9.83648 275.385C9.44777 276.052 9.92866 276.889 10.7004 276.889H103.568C103.926 276.889 104.257 276.698 104.435 276.388Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M371.152 100.343C371.152 41.4702 314.657 13.4598 307.255 10.0425C306.795 9.83001 306.268 10.0157 306.016 10.4554L153.889 275.391C153.507 276.058 153.988 276.889 154.757 276.889H368.776C369.661 276.889 370.11 275.823 369.491 275.19L292.629 196.597C292.089 196.045 292.332 195.117 293.077 194.913C316.981 188.358 371.152 161.868 371.152 100.343Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M104.435 276.388L256.989 11.1829C257.373 10.5163 256.892 9.6843 256.122 9.6843H11.359C10.4702 9.6843 10.023 10.757 10.6487 11.3883L106.515 108.104C106.834 108.425 106.897 108.921 106.669 109.312L9.83648 275.385C9.44777 276.052 9.92866 276.889 10.7004 276.889H103.568C103.926 276.889 104.257 276.698 104.435 276.388Z"
+                  stroke="currentColor"
+                  stroke-width="19.3686"
+                />
+                <path
+                  d="M371.152 100.343C371.152 41.4702 314.657 13.4598 307.255 10.0425C306.795 9.83001 306.268 10.0157 306.016 10.4554L153.889 275.391C153.507 276.058 153.988 276.889 154.757 276.889H368.776C369.661 276.889 370.11 275.823 369.491 275.19L292.629 196.597C292.089 196.045 292.332 195.117 293.077 194.913C316.981 188.358 371.152 161.868 371.152 100.343Z"
+                  stroke="currentColor"
+                  stroke-width="19.3686"
+                />
+              </svg>
+              Yiroma
+            </h3>
             <p>
               Développeur Full Stack Freelance<br />
               Châteauneuf-sur-Loire (45) · Région Orléanaise<br />
