@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yiroma — Prototype Home v3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+      /* =====================
+         TOKENS
+      ===================== */
+      :root {
+        --bg: #ffffff;
+        --bg-muted: #f1f5f9;
+        --fg: #0f172a;
+        --fg-muted: #64748b;
+        --card: #ffffff;
+        --border: #e2e8f0;
+        --primary: #2f3be3;
+        --primary-fg: #ffffff;
+        --violet: #8b5cf6;
+        --radius: 6px;
+        --radius-card: 12px;
+        --radius-pill: 999px;
+      }
+
+      body.dark {
+        --bg: #0f172a;
+        --bg-muted: #1e293b;
+        --fg: #f8fafc;
+        --fg-muted: #94a3b8;
+        --card: #1e293b;
+        --border: #334155;
+        --primary: #6366f1;
+        --primary-fg: #ffffff;
+        --violet: #a78bfa;
+      }
+
+      /* =====================
+         RESET & BASE
+      ===================== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.6;
+        transition:
+          background 0.25s,
+          color 0.25s;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: var(--fg);
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /* =====================
+         LAYOUT
+      ===================== */
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      section {
+        padding: 96px 0;
+        position: relative;
+      }
+      .bg-muted {
+        background: var(--bg-muted);
+      }
+
+      /* =====================
+         A — GRADIENT TEXT AVEC SHIMMER
+      ===================== */
+      @keyframes shimmer {
+        0% {
+          background-position: 0% center;
+        }
+        /* L'animation joue jusqu'à 55% de la durée, puis marque une pause */
+        55% {
+          background-position: -200% center;
+        }
+        100% {
+          background-position: -150% center;
+        }
+      }
+
+      .gradient-text {
+        background: linear-gradient(
+          90deg,
+          var(--primary) 0%,
+          var(--violet) 30%,
+          #c4b5fd 48%,
+          #ddd6fe 52%,
+          var(--violet) 70%,
+          var(--primary) 100%
+        );
+        background-size: 300% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: shimmer 5s ease-in-out infinite;
+      }
+
+      /* =====================
+         D — SECTION NUMBERS (grands)
+      ===================== */
+      .section-num {
+        position: absolute;
+        top: 24px;
+        right: 16px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 800;
+        font-size: clamp(8rem, 18vw, 16rem);
+        line-height: 1;
+        color: var(--fg);
+        opacity: 0.045;
+        pointer-events: none;
+        user-select: none;
+        letter-spacing: -0.04em;
+      }
+
+      /* =====================
+         E — GLOW SOURIS
+      ===================== */
+      .has-glow {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glow-orb {
+        position: absolute;
+        width: 2000px;
+        height: 2000px;
+        border-radius: 100%;
+        background: radial-gradient(
+          circle at center,
+          color-mix(in oklch, var(--primary) 18%, transparent) 0%,
+          transparent 70%
+        );
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 0;
+        /* Position par défaut (navigation clavier) */
+        top: 40%;
+        left: 30%;
+        transition:
+          top 0.08s ease-out,
+          left 0.08s ease-out;
+      }
+
+      /* Contenu au-dessus du glow */
+      .has-glow > .container,
+      .has-glow > .section-num {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* =====================
+         NAVBAR
+      ===================== */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        height: 64px;
+        border-bottom: 1px solid var(--border);
+        background: color-mix(in oklch, var(--bg) 85%, transparent);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition:
+          background 0.25s,
+          border-color 0.25s;
+      }
+
+      .nav-inner {
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-logo {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-weight: 800;
+        font-size: 1.25rem;
+        color: var(--fg);
+        letter-spacing: -0.02em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--fg-muted);
+        transition: color 0.15s;
+      }
+      .nav-links a:hover {
+        color: var(--fg);
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      /* =====================
+         BUTTONS
+      ===================== */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: var(--radius);
+        font-family: "Inter", sans-serif;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        transition: all 0.15s ease;
+        white-space: nowrap;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: var(--primary-fg);
+      }
+      .btn-primary:hover {
+        filter: brightness(0.88);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--fg);
+        border: 1.5px solid var(--border);
+      }
+      .btn-secondary:hover {
+        background: var(--bg-muted);
+      }
+
+      .btn-sm {
+        padding: 7px 14px;
+        font-size: 0.8125rem;
+      }
+      .btn-lg {
+        padding: 13px 28px;
+        font-size: 1rem;
+      }
+
+      .btn-ghost-white {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: 1.5px solid rgba(255, 255, 255, 0.35);
+      }
+      .btn-ghost-white:hover {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .btn-white {
+        background: #fff;
+        color: var(--primary);
+      }
+      .btn-white:hover {
+        filter: brightness(0.96);
+      }
+
+      .btn-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: var(--radius);
+        background: var(--bg-muted);
+        border: 1px solid var(--border);
+        color: var(--fg-muted);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s;
+      }
+      .btn-icon:hover {
+        color: var(--fg);
+        border-color: var(--fg-muted);
+      }
+
+      /* =====================
+         SECTION HEADERS
+      ===================== */
+      .label {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .section-title {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 12px;
+      }
+
+      .section-header {
+        margin-bottom: 56px;
+      }
+      .section-header.center {
+        text-align: center;
+      }
+
+      .accent-bar {
+        width: 40px;
+        height: 3px;
+        border-radius: 99px;
+        background: var(--primary);
+        margin-top: 14px;
+      }
+      .center .accent-bar {
+        margin: 14px auto 0;
+      }
+
+      /* =====================
+         HERO — E + A
+      ===================== */
+      .hero {
+        padding: 96px 0 80px;
+        overflow: hidden;
+        background: color-mix(in oklch, var(--primary) 4%, var(--bg));
+        transition: background 0.25s;
+      }
+
+      /* Grille de fond subtile */
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(to right, var(--border) 1px, transparent 1px),
+          linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+        background-size: 48px 48px;
+        opacity: 0.35;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* Fondu radial sur les bords */
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 30%, var(--bg) 100%);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* B — Grille 2 colonnes */
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* gap: 56px; */
+        align-items: center;
+      }
+
+      .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-supertitle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: var(--primary);
+        background: color-mix(in oklch, var(--primary) 10%, transparent);
+        border: 1px solid color-mix(in oklch, var(--primary) 25%, transparent);
+        padding: 5px 14px;
+        border-radius: var(--radius-pill);
+        margin-bottom: 24px;
+        letter-spacing: 0.01em;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 4vw, 3.25rem);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.125rem;
+        color: var(--fg-muted);
+        margin-bottom: 40px;
+        max-width: 400px;
+        line-height: 1.6;
+      }
+
+      .hero-ctas {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      /* B — Illustration SVG */
+      .hero-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-visual img {
+        width: 100%;
+        /* max-width: 540px; */
+        border-radius: 24px;
+        filter: drop-shadow(0 20px 48px rgba(79, 70, 229, 0.18));
+        transition: filter 0.25s;
+      }
+
+      body.dark .hero-visual img {
+        filter: drop-shadow(0 20px 60px rgba(99, 102, 241, 0.35)) brightness(0.92) saturate(0.9);
+      }
+
+      /* =====================
+         C — SERVICE CARDS (border animée)
+      ===================== */
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .service-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-card);
+        padding: 32px;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+        position: relative;
+        /* overflow: hidden pour que le ::before épouse le border-radius de la card */
+        overflow: hidden;
+      }
+
+      /* C — Gradient animé en haut de chaque card */
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--primary) 0%,
+          var(--violet) 50%,
+          var(--primary) 100%
+        );
+        background-size: 200% auto;
+        /* Légèrement décalé par rapport au H1 pour éviter la synchronisation */
+        animation: shimmer 5s ease-in-out 0.8s infinite;
+      }
+
+      .service-card:hover {
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+      }
+
+      .icon-wrap {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        background: color-mix(in oklch, var(--primary) 10%, transparent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .service-card h3 {
+        font-size: 1.0625rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .service-card p {
+        font-size: 0.875rem;
+        color: var(--fg-muted);
+        line-height: 1.65;
+        margin-bottom: 20px;
+      }
+
+      .link-more {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--primary);
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: gap 0.15s;
+      }
+      .link-more:hover {
+        gap: 9px;
+      }
+
+      /* =====================
+         POURQUOI
+      ===================== */
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+
+      .why-item {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .why-item .icon-wrap {
+        width: 44px;
+        height: 44px;
+      }
+      .why-item h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+      .why-item p {
+        font-size: 0.875rem;
+        color: var(--fg-muted);
+        line-height: 1.65;
+      }
+
+      /* =====================
+         PROJETS
+      ===================== */
+      .project-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-card);
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+      }
+      .project-card:hover {
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+      }
+
+      .project-meta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .badge {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        padding: 3px 9px;
+        border-radius: var(--radius-pill);
+        background: color-mix(in oklch, var(--primary) 10%, transparent);
+        color: var(--primary);
+        border: 1px solid color-mix(in oklch, var(--primary) 20%, transparent);
+      }
+
+      .year {
+        font-size: 0.75rem;
+        color: var(--fg-muted);
+      }
+
+      .project-card h3 {
+        font-size: 1.0625rem;
+        font-weight: 600;
+      }
+      .project-card p {
+        font-size: 0.875rem;
+        color: var(--fg-muted);
+        line-height: 1.6;
+        flex: 1;
+      }
+
+      .stack-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .tag {
+        font-size: 0.6875rem;
+        font-weight: 500;
+        padding: 3px 9px;
+        border-radius: var(--radius-pill);
+        background: var(--bg-muted);
+        color: var(--fg-muted);
+        border: 1px solid var(--border);
+      }
+
+      .projects-footer {
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      /* =====================
+         CTA FINAL
+      ===================== */
+      .cta-section > .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-box {
+        background: var(--primary);
+        border-radius: 16px;
+        padding: 72px 48px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.07) 0%, transparent 50%),
+          radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.09) 0%, transparent 40%);
+        pointer-events: none;
+      }
+
+      .cta-box > * {
+        position: relative;
+      }
+
+      .cta-box h2 {
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 12px;
+      }
+
+      .cta-box p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 36px;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-actions {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* =====================
+         FOOTER
+      ===================== */
+      footer {
+        background: var(--bg-muted);
+        border-top: 1px solid var(--border);
+        padding: 56px 0 32px;
+        transition: background 0.25s;
+      }
+
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        margin-bottom: 48px;
+      }
+
+      .footer-brand h3 {
+        font-size: 1.125rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+      }
+      .footer-brand p {
+        font-size: 0.8125rem;
+        color: var(--fg-muted);
+        line-height: 1.6;
+      }
+
+      .footer-nav {
+        display: flex;
+        gap: 56px;
+      }
+
+      .footer-col h4 {
+        font-family: "Inter", sans-serif;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--fg-muted);
+        margin-bottom: 14px;
+      }
+
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+      .footer-col a {
+        font-size: 0.875rem;
+        color: var(--fg-muted);
+        transition: color 0.15s;
+      }
+      .footer-col a:hover {
+        color: var(--fg);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid var(--border);
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-bottom p {
+        font-size: 0.8125rem;
+        color: var(--fg-muted);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 8px;
+      }
+
+      .social-btn {
+        width: 34px;
+        height: 34px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--fg-muted);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s;
+        cursor: pointer;
+      }
+      .social-btn:hover {
+        color: var(--fg);
+        border-color: var(--fg-muted);
+        background: var(--bg);
+      }
+
+      /* =====================
+         REDUCED MOTION
+      ===================== */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+        .glow-orb {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ========== NAVBAR ========== -->
+    <nav>
+      <div class="container">
+        <div class="nav-inner">
+          <a href="#" class="nav-logo">Yiroma</a>
+          <ul class="nav-links">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Tarifs</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="nav-right">
+            <button
+              class="btn-icon"
+              onclick="toggleDark()"
+              title="Changer le thème"
+              id="theme-toggle"
+            >
+              <i data-lucide="moon" width="15" height="15"></i>
+            </button>
+            <a href="#" class="btn btn-primary btn-sm">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========== HERO — has-glow (E) + A + B ========== -->
+    <section class="hero has-glow">
+      <!-- E — Orbe de glow (position par défaut, suit la souris via JS) -->
+      <div class="glow-orb" id="glow-hero"></div>
+
+      <div class="hero-content">
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Texte gauche -->
+            <div class="hero-text">
+              <span class="hero-supertitle">
+                <i data-lucide="map-pin" width="13" height="13"></i>
+                Développeur Full Stack — Orléans &amp; toute la France
+              </span>
+              <!-- A — Gradient animé sur "présence digitale" -->
+              <h1>
+                Du site vitrine à<br />l'application métier,<br />je construis votre<br /><span
+                  class="gradient-text"
+                  >présence digitale.</span
+                >
+              </h1>
+              <p class="hero-subtitle">Je conçois, je développe — vous devenez visible.</p>
+              <div class="hero-ctas">
+                <a href="#" class="btn btn-primary btn-lg">
+                  <i data-lucide="layers" width="17" height="17"></i>
+                  Découvrir mes services
+                </a>
+                <a href="#" class="btn btn-secondary btn-lg">
+                  Voir mes réalisations
+                  <i data-lucide="arrow-right" width="16" height="16"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- B — Illustration SVG -->
+            <div class="hero-visual">
+              <img src="assets/hero.svg" alt="Illustration développeur web freelance" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SERVICES — C + D ========== -->
+    <section class="bg-muted">
+      <!-- D — Grand numéro décoratif -->
+      <span class="section-num">01</span>
+      <div class="container">
+        <div class="section-header center">
+          <span class="label">Ce que je fais pour vous</span>
+          <h2 class="section-title">Des services digitaux taillés<br />pour votre activité</h2>
+          <div class="accent-bar"></div>
+        </div>
+        <div class="grid-3">
+          <!-- C — border-top animée via ::before -->
+          <div class="service-card">
+            <div class="icon-wrap">
+              <i data-lucide="globe" width="22" height="22"></i>
+            </div>
+            <h3>Création &amp; Refonte de site</h3>
+            <p>
+              Un site professionnel, rapide et pensé pour convertir. Vitrine, portfolio, e-commerce
+              — adapté à votre secteur et à vos clients.
+            </p>
+            <a href="#" class="link-more"
+              >En savoir plus <i data-lucide="arrow-right" width="14" height="14"></i
+            ></a>
+          </div>
+
+          <div class="service-card">
+            <div class="icon-wrap">
+              <i data-lucide="search" width="22" height="22"></i>
+            </div>
+            <h3>Audit SEO &amp; Visibilité locale</h3>
+            <p>
+              Votre site existe, mais personne ne le trouve ? J'analyse, je diagnostique et je vous
+              donne un plan d'action concret pour remonter sur Google — et sur les IA.
+            </p>
+            <a href="#" class="link-more"
+              >En savoir plus <i data-lucide="arrow-right" width="14" height="14"></i
+            ></a>
+          </div>
+
+          <div class="service-card">
+            <div class="icon-wrap">
+              <i data-lucide="code-2" width="22" height="22"></i>
+            </div>
+            <h3>Développement applicatif</h3>
+            <p>
+              Vous avez besoin de plus qu'un site : un outil métier, une API, un back-office. Je
+              conçois des applications robustes, testées et documentées.
+            </p>
+            <a href="#" class="link-more"
+              >En savoir plus <i data-lucide="arrow-right" width="14" height="14"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== POURQUOI YIROMA — has-glow (E) + D ========== -->
+    <section class="has-glow">
+      <!-- E — Orbe de glow -->
+      <div class="glow-orb" id="glow-why"></div>
+      <!-- D — Grand numéro décoratif -->
+      <span class="section-num">02</span>
+      <div class="container">
+        <div class="section-header">
+          <span class="label">Pourquoi travailler avec moi</span>
+          <h2 class="section-title">Un développeur qui pense<br />avant de coder.</h2>
+          <div class="accent-bar"></div>
+        </div>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="icon-wrap">
+              <i data-lucide="graduation-cap" width="20" height="20"></i>
+            </div>
+            <h3>Un concepteur, pas seulement un développeur</h3>
+            <p>
+              Diplômé Concepteur Développeur d'Application (Bac+4), je pense vos projets en amont —
+              architecture, sécurité, expérience utilisateur — avant d'écrire la première ligne de
+              code.
+            </p>
+          </div>
+
+          <div class="why-item">
+            <div class="icon-wrap">
+              <i data-lucide="users" width="20" height="20"></i>
+            </div>
+            <h3>Je parle votre langue, pas que celle de la technique</h3>
+            <p>
+              10 ans de management et de relation client me permettent de comprendre vos vrais
+              besoins, d'expliquer les choix sans jargon et de livrer ce qui était vraiment demandé.
+            </p>
+          </div>
+
+          <div class="why-item">
+            <div class="icon-wrap">
+              <i data-lucide="shield-check" width="20" height="20"></i>
+            </div>
+            <h3>Du code propre, livré dans les temps</h3>
+            <p>
+              Architecture structurée, tests automatisés, documentation soignée. Vous recevez un
+              projet maintenable — pas une boîte noire que personne ne peut faire évoluer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJETS — D ========== -->
+    <section class="bg-muted">
+      <!-- D — Grand numéro décoratif -->
+      <span class="section-num">03</span>
+      <div class="container">
+        <div class="section-header">
+          <span class="label">Quelques réalisations</span>
+          <h2 class="section-title">Des projets concrets,<br />pour des besoins réels.</h2>
+          <div class="accent-bar"></div>
+        </div>
+        <div class="grid-3">
+          <div class="project-card">
+            <div class="project-meta">
+              <span class="badge">Application</span>
+              <span class="year">2025</span>
+            </div>
+            <h3>CarePlan</h3>
+            <p>
+              Gestion de plannings médicaux complexes avec plusieurs rôles utilisateurs dans une
+              seule interface.
+            </p>
+            <div class="stack-tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">GraphQL</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-meta">
+              <span class="badge">Application</span>
+              <span class="year">2025</span>
+            </div>
+            <h3>Hive</h3>
+            <p>
+              Bibliothèque de médias locale avec favoris et recommandations, pensée pour tourner sur
+              NAS ou Raspberry Pi.
+            </p>
+            <div class="stack-tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Tailwind</span>
+              <span class="tag">GraphQL</span>
+              <span class="tag">SQLite</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-meta">
+              <span class="badge">Site web</span>
+              <span class="year">2024</span>
+            </div>
+            <h3>Taxi Loire Valley Services</h3>
+            <p>
+              Site vitrine pour VTC local avec identité visuelle créée de zéro et SEO local optimisé
+              — Lighthouse &gt; 95.
+            </p>
+            <div class="stack-tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+        <div class="projects-footer">
+          <a href="#" class="link-more">
+            Voir toutes mes réalisations
+            <i data-lucide="arrow-right" width="14" height="14"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA FINAL — has-glow (E) ========== -->
+    <section class="cta-section has-glow">
+      <!-- E — Orbe de glow -->
+      <div class="glow-orb" id="glow-cta"></div>
+      <div class="container">
+        <div class="cta-box">
+          <h2>Un projet en tête ? Parlons-en.</h2>
+          <p>Premier échange gratuit, sans engagement. Je réponds sous 24h.</p>
+          <div class="cta-actions">
+            <a href="#" class="btn btn-white btn-lg">
+              <i data-lucide="mail" width="17" height="17"></i>
+              Demander un devis gratuit
+            </a>
+            <a href="#" class="btn btn-ghost-white btn-lg">
+              Voir mes tarifs
+              <i data-lucide="arrow-right" width="16" height="16"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <h3>Yiroma</h3>
+            <p>
+              Développeur Full Stack Freelance<br />
+              Châteauneuf-sur-Loire (45) · Région Orléanaise<br />
+              Remote toute la France
+            </p>
+          </div>
+          <div class="footer-nav">
+            <div class="footer-col">
+              <h4>Navigation</h4>
+              <ul>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Tarifs</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Légal</h4>
+              <ul>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">SIRET : xxxxxxxx</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 Yiroma — Romaric Yi</p>
+          <div class="social-links">
+            <a href="#" class="social-btn" title="Malt">
+              <i data-lucide="briefcase" width="14" height="14"></i>
+            </a>
+            <a href="#" class="social-btn" title="LinkedIn">
+              <i data-lucide="linkedin" width="14" height="14"></i>
+            </a>
+            <a href="#" class="social-btn" title="GitHub">
+              <i data-lucide="github" width="14" height="14"></i>
+            </a>
+            <a href="#" class="social-btn" title="WhatsApp">
+              <i data-lucide="message-circle" width="14" height="14"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      /* ---- Dark mode ---- */
+      let dark = false;
+
+      function toggleDark() {
+        dark = !dark;
+        document.body.classList.toggle("dark", dark);
+        const btn = document.getElementById("theme-toggle");
+        btn.innerHTML = dark
+          ? '<i data-lucide="sun" width="15" height="15"></i>'
+          : '<i data-lucide="moon" width="15" height="15"></i>';
+        lucide.createIcons();
+      }
+
+      /* ---- E — Glow qui suit la souris ----
+         Chaque section .has-glow contient un div.glow-orb.
+         On calcule la position de la souris RELATIVE à chaque section
+         pour positionner l'orbe dedans.
+         Sections sans .has-glow (bg-muted) créent la rupture visuelle.
+      ---- */
+      const glowSections = document.querySelectorAll(".has-glow");
+
+      document.addEventListener("mousemove", (e) => {
+        glowSections.forEach((section) => {
+          const orb = section.querySelector(".glow-orb");
+          if (!orb) return;
+
+          const rect = section.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          orb.style.left = x + "px";
+          orb.style.top = y + "px";
+        });
+      });
+    </script>
+  </body>
+</html>
