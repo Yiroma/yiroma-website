@@ -263,7 +263,7 @@
 - [x] Copywriting tarifs
 - [x] Copywriting contact
 - [x] Design system (palette, typo, composants, tokens ShadcnUI)
-- [ ] Prototype visuel home
+- [x] Prototype visuel home
 - [ ] Développement — mise en place du projet Next.js
 - [ ] Développement — composants communs (Navbar, Footer, CTA)
 - [ ] Développement — page Home
