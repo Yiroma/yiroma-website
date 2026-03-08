@@ -31,7 +31,7 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
 
       <SheetContent side="right" className="w-72 px-6 py-8">
         <SheetHeader className="mb-8 text-left">
-          <SheetTitle asChild>
+          <SheetTitle>
             <Link
               href="/"
               onClick={() => setOpen(false)}
