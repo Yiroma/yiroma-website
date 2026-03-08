@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { YiromaLogo } from "@/components/ui/YiromaLogo";
+import { NavbarMobile } from "@/components/layout/NavbarMobile";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -46,7 +47,7 @@ export function Navbar() {
           </ul>
         </nav>
 
-        {/* CTA + placeholder menu mobile */}
+        {/* CTA desktop + menu mobile */}
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
@@ -59,8 +60,7 @@ export function Navbar() {
             Demander un devis
           </Link>
 
-          {/* Menu mobile — à implémenter dans la prochaine issue */}
-          <div className="md:hidden" aria-label="Menu mobile" />
+          <NavbarMobile navLinks={navLinks} />
         </div>
       </div>
     </header>
