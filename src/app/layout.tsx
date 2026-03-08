@@ -31,10 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="fr"
-      className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable}`}
-    >
+    <html lang="fr" className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable}`}>
       <body className="antialiased">
         <ThemeProvider
           attribute="class"

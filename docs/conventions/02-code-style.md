@@ -24,17 +24,17 @@ const data: any = fetch(...);
 
 ## Nommage
 
-| Élément                  | Convention          | Exemple                          |
-| ------------------------ | ------------------- | -------------------------------- |
-| Composants React         | PascalCase          | `ServiceCard.tsx`                |
-| Hooks custom             | camelCase + `use`   | `useTheme.ts`                    |
-| Fonctions utilitaires    | camelCase           | `formatDate.ts`                  |
-| Types / Interfaces       | PascalCase          | `ServiceItem`, `ProjectCardProps`|
-| Variables / constantes   | camelCase           | `isMenuOpen`, `projectList`      |
-| Constantes globales      | SCREAMING_SNAKE_CASE| `MAX_PROJECTS`                   |
-| Fichiers composants      | PascalCase          | `Navbar.tsx`                     |
-| Autres fichiers          | kebab-case          | `theme-provider.tsx`             |
-| Dossiers                 | kebab-case          | `components/ui/`                 |
+| Élément                | Convention           | Exemple                           |
+| ---------------------- | -------------------- | --------------------------------- |
+| Composants React       | PascalCase           | `ServiceCard.tsx`                 |
+| Hooks custom           | camelCase + `use`    | `useTheme.ts`                     |
+| Fonctions utilitaires  | camelCase            | `formatDate.ts`                   |
+| Types / Interfaces     | PascalCase           | `ServiceItem`, `ProjectCardProps` |
+| Variables / constantes | camelCase            | `isMenuOpen`, `projectList`       |
+| Constantes globales    | SCREAMING_SNAKE_CASE | `MAX_PROJECTS`                    |
+| Fichiers composants    | PascalCase           | `Navbar.tsx`                      |
+| Autres fichiers        | kebab-case           | `theme-provider.tsx`              |
+| Dossiers               | kebab-case           | `components/ui/`                  |
 
 ---
 

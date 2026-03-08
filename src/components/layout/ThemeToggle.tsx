@@ -17,9 +17,9 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       aria-label={resolvedTheme === "dark" ? "Activer le mode clair" : "Activer le mode sombre"}
       className={cn(
         "flex h-9 w-9 items-center justify-center rounded-md",
-        "border border-border bg-background text-muted-foreground",
-        "transition-colors duration-150 hover:text-foreground",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+        "border-border bg-background text-muted-foreground border",
+        "hover:text-foreground transition-colors duration-150",
+        "focus-visible:ring-primary focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
         className,
       )}
     >

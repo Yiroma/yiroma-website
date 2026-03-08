@@ -13,15 +13,15 @@ const navLinks = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
+    <header className="border-border bg-background/80 sticky top-0 z-50 w-full border-b backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-12">
         {/* Logo */}
         <Link
           href="/"
           className={cn(
-            "inline-flex items-center gap-2 font-bold text-foreground",
+            "text-foreground inline-flex items-center gap-2 font-bold",
             "transition-opacity duration-150 hover:opacity-80",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm",
+            "focus-visible:ring-primary rounded-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
           )}
         >
           <YiromaLogo width={27} height={20} className="text-primary" />
@@ -36,9 +36,9 @@ export function Navbar() {
                 <Link
                   href={href}
                   className={cn(
-                    "text-sm font-medium text-muted-foreground",
-                    "transition-colors duration-150 hover:text-foreground",
-                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm",
+                    "text-muted-foreground text-sm font-medium",
+                    "hover:text-foreground transition-colors duration-150",
+                    "focus-visible:ring-primary rounded-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
                   )}
                 >
                   {label}
@@ -53,9 +53,9 @@ export function Navbar() {
           <Link
             href="/contact"
             className={cn(
-              "hidden rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground md:inline-flex",
+              "bg-primary text-primary-foreground hidden rounded-md px-4 py-2 text-sm font-medium md:inline-flex",
               "transition-all duration-150 hover:brightness-90",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+              "focus-visible:ring-primary focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
             )}
           >
             Demander un devis

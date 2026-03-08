@@ -2,15 +2,16 @@
 
 ## Branches
 
-| Branche     | Usage                                      |
-| ----------- | ------------------------------------------ |
-| `main`      | Production — toujours stable et déployable |
-| `feat/*`    | Nouvelle fonctionnalité ou nouvelle page   |
-| `fix/*`     | Correction de bug                          |
-| `chore/*`   | Maintenance, config, dépendances           |
-| `docs/*`    | Documentation uniquement                  |
+| Branche   | Usage                                      |
+| --------- | ------------------------------------------ |
+| `main`    | Production — toujours stable et déployable |
+| `feat/*`  | Nouvelle fonctionnalité ou nouvelle page   |
+| `fix/*`   | Correction de bug                          |
+| `chore/*` | Maintenance, config, dépendances           |
+| `docs/*`  | Documentation uniquement                   |
 
 **Exemples :**
+
 ```
 feat/navbar
 feat/page-home
@@ -31,33 +32,33 @@ Format : **Conventional Commits** en français.
 
 ### Types
 
-| Type       | Usage                                               |
-| ---------- | --------------------------------------------------- |
-| `feat`     | Nouvelle fonctionnalité, nouveau composant          |
-| `fix`      | Correction de bug                                   |
-| `chore`    | Config, outils, dépendances, tâches de maintenance  |
-| `docs`     | Documentation, copywriting, design system           |
-| `style`    | Modification purement visuelle (CSS, spacing)       |
-| `refactor` | Restructuration sans changement de comportement     |
-| `perf`     | Optimisation de performance                         |
-| `test`     | Ajout ou modification de tests                      |
+| Type       | Usage                                              |
+| ---------- | -------------------------------------------------- |
+| `feat`     | Nouvelle fonctionnalité, nouveau composant         |
+| `fix`      | Correction de bug                                  |
+| `chore`    | Config, outils, dépendances, tâches de maintenance |
+| `docs`     | Documentation, copywriting, design system          |
+| `style`    | Modification purement visuelle (CSS, spacing)      |
+| `refactor` | Restructuration sans changement de comportement    |
+| `perf`     | Optimisation de performance                        |
+| `test`     | Ajout ou modification de tests                     |
 
 ### Scopes courants
 
-| Scope        | Usage                              |
-| ------------ | ---------------------------------- |
-| `init`       | Initialisation du projet           |
-| `layout`     | Layout racine, fonts, providers    |
-| `design`     | Design system, tokens, thème       |
-| `navbar`     | Composant Navbar                   |
-| `footer`     | Composant Footer                   |
-| `home`       | Page Home                          |
-| `services`   | Page Services                      |
-| `portfolio`  | Page Portfolio                     |
-| `tarifs`     | Page Tarifs                        |
-| `contact`    | Page Contact                       |
-| `seo`        | Meta tags, sitemap, robots         |
-| `deploy`     | Docker, VPS, CI/CD                 |
+| Scope       | Usage                           |
+| ----------- | ------------------------------- |
+| `init`      | Initialisation du projet        |
+| `layout`    | Layout racine, fonts, providers |
+| `design`    | Design system, tokens, thème    |
+| `navbar`    | Composant Navbar                |
+| `footer`    | Composant Footer                |
+| `home`      | Page Home                       |
+| `services`  | Page Services                   |
+| `portfolio` | Page Portfolio                  |
+| `tarifs`    | Page Tarifs                     |
+| `contact`   | Page Contact                    |
+| `seo`       | Meta tags, sitemap, robots      |
+| `deploy`    | Docker, VPS, CI/CD              |
 
 ### Exemples
 
