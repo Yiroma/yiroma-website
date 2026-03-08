@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Navbar } from "@/components/layout/Navbar";
 
 const fontSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -30,10 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="fr"
-      className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable}`}
-    >
+    <html lang="fr" className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable}`}>
       <body className="antialiased">
         <ThemeProvider
           attribute="class"
@@ -41,6 +39,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>

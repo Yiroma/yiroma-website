@@ -18,16 +18,16 @@
 
 ## 📂 Documents de référence
 
-| Document                   | Lien                                                           |
-| -------------------------- | -------------------------------------------------------------- |
-| Brainstorm & plan de route | [docs/brainstorm.md](docs/brainstorm.md)                                     |
-| Design System              | [docs/design/design-system.md](docs/design/design-system.md)                |
-| Suggestions & points ouverts | [docs/suggestions.md](docs/suggestions.md)                                 |
-| Copywriting Home           | [docs/copywrights/home.md](docs/copywrights/home.md)                         |
-| Copywriting Services       | [docs/copywrights/services.md](docs/copywrights/services.md)                 |
-| Copywriting Portfolio      | [docs/copywrights/portfolio.md](docs/copywrights/portfolio.md)               |
-| Copywriting Tarifs         | [docs/copywrights/tarifs.md](docs/copywrights/tarifs.md)                     |
-| Copywriting Contact        | [docs/copywrights/contact.md](docs/copywrights/contact.md)                   |
+| Document                     | Lien                                                           |
+| ---------------------------- | -------------------------------------------------------------- |
+| Brainstorm & plan de route   | [docs/brainstorm.md](docs/brainstorm.md)                       |
+| Design System                | [docs/design/design-system.md](docs/design/design-system.md)   |
+| Suggestions & points ouverts | [docs/suggestions.md](docs/suggestions.md)                     |
+| Copywriting Home             | [docs/copywrights/home.md](docs/copywrights/home.md)           |
+| Copywriting Services         | [docs/copywrights/services.md](docs/copywrights/services.md)   |
+| Copywriting Portfolio        | [docs/copywrights/portfolio.md](docs/copywrights/portfolio.md) |
+| Copywriting Tarifs           | [docs/copywrights/tarifs.md](docs/copywrights/tarifs.md)       |
+| Copywriting Contact          | [docs/copywrights/contact.md](docs/copywrights/contact.md)     |
 
 > Les fichiers de copywriting sont la référence pour tout le contenu des pages.
 > Le design system est la référence pour toutes les décisions visuelles.
