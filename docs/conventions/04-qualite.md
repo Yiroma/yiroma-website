@@ -49,15 +49,19 @@
 ## Principes de développement
 
 ### KISS — Keep It Simple, Stupid
+
 Choisir la solution la plus simple qui fonctionne. Éviter la sur-ingénierie.
 
 ### YAGNI — You Aren't Gonna Need It
+
 Ne pas implémenter une fonctionnalité "au cas où". Implémenter ce qui est requis maintenant.
 
 ### DRY — Don't Repeat Yourself
+
 Extraire la logique dupliquée dans un composant ou une fonction utilitaire — mais seulement si la duplication apparaît au moins 3 fois.
 
 ### Responsabilité unique
+
 Un composant = une responsabilité. Si un composant fait trop de choses, le découper.
 
 ---

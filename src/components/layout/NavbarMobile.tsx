@@ -20,9 +20,9 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
       <SheetTrigger
         className={cn(
           "flex h-9 w-9 items-center justify-center rounded-md md:hidden",
-          "border border-border bg-background text-muted-foreground",
-          "transition-colors duration-150 hover:text-foreground",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+          "border-border bg-background text-muted-foreground border",
+          "hover:text-foreground transition-colors duration-150",
+          "focus-visible:ring-primary focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
         )}
         aria-label="Ouvrir le menu"
       >
@@ -35,7 +35,7 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
             <Link
               href="/"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center gap-2 font-bold text-foreground"
+              className="text-foreground inline-flex items-center gap-2 font-bold"
             >
               <YiromaLogo width={24} height={18} className="text-primary" />
               <span className="text-lg">Yiroma</span>
@@ -51,9 +51,9 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
                   href={href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "block rounded-md px-3 py-2.5 text-sm font-medium text-muted-foreground",
-                    "transition-colors duration-150 hover:bg-accent hover:text-foreground",
-                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                    "text-muted-foreground block rounded-md px-3 py-2.5 text-sm font-medium",
+                    "hover:bg-accent hover:text-foreground transition-colors duration-150",
+                    "focus-visible:ring-primary focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
                   )}
                 >
                   {label}
@@ -67,17 +67,17 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
           href="/contact"
           onClick={() => setOpen(false)}
           className={cn(
-            "flex w-full items-center justify-center rounded-md bg-primary px-4 py-2.5",
-            "text-sm font-medium text-primary-foreground",
+            "bg-primary flex w-full items-center justify-center rounded-md px-4 py-2.5",
+            "text-primary-foreground text-sm font-medium",
             "transition-all duration-150 hover:brightness-90",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+            "focus-visible:ring-primary focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
           )}
         >
           Demander un devis
         </Link>
 
-        <div className="mt-6 border-t border-border pt-6 flex items-center justify-between">
-          <span className="pl-3 text-sm text-muted-foreground">Thème</span>
+        <div className="border-border mt-6 flex items-center justify-between border-t pt-6">
+          <span className="text-muted-foreground pl-3 text-sm">Thème</span>
           <ThemeToggle />
         </div>
       </SheetContent>
