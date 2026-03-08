@@ -73,7 +73,7 @@ Les couleurs sont définies en tant que variables CSS au format **OKLCH** (utili
 | `--ring`                       | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Focus ring                             |
 | `--destructive`                | `#EF4444` | `oklch(0.637 0.237 25.331)`  | Erreurs                                |
 | `--destructive-foreground`     | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur fond destructive             |
-| `--accent`                     | `#1E293B` | `oklch(0.279 0.041 260.031)` | Hover sur ghost buttons, items de menu |
+| `--accent`                     | `#1E293B` | `oklch(0.328 0.041 260.031)` | Hover sur ghost buttons, items de menu |
 | `--accent-foreground`          | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte sur fond accent                  |
 | `--popover`                    | `#1E293B` | `oklch(0.279 0.041 260.031)` | Fond dropdowns, tooltips, popovers     |
 | `--popover-foreground`         | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte dans les popovers                |
@@ -86,7 +86,7 @@ Les couleurs sont définies en tant que variables CSS au format **OKLCH** (utili
 | `--sidebar-foreground`         | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte dans la sidebar                  |
 | `--sidebar-primary`            | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Item actif / sélectionné               |
 | `--sidebar-primary-foreground` | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur item actif sidebar           |
-| `--sidebar-accent`             | `#334155` | `oklch(0.372 0.044 257.287)` | Hover sur items de la sidebar          |
+| `--sidebar-accent`             | `#334155` | `oklch(0.328 0.041 260.031)` | Hover sur items de la sidebar          |
 | `--sidebar-accent-foreground`  | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte sur hover sidebar                |
 | `--sidebar-border`             | `#334155` | `oklch(0.372 0.044 257.287)` | Bordure de la sidebar                  |
 | `--sidebar-ring`               | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Focus ring dans la sidebar             |
