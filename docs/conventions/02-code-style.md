@@ -40,29 +40,35 @@ const data: any = fetch(...);
 
 ## Prettier
 
-Configuration dans `.prettierrc` (ou `prettier.config.mjs`) :
+Configuration dans `.prettierrc` :
 
 ```json
 {
   "semi": true,
   "singleQuote": false,
-  "trailingComma": "es5",
+  "trailingComma": "all",
   "printWidth": 100,
-  "tabWidth": 2
+  "tabWidth": 2,
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
 ```
 
+- `trailingComma: "all"` — virgule finale y compris sur les paramètres de fonctions
+- `prettier-plugin-tailwindcss` — trie les classes Tailwind automatiquement (ordre officiel)
 - Formatage automatique à la sauvegarde (VSCode : `editor.formatOnSave`)
 - Ne jamais commiter du code non formaté
+- Lancer `npm run format` pour formater tout le projet
 
 ---
 
 ## ESLint
 
-- Config dans `eslint.config.mjs` (ESLint flat config)
-- Règles Next.js activées : `next/core-web-vitals`
+- Config dans `eslint.config.mjs` (ESLint 9 flat config)
+- Configs activées : `eslint-config-next/core-web-vitals` + `eslint-config-next/typescript` + `eslint-config-prettier`
+- `eslint-config-prettier` en dernier pour désactiver les règles en conflit avec Prettier
 - Ne pas désactiver les règles sans justification commentée
 - Zéro warning en production
+- Lancer `npm run lint` pour vérifier
 
 ---
 

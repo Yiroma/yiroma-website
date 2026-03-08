@@ -56,13 +56,14 @@
 
 ## 🏗️ Stack technique
 
-| Couche      | Technologie          |
-| ----------- | -------------------- |
-| Framework   | Next.js (App Router) |
-| Langage     | TypeScript           |
-| Style       | Tailwind CSS         |
-| Déploiement | VPS                  |
-| Qualité     | ESLint · Prettier    |
+| Couche      | Technologie                                                        |
+| ----------- | ------------------------------------------------------------------ |
+| Framework   | Next.js 16 (App Router)                                            |
+| Langage     | TypeScript 5 (strict)                                              |
+| Style       | Tailwind CSS 4 · ShadcnUI                                          |
+| Composants  | ShadcnUI v4 · Lucide React · next-themes                           |
+| Déploiement | VPS (Docker)                                                       |
+| Qualité     | ESLint 9 (flat config) · Prettier 3 · prettier-plugin-tailwindcss  |
 
 ---
 
@@ -264,8 +265,10 @@
 - [x] Copywriting contact
 - [x] Design system (palette, typo, composants, tokens ShadcnUI)
 - [x] Prototype visuel home
-- [ ] Développement — mise en place du projet Next.js
-- [ ] Développement — composants communs (Navbar, Footer, CTA)
+- [x] Développement — mise en place du projet Next.js
+- [x] Développement — configuration ESLint / Prettier
+- [x] Développement — stratégie de branches Git (main ← dev ← feat/*)
+- [ ] Développement — composants communs (Navbar ✅ · Footer · CTA)
 - [ ] Développement — page Home
 - [ ] Développement — page Services
 - [ ] Développement — page Portfolio
