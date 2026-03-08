@@ -2,6 +2,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { YiromaLogo } from "@/components/ui/YiromaLogo";
 import { NavbarMobile } from "@/components/layout/NavbarMobile";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -60,6 +61,7 @@ export function Navbar() {
             Demander un devis
           </Link>
 
+          <ThemeToggle className="hidden md:flex" />
           <NavbarMobile navLinks={navLinks} />
         </div>
       </div>

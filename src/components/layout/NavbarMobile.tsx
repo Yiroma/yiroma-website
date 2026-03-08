@@ -6,6 +6,7 @@ import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { YiromaLogo } from "@/components/ui/YiromaLogo";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 
 interface NavbarMobileProps {
   navLinks: { href: string; label: string }[];
@@ -62,19 +63,22 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
           </ul>
         </nav>
 
-        <div className="mt-8">
-          <Link
-            href="/contact"
-            onClick={() => setOpen(false)}
-            className={cn(
-              "flex w-full items-center justify-center rounded-md bg-primary px-4 py-2.5",
-              "text-sm font-medium text-primary-foreground",
-              "transition-all duration-150 hover:brightness-90",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
-            )}
-          >
-            Demander un devis
-          </Link>
+        <Link
+          href="/contact"
+          onClick={() => setOpen(false)}
+          className={cn(
+            "flex w-full items-center justify-center rounded-md bg-primary px-4 py-2.5",
+            "text-sm font-medium text-primary-foreground",
+            "transition-all duration-150 hover:brightness-90",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+          )}
+        >
+          Demander un devis
+        </Link>
+
+        <div className="mt-6 border-t border-border pt-6 flex items-center justify-between">
+          <span className="pl-3 text-sm text-muted-foreground">Thème</span>
+          <ThemeToggle />
         </div>
       </SheetContent>
     </Sheet>
