@@ -15,22 +15,17 @@ Le fichier est actuellement vide (juste le nom du repo). À remplir a minima ave
 - Instructions pour lancer le projet en local (`npm install`, `npm run dev`, etc.)
 - Variables d'environnement nécessaires
 
-### `.gitignore` à créer
+### ~~`.gitignore` à créer~~ ✅ Résolu
 
-Aucun `.gitignore` n'existe encore. À créer dès l'initialisation du projet Next.js avec au minimum :
+Généré automatiquement par `create-next-app`.
 
-- `node_modules/`
-- `.next/`
-- `.env` / `.env.local`
-- `out/`
+### ~~Palette de couleurs & typographie à définir~~ ✅ Résolu
 
-### Palette de couleurs & typographie à définir
+Design system défini dans [docs/design/design-system.md](docs/design/design-system.md). Tokens ShadcnUI configurés. Prototype visuel validé.
 
-Aucun document de design system n'existe. Définir les tokens avant d'écrire du Tailwind CSS évite les incohérences visuelles entre les pages. À créer dans `docs/design-system.md` ou directement dans `tailwind.config.ts`. Points à couvrir :
+### ~~Prototype visuel avant développement~~ ✅ Résolu
 
-- Couleurs principales (brand, fond, texte, accents)
-- Typographies (titres, corps, taille de base)
-- Espacements & breakpoints personnalisés si besoin
+Prototype HTML disponible dans `docs/design/prototype-home.html`.
 
 ---
 

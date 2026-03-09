@@ -56,13 +56,14 @@
 
 ## 🏗️ Stack technique
 
-| Couche      | Technologie          |
-| ----------- | -------------------- |
-| Framework   | Next.js (App Router) |
-| Langage     | TypeScript           |
-| Style       | Tailwind CSS         |
-| Déploiement | VPS                  |
-| Qualité     | ESLint · Prettier    |
+| Couche      | Technologie                                                        |
+| ----------- | ------------------------------------------------------------------ |
+| Framework   | Next.js 16 (App Router)                                            |
+| Langage     | TypeScript 5 (strict)                                              |
+| Style       | Tailwind CSS 4 · ShadcnUI                                          |
+| Composants  | ShadcnUI v4 · Lucide React · next-themes                           |
+| Déploiement | VPS (Docker)                                                       |
+| Qualité     | ESLint 9 (flat config) · Prettier 3 · prettier-plugin-tailwindcss  |
 
 ---
 
@@ -251,6 +252,19 @@
 - Tester la performance Lighthouse avant chaque mise en ligne
 - Respecter les bonnes pratiques SEO : balises meta, og:tags, sitemap, robots.txt
 
+### Commentaires JSX
+
+- **Pas de commentaires** dans les `return` JSX pour décrire ce que le code fait (`{/* Icône */}`, `{/* Contenu */}`, etc.)
+- Commentaires autorisés uniquement pour expliquer **pourquoi** : contrainte non évidente, logique conditionnelle non triviale
+- Si un bloc a besoin d'un commentaire pour être compris, l'extraire en sous-composant nommé
+
+### Conventions UI
+
+- Ce projet utilise `@base-ui/react/button` (pas Radix) → pas de prop `asChild` sur `Button`
+- Pattern correct pour un bouton-lien : `<Link className={cn(buttonVariants({ ... }))}>`
+- Tailwind en priorité ; CSS vanilla uniquement pour ce qui est inexprimable (ex : `grid-template-areas`)
+- `z-index` : utiliser le minimum nécessaire, ne pas dupliquer sur un enfant si le parent crée déjà le stacking context
+
 ---
 
 ## 🚧 Statut du projet
@@ -264,8 +278,10 @@
 - [x] Copywriting contact
 - [x] Design system (palette, typo, composants, tokens ShadcnUI)
 - [x] Prototype visuel home
-- [ ] Développement — mise en place du projet Next.js
-- [ ] Développement — composants communs (Navbar, Footer, CTA)
+- [x] Développement — mise en place du projet Next.js
+- [x] Développement — configuration ESLint / Prettier
+- [x] Développement — stratégie de branches Git (main ← dev ← feat/*)
+- [ ] Développement — composants communs (Navbar ✅ · Footer · CTA)
 - [ ] Développement — page Home
 - [ ] Développement — page Services
 - [ ] Développement — page Portfolio

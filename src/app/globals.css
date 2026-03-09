@@ -150,9 +150,119 @@
   }
 }
 
+/* =====================
+   HERO — gradient animé + glow souris
+===================== */
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  55% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: -150% center;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    #60a5fa 30%,
+    #bfdbfe 48%,
+    #dbeafe 52%,
+    #60a5fa 70%,
+    var(--color-primary) 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 5s ease-in-out infinite;
+}
+
+.dark .gradient-text {
+  background: linear-gradient(
+    90deg,
+    #3b82f6 0%,
+    #93c5fd 30%,
+    #dbeafe 48%,
+    #eff6ff 52%,
+    #93c5fd 70%,
+    #3b82f6 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 5s ease-in-out infinite;
+}
+
+.hero-section {
+  background: color-mix(in oklch, var(--color-primary) 4%, var(--color-background));
+}
+
+.hero-grid-bg {
+  background-image:
+    linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.hero-fade {
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 30%, var(--color-background) 100%);
+}
+
+.glow-orb {
+  width: 2000px;
+  height: 2000px;
+  border-radius: 100%;
+  background: radial-gradient(
+    circle at center,
+    color-mix(in oklch, var(--color-primary) 18%, transparent) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 30%;
+  transition:
+    top 0.08s ease-out,
+    left 0.08s ease-out;
+}
+
+/* =====================
+   BENTO GRID — grid-template-areas (non exprimable en Tailwind pur)
+===================== */
+
+/* Ordre tablet (md = 768px) : bascule sur --order-md */
+@media (min-width: 768px) {
+  .bento-grid > * {
+    order: var(--order-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "creation creation seo"
+      "refonte  devapp   seo"
+      "charte   charte   charte";
+  }
+  .bento-creation { grid-area: creation; }
+  .bento-seo      { grid-area: seo; }
+  .bento-refonte  { grid-area: refonte; }
+  .bento-devapp   { grid-area: devapp; }
+  .bento-charte   { grid-area: charte; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+  .glow-orb {
+    transition: none !important;
   }
 }

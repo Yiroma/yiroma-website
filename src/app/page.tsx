@@ -1,7 +1,11 @@
+import { Hero } from "@/components/home/Hero";
+import { ServicesPreview } from "@/components/home/ServicesPreview";
+
 export default function Home() {
   return (
     <main>
-      <h1>Yiroma</h1>
+      <Hero />
+      <ServicesPreview />
     </main>
   );
 }
