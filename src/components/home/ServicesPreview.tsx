@@ -18,7 +18,6 @@ type Service = {
   description: string;
   href: string;
   wide?: boolean;
-  // order visuel par breakpoint (mobile → md → lg géré par grid-area)
   orderMobile: number;
   orderMd: number;
 };
@@ -80,7 +79,6 @@ const services: Service[] = [
 export function ServicesPreview() {
   return (
     <section className="bg-muted relative z-10 py-16 shadow-[0_-20px_24px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.06)] md:py-24">
-      {/* Numéro décoratif */}
       <span
         className="text-foreground pointer-events-none absolute top-0 right-4 font-sans text-[clamp(3rem,18vw,16rem)] leading-none font-extrabold tracking-[-0.04em] opacity-[0.033] select-none"
         aria-hidden="true"
@@ -88,8 +86,7 @@ export function ServicesPreview() {
         01
       </span>
 
-      <div className="relative z-10 container mx-auto max-w-7xl px-4 sm:px-8">
-        {/* En-tête */}
+      <div className="relative container mx-auto max-w-7xl px-4 sm:px-8">
         <div className="mb-10 text-center md:mb-14">
           <span className="text-primary mb-2.5 inline-block text-xs font-semibold tracking-[0.08em] uppercase">
             Ce que je fais pour vous
@@ -102,7 +99,6 @@ export function ServicesPreview() {
           <div className="bg-primary mx-auto mt-3.5 h-0.75 w-10 rounded-full" />
         </div>
 
-        {/* Bento grid — 1 col mobile, 2 col tablet, bento 3 col desktop */}
         <div className="bento-grid grid grid-cols-1 gap-4 md:grid-cols-2">
           {services.map((service) => {
             const Icon = service.icon;
@@ -127,7 +123,6 @@ export function ServicesPreview() {
                   service.wide && "md:flex-row md:items-center md:gap-7 md:py-6",
                 )}
               >
-                {/* Icône */}
                 <div
                   className={cn(
                     "justify-content flex size-12 shrink-0 items-center rounded-[10px]",
@@ -139,7 +134,6 @@ export function ServicesPreview() {
                   <Icon size={22} className="m-auto" aria-hidden="true" />
                 </div>
 
-                {/* Contenu */}
                 <div className={cn("flex flex-col gap-2.5", service.wide && "min-w-0 flex-1")}>
                   <h3 className="text-foreground font-sans text-[1.0625rem] font-semibold transition-colors duration-200 group-hover:text-white">
                     {service.title}

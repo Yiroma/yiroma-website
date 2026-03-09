@@ -252,6 +252,19 @@
 - Tester la performance Lighthouse avant chaque mise en ligne
 - Respecter les bonnes pratiques SEO : balises meta, og:tags, sitemap, robots.txt
 
+### Commentaires JSX
+
+- **Pas de commentaires** dans les `return` JSX pour décrire ce que le code fait (`{/* Icône */}`, `{/* Contenu */}`, etc.)
+- Commentaires autorisés uniquement pour expliquer **pourquoi** : contrainte non évidente, logique conditionnelle non triviale
+- Si un bloc a besoin d'un commentaire pour être compris, l'extraire en sous-composant nommé
+
+### Conventions UI
+
+- Ce projet utilise `@base-ui/react/button` (pas Radix) → pas de prop `asChild` sur `Button`
+- Pattern correct pour un bouton-lien : `<Link className={cn(buttonVariants({ ... }))}>`
+- Tailwind en priorité ; CSS vanilla uniquement pour ce qui est inexprimable (ex : `grid-template-areas`)
+- `z-index` : utiliser le minimum nécessaire, ne pas dupliquer sur un enfant si le parent crée déjà le stacking context
+
 ---
 
 ## 🚧 Statut du projet

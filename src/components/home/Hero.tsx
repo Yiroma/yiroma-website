@@ -28,27 +28,18 @@ export function Hero() {
 
   return (
     <section ref={sectionRef} className="hero-section relative z-0 overflow-hidden py-24 pb-20">
-      {/* Grille de fond */}
-      <div className="hero-grid-bg pointer-events-none absolute inset-0 z-0 opacity-35" />
+      <div className="hero-grid-bg pointer-events-none absolute inset-0 opacity-35" />
+      <div className="hero-fade pointer-events-none absolute inset-0" />
+      <div ref={orbRef} className="glow-orb pointer-events-none absolute" />
 
-      {/* Fondu radial sur les bords */}
-      <div className="hero-fade pointer-events-none absolute inset-0 z-0" />
-
-      {/* Orbe glow souris */}
-      <div ref={orbRef} className="glow-orb pointer-events-none absolute z-0" />
-
-      {/* Contenu */}
       <div className="relative z-10 container mx-auto max-w-7xl px-8">
         <div className="grid grid-cols-1 items-center md:grid-cols-2">
-          {/* Texte gauche */}
           <div className="flex flex-col items-start">
-            {/* Sur-titre */}
             <span className="border-primary/25 bg-primary/10 text-primary mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[0.8125rem] font-medium">
               <MapPin size={13} aria-hidden="true" />
               Développeur Full Stack Freelance — Orléans &amp; toute la France
             </span>
 
-            {/* H1 */}
             <h1 className="text-foreground mb-5 font-sans text-[clamp(2rem,4vw,3.25rem)] leading-[1.15] font-extrabold tracking-[-0.02em]">
               Du site vitrine à
               <br />
@@ -59,12 +50,10 @@ export function Hero() {
               <span className="gradient-text">présence digitale.</span>
             </h1>
 
-            {/* Sous-titre */}
             <p className="text-muted-foreground mb-10 max-w-100 text-lg leading-relaxed">
               Je conçois, je développe — vous devenez visible.
             </p>
 
-            {/* CTAs */}
             <div className="flex flex-wrap gap-3">
               <Link href="/services" className={cn(buttonVariants({ size: "lg" }))}>
                 <Layers size={17} aria-hidden="true" />
@@ -80,7 +69,6 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Illustration */}
           <div className="flex items-center justify-center">
             <Image
               src="/hero.svg"
