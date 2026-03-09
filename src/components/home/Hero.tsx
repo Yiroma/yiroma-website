@@ -27,7 +27,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="hero-section relative overflow-hidden py-24 pb-20">
+    <section ref={sectionRef} className="hero-section relative z-0 overflow-hidden py-24 pb-20">
       {/* Grille de fond */}
       <div className="hero-grid-bg pointer-events-none absolute inset-0 z-0 opacity-35" />
 
