@@ -231,6 +231,32 @@
     left 0.08s ease-out;
 }
 
+/* =====================
+   BENTO GRID — grid-template-areas (non exprimable en Tailwind pur)
+===================== */
+
+/* Ordre tablet (md = 768px) : bascule sur --order-md */
+@media (min-width: 768px) {
+  .bento-grid > * {
+    order: var(--order-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "creation creation seo"
+      "refonte  devapp   seo"
+      "charte   charte   charte";
+  }
+  .bento-creation { grid-area: creation; }
+  .bento-seo      { grid-area: seo; }
+  .bento-refonte  { grid-area: refonte; }
+  .bento-devapp   { grid-area: devapp; }
+  .bento-charte   { grid-area: charte; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
