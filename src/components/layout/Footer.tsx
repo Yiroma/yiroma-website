@@ -20,9 +20,7 @@ export function Footer() {
   return (
     <footer className="border-border bg-muted border-t">
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-12">
-        {/* Top : brand + navigation */}
         <div className="mb-12 flex flex-col gap-10 sm:flex-row sm:justify-between">
-          {/* Brand */}
           <div className="max-w-xs">
             <Link
               href="/"
@@ -32,7 +30,6 @@ export function Footer() {
               <span className="text-lg">Yiroma</span>
             </Link>
 
-            {/* Réseaux sociaux */}
             <div className="mb-3 flex gap-2">
               {socialLinks.map(({ href, label, icon: Icon }) => (
                 <a
@@ -57,7 +54,6 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Navigation */}
           <div className="text-right">
             <h4 className="text-muted-foreground mb-4 text-xs font-semibold tracking-widest uppercase">
               Navigation
@@ -77,11 +73,8 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom : copyright + légal */}
         <div className="border-border flex flex-col items-center justify-between gap-4 border-t pt-6 sm:flex-row">
-          <p className="text-muted-foreground text-sm">
-            © 2024–{new Date().getFullYear()} Yiroma
-          </p>
+          <p className="text-muted-foreground text-sm">© 2024–{new Date().getFullYear()} Yiroma</p>
 
           <div className="flex gap-4">
             <Link
