@@ -76,9 +76,9 @@ export function WhyYiroma() {
 
       <div className="relative z-10 container mx-auto max-w-7xl px-4 sm:px-8">
         <div className="mb-10 md:mb-14">
-          <span className="text-primary mb-2.5 inline-block text-xs font-semibold tracking-[0.08em] uppercase">
+          <p className="text-primary mb-2.5 text-xs font-semibold tracking-[0.08em] uppercase">
             Pourquoi travailler avec moi
-          </span>
+          </p>
           <h2 className="text-foreground font-sans text-[clamp(1.5rem,3vw,2rem)] leading-tight font-bold">
             Un développeur qui pense
             <br />
@@ -106,9 +106,9 @@ export function WhyYiroma() {
                 </div>
 
                 <div className={`flex flex-col gap-4 ${isEven ? "md:order-1" : ""}`}>
-                  <span className="text-primary text-xs font-semibold tracking-[0.08em] uppercase">
+                  <p className="text-primary text-xs font-semibold tracking-[0.08em] uppercase">
                     {arg.label}
-                  </span>
+                  </p>
                   <h3 className="text-foreground font-sans text-[clamp(1.125rem,2vw,1.375rem)] leading-snug font-bold">
                     {arg.title}
                   </h3>

@@ -199,18 +199,19 @@
   animation: shimmer 5s ease-in-out infinite;
 }
 
-.hero-section {
+/* Sections Hero + WhyYiroma : même fond teinté, grille, fondu et orbe */
+.section-primary-bg {
   background: color-mix(in oklch, var(--color-primary) 4%, var(--color-background));
 }
 
-.hero-grid-bg {
+.section-grid-bg {
   background-image:
     linear-gradient(to right, var(--color-border) 1px, transparent 1px),
     linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
-.hero-fade {
+.section-fade {
   background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 30%, var(--color-background) 100%);
 }
 
