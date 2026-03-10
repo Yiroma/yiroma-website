@@ -51,9 +51,9 @@
 .dark {
   --background: oklch(0.208 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.279 0.041 260.031);
+  --card: oklch(0.32 0.041 260.031);
   --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.279 0.041 260.031);
+  --popover: oklch(0.32 0.041 260.031);
   --popover-foreground: oklch(0.984 0.003 247.858);
   --primary: oklch(0.661 0.214 264.052);
   --primary-foreground: oklch(1 0 0);
@@ -230,6 +230,22 @@
   transition:
     top 0.08s ease-out,
     left 0.08s ease-out;
+}
+
+/* =====================
+   PROJETS — shimmer top border (pseudo-élément, inexprimable en Tailwind)
+===================== */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 0.75rem 0.75rem 0 0;
+  background: linear-gradient(90deg, var(--color-primary) 0%, #60a5fa 50%, var(--color-primary) 100%);
+  background-size: 200% auto;
+  animation: shimmer 5s ease-in-out 0.8s infinite;
 }
 
 /* =====================
