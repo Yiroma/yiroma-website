@@ -281,8 +281,8 @@
 - [x] Développement — mise en place du projet Next.js
 - [x] Développement — configuration ESLint / Prettier
 - [x] Développement — stratégie de branches Git (main ← dev ← feat/*)
-- [ ] Développement — composants communs (Navbar ✅ · Footer · CTA)
-- [ ] Développement — page Home
+- [ ] Développement — composants communs (Navbar ✅ · Footer ✅ · CTA)
+- [ ] Développement — page Home (Hero ✅ · Services ✅ · Pourquoi Yiroma ✅ · Projets · CTA final)
 - [ ] Développement — page Services
 - [ ] Développement — page Portfolio
 - [ ] Développement — page Tarifs
