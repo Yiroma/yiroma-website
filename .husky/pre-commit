@@ -1,0 +1,7 @@
+# Vérifie qu'aucun fichier .env sensible n'est staged
+if git diff --cached --name-only | grep -E '\.env(\..+)?$' | grep -v '\.env\.sample$'; then
+  echo "❌ Fichier .env détecté dans le commit. Utilisez .env.sample pour les exemples."
+  exit 1
+fi
+
+npx lint-staged
