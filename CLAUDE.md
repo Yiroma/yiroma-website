@@ -21,6 +21,7 @@
 | Document                     | Lien                                                           |
 | ---------------------------- | -------------------------------------------------------------- |
 | Brainstorm & plan de route   | [docs/brainstorm.md](docs/brainstorm.md)                       |
+| Architecture déploiement     | [docs/deployment.md](docs/deployment.md)                       |
 | Design System                | [docs/design/design-system.md](docs/design/design-system.md)   |
 | Suggestions & points ouverts | [docs/suggestions.md](docs/suggestions.md)                     |
 | Copywriting Home             | [docs/copywrights/home.md](docs/copywrights/home.md)           |
@@ -62,7 +63,8 @@
 | Langage     | TypeScript 5 (strict)                                              |
 | Style       | Tailwind CSS 4 · ShadcnUI                                          |
 | Composants  | ShadcnUI v4 · Lucide React · next-themes                           |
-| Déploiement | VPS (Docker)                                                       |
+| Déploiement | Export statique Next.js → Hostinger (mutualisé)                    |
+| Mail        | EmailJS (formulaire de contact, sans backend)                      |
 | Qualité     | ESLint 9 (flat config) · Prettier 3 · prettier-plugin-tailwindcss  |
 
 ---
@@ -281,13 +283,18 @@
 - [x] Développement — mise en place du projet Next.js
 - [x] Développement — configuration ESLint / Prettier
 - [x] Développement — stratégie de branches Git (main ← dev ← feat/*)
-- [ ] Développement — composants communs (Navbar ✅ · Footer · CTA)
-- [ ] Développement — page Home
+- [ ] Développement — composants communs (Navbar ✅ · Footer ✅ · CTA)
+- [ ] Développement — page Home (Hero ✅ · Services ✅ · Pourquoi Yiroma ✅ · Projets · CTA final)
 - [ ] Développement — page Services
 - [ ] Développement — page Portfolio
 - [ ] Développement — page Tarifs
 - [ ] Développement — page Contact
 - [ ] SEO — meta tags, sitemap, robots.txt
 - [ ] SEO — Google Business Profile
-- [ ] Déploiement sur VPS (docker)
+- [ ] CI/CD — Husky (commitlint · lint-staged · protection .env)
+- [ ] CI/CD — GitHub Actions workflow lint (PR feat → dev)
+- [ ] CI/CD — GitHub Actions workflow deploy (merge dev → main → Hostinger)
+- [ ] Formulaire contact — intégration EmailJS
+- [ ] Déploiement — export statique Next.js (`output: 'export'`)
+- [ ] Déploiement — mise en ligne sur Hostinger
 - [ ] Tests Lighthouse

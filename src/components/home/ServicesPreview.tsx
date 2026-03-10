@@ -88,9 +88,9 @@ export function ServicesPreview() {
 
       <div className="relative container mx-auto max-w-7xl px-4 sm:px-8">
         <div className="mb-10 text-center md:mb-14">
-          <span className="text-primary mb-2.5 inline-block text-xs font-semibold tracking-[0.08em] uppercase">
+          <p className="text-primary mb-2.5 text-xs font-semibold tracking-[0.08em] uppercase">
             Ce que je fais pour vous
-          </span>
+          </p>
           <h2 className="text-foreground font-sans text-[clamp(1.5rem,3vw,2rem)] leading-tight font-bold">
             Des services digitaux taillés
             <br />

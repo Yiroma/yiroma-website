@@ -27,9 +27,12 @@ export function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="hero-section relative z-0 overflow-hidden py-24 pb-20">
-      <div className="hero-grid-bg pointer-events-none absolute inset-0 opacity-35" />
-      <div className="hero-fade pointer-events-none absolute inset-0" />
+    <section
+      ref={sectionRef}
+      className="section-primary-bg relative z-0 overflow-hidden py-24 pb-20"
+    >
+      <div className="section-grid-bg pointer-events-none absolute inset-0 opacity-35" />
+      <div className="section-fade pointer-events-none absolute inset-0" />
       <div ref={orbRef} className="glow-orb pointer-events-none absolute" />
 
       <div className="relative z-10 container mx-auto max-w-7xl px-8">
