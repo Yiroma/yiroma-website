@@ -62,7 +62,10 @@ export function WhyYiroma() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-primary-bg relative z-0 overflow-hidden py-16 md:py-24">
+    <section
+      ref={sectionRef}
+      className="section-primary-bg relative z-0 overflow-hidden py-16 md:py-24"
+    >
       <div className="section-grid-bg pointer-events-none absolute inset-0 opacity-35" />
       <div className="section-fade pointer-events-none absolute inset-0" />
       <div ref={orbRef} className="glow-orb pointer-events-none absolute" />
