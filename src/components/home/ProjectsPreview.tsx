@@ -48,13 +48,6 @@ const projects: Project[] = [
 export function ProjectsPreview() {
   return (
     <section className="bg-muted relative z-10 py-16 shadow-[0_-20px_24px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.06)] md:py-24">
-      <span
-        className="text-foreground pointer-events-none absolute top-0 right-4 font-sans text-[clamp(3rem,18vw,16rem)] leading-none font-extrabold tracking-[-0.04em] opacity-[0.033] select-none"
-        aria-hidden="true"
-      >
-        03
-      </span>
-
       <div className="relative container mx-auto max-w-7xl px-4 sm:px-8">
         <div className="mb-10 md:mb-14">
           <p className="text-primary mb-2.5 text-xs font-semibold tracking-[0.08em] uppercase">
