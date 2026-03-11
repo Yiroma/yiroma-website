@@ -208,7 +208,7 @@
 - [x] Développement — page Home (Hero ✅ · Services ✅ · Pourquoi Yiroma ✅ · Projets · Tarifs résumés · CTA final)
 - [x] Développement — page cgv
 - [x] Développement — page mentions-legales
-- [ ] Développement — page Services
+- [x] Développement — page Services
 - [ ] Développement — page Tarifs
 - [ ] Développement — page Contact
 - [ ] SEO — meta tags, sitemap, robots.txt
