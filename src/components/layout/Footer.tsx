@@ -18,7 +18,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-border bg-muted relative z-10 border-t">
+    <footer className="border-border bg-muted relative z-10 border-t shadow-[0_-20px_24px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.06)]">
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-12">
         <div className="mb-12 flex flex-col gap-10 sm:flex-row sm:justify-between">
           <div className="max-w-xs">
@@ -55,9 +55,9 @@ export function Footer() {
           </div>
 
           <div className="text-right">
-            <p className="text-muted-foreground mb-4 text-xs font-semibold tracking-widest uppercase">
+            <h4 className="text-muted-foreground mb-4 text-xs font-semibold tracking-widest uppercase">
               Navigation
-            </p>
+            </h4>
             <ul className="flex flex-col gap-2.5">
               {navLinks.map(({ href, label }) => (
                 <li key={href}>
