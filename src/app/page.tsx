@@ -2,6 +2,7 @@ import { Hero } from "@/components/home/Hero";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
 import { WhyYiroma } from "@/components/home/WhyYiroma";
 import { ProjectsPreview } from "@/components/home/ProjectsPreview";
+import { PricingPreview } from "@/components/home/PricingPreview";
 import { CtaFinal } from "@/components/home/CtaFinal";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <ServicesPreview />
       <WhyYiroma />
       <ProjectsPreview />
+      <PricingPreview />
       <CtaFinal />
     </main>
   );
