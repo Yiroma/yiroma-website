@@ -204,17 +204,19 @@
 - [x] Développement — mise en place du projet Next.js
 - [x] Développement — configuration ESLint / Prettier
 - [x] Développement — stratégie de branches Git (main ← dev ← feat/\*)
-- [ ] Développement — composants communs (Navbar ✅ · Footer ✅ · CTA)
-- [ ] Développement — page Home (Hero ✅ · Services ✅ · Pourquoi Yiroma ✅ · Projets · Tarifs résumés · CTA final)
+- [x] Développement — composants communs (Navbar ✅ · Footer ✅ · CTA)
+- [x] Développement — page Home (Hero ✅ · Services ✅ · Pourquoi Yiroma ✅ · Projets · Tarifs résumés · CTA final)
+- [x] Développement — page cgv
+- [x] Développement — page mentions-legales
 - [ ] Développement — page Services
 - [ ] Développement — page Tarifs
 - [ ] Développement — page Contact
 - [ ] SEO — meta tags, sitemap, robots.txt
 - [ ] SEO — Google Business Profile
-- [ ] CI/CD — Husky (commitlint · lint-staged · protection .env)
-- [ ] CI/CD — GitHub Actions workflow lint (PR feat → dev)
-- [ ] CI/CD — GitHub Actions workflow deploy (merge dev → main → Hostinger)
+- [x] CI/CD — Husky (commitlint · lint-staged · protection .env)
+- [x] CI/CD — GitHub Actions workflow lint (PR feat → dev)
+- [x] CI/CD — GitHub Actions workflow deploy (merge dev → main → Hostinger)
 - [ ] Formulaire contact — intégration EmailJS
-- [ ] Déploiement — export statique Next.js (`output: 'export'`)
-- [ ] Déploiement — mise en ligne sur Hostinger
+- [x] Déploiement — export statique Next.js (`output: 'export'`)
+- [x] Déploiement — mise en ligne sur Hostinger
 - [ ] Tests Lighthouse
