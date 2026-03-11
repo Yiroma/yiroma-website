@@ -212,7 +212,11 @@
 }
 
 .section-fade {
-  background: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 30%, var(--color-background) 100%);
+  background: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    transparent 30%,
+    var(--color-background) 100%
+  );
 }
 
 .glow-orb {
@@ -256,7 +260,12 @@
   right: 0;
   height: 4px;
   border-radius: 0.75rem 0.75rem 0 0;
-  background: linear-gradient(90deg, var(--color-primary) 0%, #60a5fa 50%, var(--color-primary) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    #60a5fa 50%,
+    var(--color-primary) 100%
+  );
   background-size: 200% auto;
   animation: shimmer 5s ease-in-out 0.8s infinite;
 }
@@ -280,11 +289,21 @@
       "refonte  devapp   seo"
       "charte   charte   charte";
   }
-  .bento-creation { grid-area: creation; }
-  .bento-seo      { grid-area: seo; }
-  .bento-refonte  { grid-area: refonte; }
-  .bento-devapp   { grid-area: devapp; }
-  .bento-charte   { grid-area: charte; }
+  .bento-creation {
+    grid-area: creation;
+  }
+  .bento-seo {
+    grid-area: seo;
+  }
+  .bento-refonte {
+    grid-area: refonte;
+  }
+  .bento-devapp {
+    grid-area: devapp;
+  }
+  .bento-charte {
+    grid-area: charte;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
