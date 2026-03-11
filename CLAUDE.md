@@ -57,27 +57,28 @@
 
 ## 🏗️ Stack technique
 
-| Couche      | Technologie                                                        |
-| ----------- | ------------------------------------------------------------------ |
-| Framework   | Next.js 16 (App Router)                                            |
-| Langage     | TypeScript 5 (strict)                                              |
-| Style       | Tailwind CSS 4 · ShadcnUI                                          |
-| Composants  | ShadcnUI v4 · Lucide React · next-themes                           |
-| Déploiement | Export statique Next.js → Hostinger (mutualisé)                    |
-| Mail        | EmailJS (formulaire de contact, sans backend)                      |
-| Qualité     | ESLint 9 (flat config) · Prettier 3 · prettier-plugin-tailwindcss  |
+| Couche      | Technologie                                                       |
+| ----------- | ----------------------------------------------------------------- |
+| Framework   | Next.js 16 (App Router)                                           |
+| Langage     | TypeScript 5 (strict)                                             |
+| Style       | Tailwind CSS 4 · ShadcnUI                                         |
+| Composants  | ShadcnUI v4 · Lucide React · next-themes                          |
+| Déploiement | Export statique Next.js → Hostinger (mutualisé)                   |
+| Mail        | EmailJS (formulaire de contact, sans backend)                     |
+| Qualité     | ESLint 9 (flat config) · Prettier 3 · prettier-plugin-tailwindcss |
 
 ---
 
 ## 📁 Structure des pages
 
 ```
-/                   → Home
-/services           → Détail des 3 services
-/portfolio          → Réalisations (5 projets)
-/tarifs             → 4 forfaits + FAQ
+/                   → Home (Hero · Services aperçu bento · Pourquoi Yiroma · Projets · Tarifs résumés · CTA)
+/services           → Détail des 5 services (Création · Refonte · Identité visuelle · Audit SEO/GEO · Dev applicatif)
+/tarifs             → 4 forfaits détaillés + FAQ complète
 /contact            → Formulaire + coordonnées
 ```
+
+> `/portfolio` supprimé de la v1 — 3 projets en aperçu sur la home suffisent. À recréer en v2.
 
 ---
 
@@ -96,88 +97,9 @@
 2. Services — aperçu 3 colonnes (Création de site · Audit SEO · Dev applicatif)
 3. Pourquoi Yiroma — 3 arguments (Concepteur Bac+4 · Manager 10 ans · Code propre)
 4. Projets — aperçu 3 cartes (CarePlan · Hive · Taxi Loire Valley)
-5. CTA final — `Un projet en tête ? Parlons-en.`
-6. Footer
-
----
-
-### `/services` — Services
-
-**H1 :** `Des services digitaux taillés pour votre activité`
-
-**3 services :**
-
-**1. Création & Refonte de site**
-
-- Landing page · Site vitrine · E-commerce/CMS · Refonte
-- Toujours inclus : responsive, Lighthouse > 90, SEO de base, formulaire, conseil hébergement
-
-**2. Audit SEO & Visibilité**
-
-- Audit technique · Audit contenu & mots-clés · Google Business Profile · GEO (IA)
-- Livrable : rapport détaillé priorisé + option suivi
-
-**3. Développement applicatif**
-
-- Application métier · API REST/GraphQL · Back-office · Automatisation · Intégrations
-- Méthode : UML + Clean Architecture + tests automatisés + documentation
-
-**CTA final :** `Pas sûr de ce dont vous avez besoin ? Prenons 30 minutes pour en parler.`
-
----
-
-### `/portfolio` — Portfolio
-
-**H1 :** `Mes réalisations`
-**Sous-titre :** `Des projets concrets, des besoins réels, du code qui fonctionne.`
-
-**Filtres :** Tous · Site web · Application · En cours
-
-**Format de présentation :** Problème → Solution → Stack
-
-**Projets :**
-
-| Projet                     | Année    | Type        | Modal |
-| -------------------------- | -------- | ----------- | ----- |
-| CarePlan                   | 2025     | Application | ✅    |
-| Budget Management          | En cours | Application | ✅    |
-| Hive                       | 2025     | Application | ❌    |
-| Taxi Loire Valley Services | 2024     | Site web    | ❌    |
-| DevMX                      | 2023     | Site web    | ❌    |
-
-**Détail projets :**
-
-**CarePlan (2025)**
-
-- Besoin : Gestion de plannings médicaux multi-rôles
-- Solution : Architecture microservices, GraphQL, tests automatisés
-- Stack : React · TypeScript · Apollo · GraphQL · TypeORM · PostgreSQL · Docker
-
-**Budget Management (en cours)**
-
-- Besoin : Application de gestion financière robuste et conteneurisée
-- Solution : Architecture en couches, API REST, Java/Spring Boot + Next.js
-- Stack : Next.js · TypeScript · Tailwind · Java · Spring Boot · PostgreSQL · Docker
-
-**Hive (2025)**
-
-- Besoin : Bibliothèque de médias locale avec favoris et recommandations
-- Solution : Interface mobile-first, GraphQL, SQLite léger
-- Stack : React · TypeScript · Tailwind · Apollo · GraphQL · TypeORM · SQLite
-
-**Taxi Loire Valley Services (2024)**
-
-- Besoin : VTC local sans présence en ligne
-- Solution : Site vitrine + identité visuelle + SEO local — Lighthouse > 95
-- Stack : HTML5 · CSS3 · JavaScript
-
-**DevMX (2023)**
-
-- Besoin : Blog communautaire pour développeurs
-- Solution : Auth complète, rôles utilisateurs, interface admin
-- Stack : React · SASS · Node.js · Express · MySQL
-
-**CTA final :** `Votre projet pourrait être ici.`
+5. Tarifs — résumé 4 forfaits (prix + cible) + CTA vers `/tarifs`
+6. CTA final — `Un projet en tête ? Parlons-en.`
+7. Footer
 
 ---
 
@@ -274,19 +196,17 @@
 - [x] Brainstorming & positionnement
 - [x] Architecture des pages (wireframes)
 - [x] Copywriting home
-- [x] Copywriting services
-- [x] Copywriting portfolio
+- [x] Copywriting services (5 services : Création · Refonte · Identité visuelle · Audit SEO/GEO · Dev applicatif)
 - [x] Copywriting tarifs
 - [x] Copywriting contact
 - [x] Design system (palette, typo, composants, tokens ShadcnUI)
 - [x] Prototype visuel home
 - [x] Développement — mise en place du projet Next.js
 - [x] Développement — configuration ESLint / Prettier
-- [x] Développement — stratégie de branches Git (main ← dev ← feat/*)
+- [x] Développement — stratégie de branches Git (main ← dev ← feat/\*)
 - [ ] Développement — composants communs (Navbar ✅ · Footer ✅ · CTA)
-- [ ] Développement — page Home (Hero ✅ · Services ✅ · Pourquoi Yiroma ✅ · Projets · CTA final)
+- [ ] Développement — page Home (Hero ✅ · Services ✅ · Pourquoi Yiroma ✅ · Projets · Tarifs résumés · CTA final)
 - [ ] Développement — page Services
-- [ ] Développement — page Portfolio
 - [ ] Développement — page Tarifs
 - [ ] Développement — page Contact
 - [ ] SEO — meta tags, sitemap, robots.txt

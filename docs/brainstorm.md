@@ -10,12 +10,13 @@ Pro & corporate, sobre, rassurant. Le site doit lui-même être une carte de vis
 
 ## Structure :
 
-| Page         | Contenu clé                                               |
-| ------------ | --------------------------------------------------------- |
-| `/`          | Hero percutant, 3 services résumés, quelques projets, CTA |
-| `/services`  | Création de site · Audit SEO/GEO · Dev applicatif (CDA)   |
-| `/portfolio` | Projets contextualisés métier + stack                     |
-| `/tarifs`    | Forfaits Starter / Pro / Sur-mesure                       |
-| `/contact`   | Formulaire devis + Malt + LinkedIn                        |
+| Page        | Contenu clé                                                                            |
+| ----------- | -------------------------------------------------------------------------------------- |
+| `/`         | Hero percutant · 5 services (bento) · Pourquoi Yiroma · Projets · Tarifs résumés · CTA |
+| `/services` | Détail des 5 services (Création · Refonte · Identité visuelle · Audit SEO/GEO · Dev)   |
+| `/tarifs`   | Forfaits détaillés (Starter / Pro / E-commerce / Sur-mesure) + FAQ complète            |
+| `/contact`  | Formulaire devis + Malt + LinkedIn                                                     |
+
+> `/portfolio` supprimé de la v1 — 3 projets en aperçu sur la home suffisent. À recréer en v2.
 
 Stack : Next.js (App Router) · TypeScript · Tailwind · déployé sur vps avec docker

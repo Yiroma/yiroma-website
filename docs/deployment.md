@@ -9,6 +9,7 @@ Choix retenu le 2026-03-10 après analyse des options.
 ### Contexte de la décision
 
 Le site `yiroma.fr` est une vitrine freelance sans backend propre :
+
 - Pas d'API Routes dynamiques
 - Pas de Server Actions côté serveur
 - Pas de base de données
@@ -16,11 +17,11 @@ Le site `yiroma.fr` est une vitrine freelance sans backend propre :
 
 ### Options considérées
 
-| Option | Description | Décision |
-|---|---|---|
-| A — Export statique + EmailJS + Hostinger | Build statique, service tiers pour le mail | ✅ **Retenu** |
-| B — Node.js + Docker + VPS | Serveur Node.js, image Docker, déploiement SSH | ❌ Trop complexe pour ce besoin |
-| C — Export statique + API Route sur VPS | Hybride | ❌ Complexité inutile |
+| Option                                    | Description                                    | Décision                        |
+| ----------------------------------------- | ---------------------------------------------- | ------------------------------- |
+| A — Export statique + EmailJS + Hostinger | Build statique, service tiers pour le mail     | ✅ **Retenu**                   |
+| B — Node.js + Docker + VPS                | Serveur Node.js, image Docker, déploiement SSH | ❌ Trop complexe pour ce besoin |
+| C — Export statique + API Route sur VPS   | Hybride                                        | ❌ Complexité inutile           |
 
 ### Pourquoi Hostinger mutualisé plutôt que le VPS ?
 
@@ -55,13 +56,14 @@ Dans [next.config.ts](../next.config.ts), ajouter :
 
 ```ts
 const nextConfig = {
-  output: 'export',
-}
+  output: "export",
+};
 ```
 
 Cela génère un dossier `out/` contenant les fichiers statiques prêts à déployer.
 
 > ⚠️ Avec `output: 'export'`, les fonctionnalités suivantes ne sont pas disponibles :
+>
 > - API Routes (`/api/*`)
 > - Server Actions
 > - Image Optimization (remplacer par `unoptimized: true` ou un service externe)
@@ -83,11 +85,12 @@ Documentation : https://www.emailjs.com/docs/
 
 ## CI/CD — GitHub Actions
 
-### Workflow 1 : `ci.yml` — Lint (PR feat/* → dev)
+### Workflow 1 : `ci.yml` — Lint (PR feat/\* → dev)
 
 Déclenché sur : `pull_request` ciblant `dev`
 
 Étapes :
+
 1. Checkout
 2. Setup Node.js
 3. `npm ci`
@@ -99,6 +102,7 @@ Déclenché sur : `pull_request` ciblant `dev`
 Déclenché sur : `push` vers `main`
 
 Étapes :
+
 1. Checkout
 2. Setup Node.js
 3. `npm ci`
@@ -107,11 +111,11 @@ Déclenché sur : `push` vers `main`
 
 #### Secrets GitHub requis
 
-| Secret | Description |
-|---|---|
-| `FTP_SERVER` | Adresse FTP Hostinger (ex: `ftp.yiroma.fr`) |
-| `FTP_USERNAME` | Identifiant FTP Hostinger |
-| `FTP_PASSWORD` | Mot de passe FTP Hostinger |
+| Secret         | Description                                 |
+| -------------- | ------------------------------------------- |
+| `FTP_SERVER`   | Adresse FTP Hostinger (ex: `ftp.yiroma.fr`) |
+| `FTP_USERNAME` | Identifiant FTP Hostinger                   |
+| `FTP_PASSWORD` | Mot de passe FTP Hostinger                  |
 
 Ces secrets sont à configurer dans : GitHub → Settings → Secrets and variables → Actions
 
@@ -119,10 +123,10 @@ Ces secrets sont à configurer dans : GitHub → Settings → Secrets and variab
 
 ## Hooks locaux — Husky
 
-| Hook | Outil | Vérification |
-|---|---|---|
-| `commit-msg` | commitlint | Format conventionnel des commits |
-| `pre-commit` | lint-staged | ESLint sur les fichiers modifiés |
+| Hook         | Outil         | Vérification                                        |
+| ------------ | ------------- | --------------------------------------------------- |
+| `commit-msg` | commitlint    | Format conventionnel des commits                    |
+| `pre-commit` | lint-staged   | ESLint sur les fichiers modifiés                    |
 | `pre-commit` | script custom | Bloque si un `.env` (hors `.env.sample`) est staged |
 
 ---
