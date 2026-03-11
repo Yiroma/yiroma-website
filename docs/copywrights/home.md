@@ -4,11 +4,11 @@
 
 ## NAVBAR
 
-| Élément | Contenu                                         |
-| ------- | ----------------------------------------------- |
-| Logo    | `Yiroma`                                        |
-| Liens   | `Services` · `Portfolio` · `Tarifs` · `Contact` |
-| CTA     | `Demander un devis`                             |
+| Élément | Contenu                           |
+| ------- | --------------------------------- |
+| Logo    | `Yiroma`                          |
+| Liens   | `Services` · `Tarifs` · `Contact` |
+| CTA     | `Demander un devis`               |
 
 ---
 
@@ -26,32 +26,41 @@
 **CTAs**
 
 - `[ Découvrir mes services ]`
-- `[ Voir mes réalisations ]`
+- `[ Voir mes tarifs ]`
 
 ---
 
-## SERVICES — Aperçu (3 colonnes)
+## SERVICES — Aperçu bento (5 cards)
 
 **Titre de section**
 `Ce que je fais pour vous`
 
-### 🌐 Création & Refonte de site
+**H2**
+`Des services digitaux taillés pour votre activité`
 
-> Un site professionnel, rapide et pensé pour convertir. Vitrine, portfolio, site e-commerce — adapté à votre secteur et à vos clients.
+### 🌐 Création de site web
 
-`[ En savoir plus → ]`
+> Landing page, site vitrine, portfolio ou e-commerce — un site professionnel, rapide et pensé pour convertir, taillé pour votre secteur et vos clients.
 
-### 🔍 Audit SEO & Visibilité locale
+### 🔄 Refonte de site
 
-> Votre site existe, mais personne ne le trouve ? J'analyse, je diagnostique et je vous donne un plan d'action concret pour remonter sur Google — et sur les IA.
+> Votre site vieillit mal ou ne convertit plus ? Je modernise, j'accélère et je repositionne votre présence en ligne.
 
-`[ En savoir plus → ]`
+### 🔍 Audit SEO & Visibilité GEO
+
+> Votre site existe, mais personne ne le trouve ? J'analyse, je diagnostique et je vous donne un plan d'action concret pour remonter sur Google — et dans les IA génératives.
+
+### 🎨 Identité visuelle & Charte graphique
+
+> Logo, couleurs, typographies, règles d'usage — une identité cohérente qui rend votre marque reconnaissable sur tous vos supports.
 
 ### ⚙️ Développement applicatif
 
-> Vous avez besoin de plus qu'un site : un outil métier, une API, un back-office. Je conçois des applications robustes, testées et documentées.
+> Outil métier, API, back-office sur mesure — des applications robustes, testées et documentées.
 
-`[ En savoir plus → ]`
+_Affichage : bento grid — 2 colonnes sur mobile, carte "Identité visuelle" en pleine largeur sur desktop_
+
+`[ En savoir plus → ]` sur chaque carte → `/services#ancre`
 
 ---
 
@@ -84,8 +93,25 @@
 
 _3 cartes affichées : CarePlan · Hive · Taxi Loire Valley_
 
-**Lien**
-`[ Voir toutes mes réalisations → ]`
+---
+
+## TARIFS — Résumé
+
+**Titre de section**
+`Des forfaits clairs, sans mauvaise surprise`
+
+**Sous-titre**
+`Vous savez ce que vous payez et ce que vous obtenez.`
+
+| Forfait          | Prix               | Cible                                |
+| ---------------- | ------------------ | ------------------------------------ |
+| Starter          | À partir de 400€   | Lancement, offre ponctuelle          |
+| Pro              | À partir de 900€   | Artisans, PME, professions libérales |
+| E-commerce & CMS | À partir de 1 800€ | Boutiques, restaurants, actus        |
+| Sur-mesure       | Sur devis          | Entreprises, ESN, applicatif         |
+
+**CTA**
+`[ Voir le détail des forfaits → ]`
 
 ---
 
@@ -108,7 +134,7 @@ _3 cartes affichées : CarePlan · Hive · Taxi Loire Valley_
 Yiroma — Développeur Full Stack Freelance
 Châteauneuf-sur-Loire (45) · Région Orléanaise · France entière (remote)
 
-Services   Portfolio   Tarifs   Contact
+Services   Tarifs   Contact
 
 [ Malt ]  [ LinkedIn ]  [ GitHub ]
 

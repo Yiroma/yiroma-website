@@ -20,7 +20,7 @@
 **Accroche**
 `Un site internet, c'est votre vitrine ouverte 24h/24. Il doit être rapide, clair, et convaincre vos visiteurs de vous contacter. Je conçois des sites pensés pour vos clients — pas pour faire plaisir aux développeurs.`
 
-### 4 options
+### 3 options
 
 **Landing page**
 
@@ -34,10 +34,6 @@
 
 > Vendez en ligne ou gérez votre contenu en autonomie. Je développe des boutiques et des sites éditoriaux avec des interfaces d'administration simples à prendre en main.
 
-**Refonte de site existant**
-
-> Votre site actuel est lent, vieillissant ou ne vous ressemble plus ? Je l'analyse, identifie ce qui freine vos résultats et le reconstruis sur des bases saines.
-
 ### Ce qui est toujours inclus
 
 - Design responsive (mobile, tablette, desktop)
@@ -50,7 +46,66 @@
 
 ---
 
-## SERVICE 2 — Audit SEO & Visibilité
+## SERVICE 2 — Refonte de site
+
+**H2**
+`Votre site vieillit mal ? Reconstruisons-le sur des bases saines.`
+
+**Accroche**
+`Un site lent, vieillissant ou qui ne convertit plus coûte plus cher qu'une refonte. J'analyse ce qui freine vos résultats, je modernise l'interface et je repositionne votre présence en ligne.`
+
+### Ce que comprend une refonte
+
+**Audit de l'existant**
+
+> J'analyse votre site actuel : performances, SEO, UX, contenu — pour identifier précisément ce qui freine vos résultats avant de reconstruire.
+
+**Redesign & modernisation**
+
+> Nouvelle identité visuelle ou refonte de l'existante, mise en page repensée, expérience utilisateur optimisée.
+
+**Migration & redirection**
+
+> Je gère la migration technique pour préserver votre référencement existant et éviter toute perte de trafic.
+
+### Ce qui est toujours inclus
+
+- Design responsive (mobile, tablette, desktop)
+- Optimisation des performances (Lighthouse > 90)
+- Redirection des anciennes URLs
+- Mise en ligne et accompagnement au démarrage
+
+**CTAs** : `[ Voir les tarifs ]` · `[ Demander un devis ]`
+
+---
+
+## SERVICE 3 — Identité visuelle & Charte graphique
+
+**H2**
+`Vous partez de zéro ? Je construis votre identité de A à Z.`
+
+**Accroche**
+`Un développeur a besoin d'éléments visuels pour travailler — logo, couleurs, typographies. Si vous n'avez rien, pas de problème : je conçois votre identité visuelle complète avant de développer votre site.`
+
+### Ce que comprend ce service
+
+**Logo**
+
+> Création d'un logo professionnel, déclinable sur tous vos supports (web, print, réseaux sociaux).
+
+**Charte graphique**
+
+> Palette de couleurs, typographies, règles d'usage — un guide clair pour garantir la cohérence de votre image sur tous vos canaux.
+
+**Maquettes & prototype**
+
+> Wireframes, maquettes desktop et mobile, prototype interactif — vous validez le rendu avant que le développement commence.
+
+**CTAs** : `[ Voir les tarifs ]` · `[ Demander un devis ]`
+
+---
+
+## SERVICE 4 — Audit SEO & Visibilité
 
 **H2**
 `Soyez trouvé — sur Google, et sur les intelligences artificielles`
@@ -88,7 +143,7 @@
 
 ---
 
-## SERVICE 3 — Développement applicatif
+## SERVICE 5 — Développement applicatif
 
 **H2**
 `Au-delà du site : des outils qui structurent et automatisent votre activité`
