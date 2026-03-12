@@ -5,7 +5,8 @@ import { Check, Clock } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import type { PricingPlan } from "./pricing.data";
+import type { PricingPlan } from "@/data/pricing.data";
+import { navLinks } from "@/data/nav.data";
 
 type Props = {
   plan: PricingPlan;
@@ -59,7 +60,7 @@ export function PricingCard({ plan, ariaLabel = "Inclus dans ce forfait" }: Prop
           Délai estimé : {plan.delay}
         </p>
         <Link
-          href="/contact"
+          href={`${navLinks[2].href}`}
           className={cn(
             buttonVariants({
               variant: plan.highlighted ? "default" : "outline",

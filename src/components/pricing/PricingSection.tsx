@@ -1,4 +1,4 @@
-import { webPlans } from "./pricing.data";
+import { webPlans } from "@/data/pricing.data";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { PricingCard } from "./PricingCard";
 import { MaintenanceBlock } from "./MaintenanceBlock";

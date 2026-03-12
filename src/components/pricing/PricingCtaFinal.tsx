@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { CtaWrapper } from "@/components/ui/CtaWrapper";
+import { navLinks } from "@/data/nav.data";
 
 export function PricingCtaFinal() {
   return (
@@ -14,7 +15,7 @@ export function PricingCtaFinal() {
         Tous les devis sont gratuits et sans engagement. Je réponds sous 24h.
       </p>
       <Link
-        href="/contact"
+        href={`${navLinks[2].href}`}
         className="text-primary focus-visible:border-ring focus-visible:ring-ring/50 inline-flex h-10 shrink-0 items-center gap-1.5 rounded-md border border-transparent bg-white px-4 text-sm font-medium whitespace-nowrap transition-all hover:bg-white/90 focus-visible:ring-3"
       >
         <Mail size={17} aria-hidden="true" />

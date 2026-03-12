@@ -1,5 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import { userContact, hostContact } from "@/data/contact.data";
+import { formatPhoneNumberFR } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Yiroma — Mentions légales",
@@ -18,31 +20,34 @@ export default function MentionsLegales() {
         <p className="text-muted-foreground leading-relaxed">Le présent site est édité par :</p>
         <ul className="text-muted-foreground mt-3 space-y-1 leading-relaxed">
           <li>
-            <span className="text-foreground font-medium">Nom :</span> Romaric YI – EI
+            <span className="text-foreground font-medium">Nom :</span> {userContact.firstname}{" "}
+            {userContact.lastname} – {userContact.businessLabel}
           </li>
           <li>
-            <span className="text-foreground font-medium">Nom commercial :</span> Yiroma
+            <span className="text-foreground font-medium">Nom commercial :</span>{" "}
+            {userContact.nickname}
           </li>
           <li>
-            <span className="text-foreground font-medium">Forme juridique :</span> Micro-entreprise
+            <span className="text-foreground font-medium">Forme juridique :</span>{" "}
+            {userContact.businessStatus}
           </li>
           <li>
-            <span className="text-foreground font-medium">Siège social :</span> 10 Bis, Chemin des
-            Levrettes, 45110 Châteauneuf-sur-Loire, FRANCE
+            <span className="text-foreground font-medium">Siège social :</span>{" "}
+            {userContact.address}
           </li>
           <li>
-            <span className="text-foreground font-medium">SIRET :</span> 984 160 515 00016
+            <span className="text-foreground font-medium">SIRET :</span> {userContact.siret}
           </li>
           <li>
             <span className="text-foreground font-medium">Responsable de la publication :</span>{" "}
-            Romaric YI
+            {userContact.firstname} {userContact.lastname}
           </li>
           <li>
-            <span className="text-foreground font-medium">Contact :</span> contact@yiroma.fr / 06 95
-            38 60 99
+            <span className="text-foreground font-medium">Contact :</span> {userContact.email} /{" "}
+            {formatPhoneNumberFR(userContact.phone)}
           </li>
           <li>
-            <span className="text-foreground font-medium">Site web :</span> https://yiroma.fr
+            <span className="text-foreground font-medium">Site web :</span> {userContact.url}
           </li>
         </ul>
       </section>
@@ -54,16 +59,14 @@ export default function MentionsLegales() {
         </p>
         <ul className="text-muted-foreground mt-3 space-y-1 leading-relaxed">
           <li>
-            <span className="text-foreground font-medium">Nom de l'hébergeur :</span> Hostinger
-            International Ltd.
+            <span className="text-foreground font-medium">Nom de l'hébergeur :</span>{" "}
+            {hostContact.hostname}
           </li>
           <li>
-            <span className="text-foreground font-medium">Adresse :</span> 61, Lordou Vironos
-            Street, 6023 Larnaca, Chypre
+            <span className="text-foreground font-medium">Adresse :</span> {hostContact.address}
           </li>
           <li>
-            <span className="text-foreground font-medium">Site web :</span>{" "}
-            https://www.hostinger.fr/contact
+            <span className="text-foreground font-medium">Site web :</span> {hostContact.url}
           </li>
         </ul>
       </section>
@@ -73,12 +76,12 @@ export default function MentionsLegales() {
         <p className="text-muted-foreground leading-relaxed">
           Tous les éléments du site (textes, images, illustrations, logos, icônes, etc.) sont
           protégés par les lois en vigueur sur la propriété intellectuelle et sont la propriété
-          exclusive de Romaric YI, sauf mention contraire.
+          exclusive de {userContact.firstname} {userContact.lastname}, sauf mention contraire.
         </p>
         <p className="text-muted-foreground mt-3 leading-relaxed">
           Toute reproduction, représentation, modification, publication, ou adaptation de tout ou
           partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite
-          sans l'autorisation écrite préalable de Romaric YI.
+          sans l'autorisation écrite préalable de {userContact.firstname} {userContact.lastname}.
         </p>
       </section>
 
@@ -90,8 +93,8 @@ export default function MentionsLegales() {
           manière confidentielle.
         </p>
         <p className="text-muted-foreground mt-3 leading-relaxed">
-          <span className="text-foreground font-medium">Responsable du traitement :</span> Romaric
-          YI
+          <span className="text-foreground font-medium">Responsable du traitement :</span>{" "}
+          {userContact.firstname} {userContact.lastname}
         </p>
         <p className="text-muted-foreground mt-3 leading-relaxed">
           Les données sont collectées dans le cadre de la gestion des relations commerciales (devis,
@@ -111,10 +114,10 @@ export default function MentionsLegales() {
         <p className="text-muted-foreground mt-3 leading-relaxed">
           Pour exercer ces droits, vous pouvez adresser une demande à{" "}
           <a
-            href="mailto:contact@yiroma.fr"
+            href={`mailto:${userContact.email}`}
             className="text-foreground underline underline-offset-4"
           >
-            contact@yiroma.fr
+            {userContact.email}
           </a>
           . Une réponse vous sera apportée dans un délai maximal d'un mois.
         </p>
@@ -136,23 +139,23 @@ export default function MentionsLegales() {
       <section className="mb-10">
         <h2 className="mb-4 text-xl font-semibold">Limitation de responsabilité</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Romaric YI s'efforce d'assurer l'exactitude des informations diffusées sur ce site.
-          Toutefois, il ne peut être tenu responsable des erreurs ou omissions. Le Prestataire
-          décline toute responsabilité pour les dommages directs ou indirects pouvant résulter de
-          l'accès ou de l'utilisation du site, y compris en cas de virus informatique ou de tout
-          autre dommage au matériel informatique.
+          {userContact.firstname} {userContact.lastname} s'efforce d'assurer l'exactitude des
+          informations diffusées sur ce site. Toutefois, il ne peut être tenu responsable des
+          erreurs ou omissions. Le Prestataire décline toute responsabilité pour les dommages
+          directs ou indirects pouvant résulter de l'accès ou de l'utilisation du site, y compris en
+          cas de virus informatique ou de tout autre dommage au matériel informatique.
         </p>
       </section>
 
       <section className="mb-10">
         <h2 className="mb-4 text-xl font-semibold">Liens hypertextes</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Ce site peut contenir des liens vers des sites externes. Romaric YI décline toute
-          responsabilité quant au contenu de ces sites tiers.
+          Ce site peut contenir des liens vers des sites externes. {userContact.firstname}{" "}
+          {userContact.lastname} décline toute responsabilité quant au contenu de ces sites tiers.
         </p>
         <p className="text-muted-foreground mt-3 leading-relaxed">
           Toute création de lien hypertexte vers ce site doit faire l'objet d'une autorisation
-          préalable et écrite de Romaric YI.
+          préalable et écrite de {userContact.firstname} {userContact.lastname}.
         </p>
       </section>
 

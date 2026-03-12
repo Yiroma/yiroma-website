@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import { userContact } from "@/data/contact.data";
 
 export const metadata: Metadata = {
   title: "Yiroma — Conditions Générales de Vente",
@@ -16,10 +17,14 @@ export default function CGV() {
       <section className="mb-10">
         <h2 className="mb-4 text-xl font-semibold">Définitions</h2>
         <p className="text-muted-foreground leading-relaxed">
-          « le Prestataire » : <strong>Romaric YI</strong>, utilisant pour nom commercial{" "}
-          <strong>Yiroma</strong>, est une Entreprise Individuelle sous le statut de
-          Micro-entreprise, domicilié au 10 Bis, Chemin des Levrettes, 45110 Châteauneuf-sur-Loire,
-          FRANCE, Siret n° 984 160 515 00016.
+          « le Prestataire » :{" "}
+          <strong>
+            {userContact.firstname} {userContact.lastname}
+          </strong>
+          , utilisant pour nom commercial <strong>{userContact.nickname}</strong>, est une
+          Entreprise Individuelle sous le statut de
+          {userContact.businessStatus}, domicilié au {userContact.address}, Siret n°{" "}
+          {userContact.siret}.
         </p>
         <p className="text-muted-foreground mt-3 leading-relaxed">
           Dans les présentes conditions générales de vente, est dénommée le client ou le prospect, «
@@ -45,10 +50,10 @@ export default function CGV() {
       <section className="mb-10">
         <h2 className="mb-4 text-xl font-semibold">2. Prestations</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Ces prestations incluent, sans s'y limiter, le développement web (incluant entre autres la
-          création de sites internet), le web design (incluant entre autres la création d'identité
-          graphique), le référencement SEO et l'audit de visibilité (SEO/GEO), ainsi que le
-          développement d'applications métier sur mesure.
+          Ces prestations incluent, sans s'y limiter : la création et la refonte de sites web
+          (landing page, site vitrine, e-commerce, CMS), la conception d'identité visuelle et de
+          charte graphique (logo, typographies, maquettes), l'audit SEO et de visibilité GEO, ainsi
+          que le développement d'applications métier sur mesure (application web, API, back-office).
         </p>
         <p className="text-muted-foreground mt-3 leading-relaxed">
           Le détail des prestations est défini dans un devis accepté par le Client avant le début de
@@ -112,8 +117,9 @@ export default function CGV() {
       <section className="mb-10">
         <h2 className="mb-4 text-xl font-semibold">6. Modifications et Révisions</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Le Prestataire inclut 2 tours de révisions dans le prix initial des prestations. Toute
-          demande de révision supplémentaire sera facturée selon les tarifs en vigueur.
+          Le nombre d'allers-retours inclus est précisé dans le devis ou le forfait retenu (entre 2
+          et 4 selon la prestation, illimités pour le forfait Sur-mesure). Tout aller-retour
+          supplémentaire au-delà du nombre prévu sera facturé selon les tarifs en vigueur.
         </p>
         <p className="text-muted-foreground mt-3 leading-relaxed">
           <span className="text-foreground font-medium">Post-livraison :</span> Toute modification
@@ -169,9 +175,10 @@ export default function CGV() {
           </li>
         </ul>
         <p className="text-muted-foreground mt-3 leading-relaxed">
-          Ces services sont inclus pendant 1 mois après la livraison. Au-delà, ces services sont
-          disponibles à la demande et feront l'objet d'un devis complémentaire. Aucun abonnement de
-          maintenance n'est imposé par défaut.
+          Pendant les <strong>30 jours suivant la livraison finale</strong>, le Prestataire corrige
+          sans frais supplémentaires tout dysfonctionnement directement imputable à la prestation
+          livrée. Au-delà de cette période, la maintenance est disponible à la demande et fera
+          l'objet d'un devis complémentaire. Aucun abonnement n'est imposé par défaut.
         </p>
       </section>
 

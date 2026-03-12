@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Check, ArrowRight, Mail } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import type { ServiceData } from "./services.data";
+import type { ServiceData } from "@/data/services.data";
 
 type Props = { service: ServiceData };
 

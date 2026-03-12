@@ -5,6 +5,7 @@ import { Wrench } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { navLinks } from "@/data/nav.data";
 
 export function MaintenanceBlock() {
   return (
@@ -23,7 +24,7 @@ export function MaintenanceBlock() {
         </div>
       </div>
       <Link
-        href="/contact"
+        href={`${navLinks[2].href}`}
         className={cn(buttonVariants({ variant: "outline", size: "sm" }), "shrink-0")}
       >
         Me contacter

@@ -1,4 +1,4 @@
-import { addonPlans } from "./pricing.data";
+import { addonPlans } from "@/data/pricing.data";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { PricingCard } from "./PricingCard";
 

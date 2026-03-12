@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Mail, ArrowRight } from "lucide-react";
 import { CtaWrapper } from "@/components/ui/CtaWrapper";
+import { navLinks } from "@/data/nav.data";
 
 export function ServicesCtaFinal() {
   return (
@@ -23,10 +24,10 @@ export function ServicesCtaFinal() {
           Prenons 30 minutes pour en parler
         </Link>
         <Link
-          href="/pricing"
+          href={`${navLinks[1].href}`}
           className="focus-visible:border-ring focus-visible:ring-ring/50 inline-flex h-10 shrink-0 items-center gap-1.5 rounded-md border border-white/35 bg-white/15 px-2.5 text-sm font-medium whitespace-nowrap text-white transition-all hover:bg-white/25 focus-visible:ring-3"
         >
-          Voir mes tarifs
+          Voir mes {`${navLinks[1].label}`}
           <ArrowRight size={16} aria-hidden="true" />
         </Link>
       </div>

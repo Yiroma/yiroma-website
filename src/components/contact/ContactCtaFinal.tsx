@@ -1,6 +1,7 @@
 "use client";
 
 import { CtaWrapper } from "@/components/ui/CtaWrapper";
+import { socialLinks } from "@/data/contact.data";
 
 export function ContactCtaFinal() {
   return (
@@ -9,15 +10,16 @@ export function ContactCtaFinal() {
         Vous préférez passer par une plateforme ?
       </h2>
       <p className="mx-auto mb-9 max-w-md text-base text-white/80">
-        Retrouvez-moi également sur Malt pour les missions freelance en entreprise.
+        Retrouvez-moi également sur {socialLinks[2].label} pour les missions freelance en
+        entreprise.
       </p>
       <a
-        href="https://www.malt.fr/profile/romaricyi"
+        href={socialLinks[2].href}
         target="_blank"
         rel="noopener noreferrer"
         className="text-primary focus-visible:border-ring focus-visible:ring-ring/50 inline-flex h-10 shrink-0 items-center gap-1.5 rounded-md border border-transparent bg-white px-4 text-sm font-medium whitespace-nowrap transition-all hover:bg-white/90 focus-visible:ring-3"
       >
-        Voir mon profil Malt
+        Voir mon profil {socialLinks[2].label}
       </a>
     </CtaWrapper>
   );

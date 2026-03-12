@@ -11,7 +11,7 @@
 - **Statut juridique :** Auto-entrepreneur
 - **Activité :** Développeur Full Stack Freelance — création de sites web, audit SEO/GEO, développement applicatif sur-mesure
 - **Localisation :** Châteauneuf-sur-Loire (45) — présentiel région orléanaise, remote toute la France
-- **Contact :** yiromaric@gmail.com · 06 95 38 60 99
+- **Contact :** contact@yiroma.fr · 06 95 38 60 99
 - **Liens :** [GitHub](https://github.com/Yiroma) · [LinkedIn](https://linkedin.com/in/yiromaric) · [Malt](#) · [Site](https://yiroma.fr)
 
 ---

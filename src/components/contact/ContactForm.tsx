@@ -16,7 +16,8 @@ import {
 } from "@/components/ui/select";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { cn, formatPhoneNumberFR } from "@/lib/utils";
-import { userContact, socialLinks } from "@/data/contact";
+import { userContact, socialLinks } from "@/data/contact.data";
+import { navLinks } from "@/data/nav.data";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -60,8 +61,8 @@ export function ContactForm() {
               {`Je reviens vers vous sous 24h. En attendant, n'hésitez pas à consulter mes réalisations ou mes tarifs si ce n'est pas encore fait.`}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/pricing" className={cn(buttonVariants({ variant: "outline" }))}>
-                Voir les tarifs
+              <Link href={navLinks[1].href} className={cn(buttonVariants({ variant: "outline" }))}>
+                Voir les {navLinks[1].label}
               </Link>
             </div>
           </div>
@@ -158,7 +159,11 @@ export function ContactForm() {
 
               {formState === "error" && (
                 <p className="text-sm text-red-600 dark:text-red-400">
-                  Une erreur est survenue. Veuillez réessayer ou me contacter directement par email.
+                  Une erreur est survenue. Veuillez réessayer ou me{" "}
+                  <a href={`mailto:${userContact.email}`} className="text-primary hover:underline">
+                    contacter directement par email
+                  </a>
+                  .
                 </p>
               )}
 
