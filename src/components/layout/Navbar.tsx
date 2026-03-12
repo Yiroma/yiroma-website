@@ -3,12 +3,7 @@ import { cn } from "@/lib/utils";
 import { YiromaLogo } from "@/components/ui/YiromaLogo";
 import { NavbarMobile } from "@/components/layout/NavbarMobile";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
-
-const navLinks = [
-  { href: "/services", label: "Services" },
-  { href: "/pricing", label: "Tarifs" },
-  { href: "/contact", label: "Contact" },
-];
+import { navLinks } from "@/data/nav.data";
 
 export function Navbar() {
   return (
@@ -47,7 +42,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/contact"
+            href={`${navLinks[2].href}`}
             className={cn(
               "bg-primary text-primary-foreground hidden rounded-md px-4 py-2 text-sm font-medium md:inline-flex",
               "transition-all duration-150 hover:brightness-90",
