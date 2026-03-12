@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useOrbEffect } from "@/hooks/useOrbEffect";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 type Argument = {
   id: string;
@@ -55,17 +56,16 @@ export function WhyYiroma() {
       <div ref={orbRef} className="glow-orb pointer-events-none absolute" />
 
       <div className="relative z-10 container mx-auto max-w-7xl px-4 sm:px-8">
-        <div className="mb-10 md:mb-14">
-          <p className="text-primary mb-2.5 text-xs font-semibold tracking-[0.08em] uppercase">
-            Pourquoi travailler avec moi
-          </p>
-          <h2 className="text-foreground font-sans text-[clamp(1.5rem,3vw,2rem)] leading-tight font-bold">
-            Un développeur qui pense
-            <br />
-            avant de coder.
-          </h2>
-          <div className="bg-primary mt-3.5 h-0.75 w-10 rounded-full" />
-        </div>
+        <SectionHeader
+          eyebrow="Pourquoi travailler avec moi"
+          title={
+            <>
+              Un développeur qui pense
+              <br />
+              avant de coder.
+            </>
+          }
+        />
 
         <div className="flex flex-col">
           {arguments_.map((arg, index) => {

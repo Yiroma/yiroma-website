@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 type Project = {
   id: string;
@@ -49,17 +50,16 @@ export function ProjectsPreview() {
   return (
     <section className="bg-muted relative z-10 py-16 shadow-[0_-20px_24px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.06)] md:py-24">
       <div className="relative container mx-auto max-w-7xl px-4 sm:px-8">
-        <div className="mb-10 md:mb-14">
-          <p className="text-primary mb-2.5 text-xs font-semibold tracking-[0.08em] uppercase">
-            Quelques réalisations
-          </p>
-          <h2 className="text-foreground font-sans text-[clamp(1.5rem,3vw,2rem)] leading-tight font-bold">
-            Des projets concrets,
-            <br />
-            pour des besoins réels.
-          </h2>
-          <div className="bg-primary mt-3.5 h-0.75 w-10 rounded-full" />
-        </div>
+        <SectionHeader
+          eyebrow="Quelques réalisations"
+          title={
+            <>
+              Des projets concrets,
+              <br />
+              pour des besoins réels.
+            </>
+          }
+        />
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {projects.map((project) => (

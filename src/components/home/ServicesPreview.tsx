@@ -10,6 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 type Service = {
   id: string;
@@ -80,17 +81,17 @@ export function ServicesPreview() {
   return (
     <section className="bg-muted relative z-10 py-16 shadow-[0_-20px_24px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.06)] md:py-24">
       <div className="relative container mx-auto max-w-7xl px-4 sm:px-8">
-        <div className="mb-10 text-center md:mb-14">
-          <p className="text-primary mb-2.5 text-xs font-semibold tracking-[0.08em] uppercase">
-            Ce que je fais pour vous
-          </p>
-          <h2 className="text-foreground font-sans text-[clamp(1.5rem,3vw,2rem)] leading-tight font-bold">
-            Des services digitaux taillés
-            <br />
-            pour votre activité
-          </h2>
-          <div className="bg-primary mx-auto mt-3.5 h-0.75 w-10 rounded-full" />
-        </div>
+        <SectionHeader
+          eyebrow="Ce que je fais pour vous"
+          title={
+            <>
+              Des services digitaux taillés
+              <br />
+              pour votre activité
+            </>
+          }
+          align="center"
+        />
 
         <div className="bento-grid grid grid-cols-1 gap-4 md:grid-cols-2">
           {services.map((service) => {

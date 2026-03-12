@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 
 type Plan = {
   name: string;
@@ -72,17 +73,16 @@ export function PricingPreview() {
   return (
     <section className="bg-background relative z-0 py-16 md:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-8">
-        <div className="mb-10 md:mb-14">
-          <p className="text-primary mb-2.5 text-xs font-semibold tracking-[0.08em] uppercase">
-            Des forfaits clairs, sans mauvaise surprise
-          </p>
-          <h2 className="text-foreground font-sans text-[clamp(1.5rem,3vw,2rem)] leading-tight font-bold">
-            Vous savez ce que vous payez
-            <br />
-            et ce que vous obtenez.
-          </h2>
-          <div className="bg-primary mt-3.5 h-0.75 w-10 rounded-full" />
-        </div>
+        <SectionHeader
+          eyebrow="Des forfaits clairs, sans mauvaise surprise"
+          title={
+            <>
+              Vous savez ce que vous payez
+              <br />
+              et ce que vous obtenez.
+            </>
+          }
+        />
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan) => (
