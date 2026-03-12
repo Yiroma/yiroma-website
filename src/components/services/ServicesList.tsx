@@ -1,7 +1,7 @@
 "use client";
 
 import { ServiceSection } from "./ServiceSection";
-import { services } from "./services.data";
+import { services } from "@/data/services.data";
 
 export function ServicesList() {
   return (

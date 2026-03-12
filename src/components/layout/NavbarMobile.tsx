@@ -64,7 +64,7 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
         </nav>
 
         <Link
-          href="/contact"
+          href={`${navLinks[2].href}`}
           onClick={() => setOpen(false)}
           className={cn(
             "bg-primary flex w-full items-center justify-center rounded-md px-4 py-2.5",

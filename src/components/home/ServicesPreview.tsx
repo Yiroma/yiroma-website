@@ -1,119 +1,48 @@
 import React from "react";
 import Link from "next/link";
-import {
-  type LucideIcon,
-  Globe,
-  Search,
-  RefreshCw,
-  Code2,
-  Palette,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-type Service = {
-  id: string;
-  icon: LucideIcon;
-  title: string;
-  description: string;
-  href: string;
-  wide?: boolean;
-  orderMobile: number;
-  orderMd: number;
-};
-
-const services: Service[] = [
-  {
-    id: "creation",
-    icon: Globe,
-    title: "Création de site web",
-    description:
-      "Landing page, site vitrine, portfolio ou e-commerce — un site professionnel, rapide et pensé pour convertir, taillé pour votre secteur et vos clients.",
-    href: "/services#creation",
-    orderMobile: 1,
-    orderMd: 1,
-  },
-  {
-    id: "seo",
-    icon: Search,
-    title: "Audit SEO & Visibilité GEO",
-    description:
-      "Votre site existe, mais personne ne le trouve ? J'analyse, je diagnostique et je vous donne un plan d'action concret pour remonter sur Google — et dans les IA génératives.",
-    href: "/services#seo",
-    orderMobile: 3,
-    orderMd: 3,
-  },
-  {
-    id: "refonte",
-    icon: RefreshCw,
-    title: "Refonte de site",
-    description:
-      "Votre site vieillit mal ou ne convertit plus ? Je modernise, j'accélère et je repositionne votre présence en ligne.",
-    href: "/services#refonte",
-    orderMobile: 2,
-    orderMd: 2,
-  },
-  {
-    id: "devapp",
-    icon: Code2,
-    title: "Développement applicatif",
-    description:
-      "Outil métier, API, back-office sur mesure — des applications robustes, testées et documentées.",
-    href: "/services#devapp",
-    orderMobile: 4,
-    orderMd: 5,
-  },
-  {
-    id: "charte",
-    icon: Palette,
-    title: "Identité visuelle & Charte graphique",
-    description:
-      "Logo, couleurs, typographies, règles d'usage — une identité cohérente qui rend votre marque reconnaissable sur tous vos supports.",
-    href: "/services#charte",
-    wide: true,
-    orderMobile: 5,
-    orderMd: 4,
-  },
-];
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { services } from "@/data/services.data";
+import { navLinks } from "@/data/nav.data";
 
 export function ServicesPreview() {
   return (
     <section className="bg-muted relative z-10 py-16 shadow-[0_-20px_24px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.06)] md:py-24">
       <div className="relative container mx-auto max-w-7xl px-4 sm:px-8">
-        <div className="mb-10 text-center md:mb-14">
-          <p className="text-primary mb-2.5 text-xs font-semibold tracking-[0.08em] uppercase">
-            Ce que je fais pour vous
-          </p>
-          <h2 className="text-foreground font-sans text-[clamp(1.5rem,3vw,2rem)] leading-tight font-bold">
-            Des services digitaux taillés
-            <br />
-            pour votre activité
-          </h2>
-          <div className="bg-primary mx-auto mt-3.5 h-0.75 w-10 rounded-full" />
-        </div>
+        <SectionHeader
+          eyebrow="Ce que je fais pour vous"
+          title={
+            <>
+              Des services digitaux taillés
+              <br />
+              pour votre activité
+            </>
+          }
+          align="center"
+        />
 
         <div className="bento-grid grid grid-cols-1 gap-4 md:grid-cols-2">
           {services.map((service) => {
             const Icon = service.icon;
+            const { title, description, orderMobile, orderMd, wide } = service.preview;
             return (
               <Link
                 key={service.id}
-                href={service.href}
+                href={`${navLinks[0].href}#${service.id}`}
                 style={
                   {
-                    "--order-mobile": service.orderMobile,
-                    "--order-md": service.orderMd,
+                    "--order-mobile": orderMobile,
+                    "--order-md": orderMd,
                     order: "var(--order-mobile)",
                   } as React.CSSProperties
                 }
                 className={cn(
-                  // Base card
                   `bento-${service.id} group`,
                   "border-border bg-card flex flex-col gap-3.5 rounded-xl border p-8 no-underline",
                   "transition-[background,border-color,box-shadow,transform] duration-200",
                   "hover:bg-primary hover:-translate-y-0.5 hover:border-transparent hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)]",
-                  // Carte charte : horizontal sur md+
-                  service.wide && "md:flex-row md:items-center md:gap-7 md:py-6",
+                  wide && "md:flex-row md:items-center md:gap-7 md:py-6",
                 )}
               >
                 <div
@@ -127,12 +56,12 @@ export function ServicesPreview() {
                   <Icon size={22} className="m-auto" aria-hidden="true" />
                 </div>
 
-                <div className={cn("flex flex-col gap-2.5", service.wide && "min-w-0 flex-1")}>
+                <div className={cn("flex flex-col gap-2.5", wide && "min-w-0 flex-1")}>
                   <h3 className="text-foreground font-sans text-[1.0625rem] font-semibold transition-colors duration-200 group-hover:text-white">
-                    {service.title}
+                    {title}
                   </h3>
                   <p className="text-muted-foreground flex-1 text-sm leading-[1.65] transition-colors duration-200 group-hover:text-white/80">
-                    {service.description}
+                    {description}
                   </p>
                   <span className="text-primary mt-1 inline-flex items-center gap-1.5 text-sm font-medium transition-[color] duration-200 group-hover:text-white">
                     En savoir plus <ArrowRight size={14} aria-hidden="true" />

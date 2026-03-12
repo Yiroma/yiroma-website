@@ -28,6 +28,13 @@ export type ServiceData = {
   extra?: LeftExtra;
   cardsLabel: string;
   cards: Card[];
+  preview: {
+    title: string;
+    description: string;
+    orderMobile: number;
+    orderMd: number;
+    wide?: boolean;
+  };
 };
 
 export const services: ServiceData[] = [
@@ -37,6 +44,13 @@ export const services: ServiceData[] = [
     icon: Globe,
     label: "Service 1",
     title: "Votre site web, enfin à la hauteur\nde votre activité",
+    preview: {
+      title: "Création de site web",
+      description:
+        "Landing page, site vitrine, portfolio ou e-commerce — un site professionnel, rapide et pensé pour convertir, taillé pour votre secteur et vos clients.",
+      orderMobile: 1,
+      orderMd: 1,
+    },
     description:
       "Un site internet, c'est votre vitrine ouverte 24h/24. Il doit être rapide, clair, et convaincre vos visiteurs de vous contacter. Je conçois des sites pensés pour vos clients — pas pour faire plaisir aux développeurs.",
     extra: {
@@ -75,6 +89,13 @@ export const services: ServiceData[] = [
     icon: RefreshCw,
     label: "Service 2",
     title: "Votre site vieillit mal ?\nReconstruisons-le sur des bases saines.",
+    preview: {
+      title: "Refonte de site",
+      description:
+        "Votre site vieillit mal ou ne convertit plus ? Je modernise, j'accélère et je repositionne votre présence en ligne.",
+      orderMobile: 2,
+      orderMd: 2,
+    },
     description:
       "Un site lent, vieillissant ou qui ne convertit plus coûte plus cher qu'une refonte. J'analyse ce qui freine vos résultats, je modernise l'interface et je repositionne votre présence en ligne.",
     extra: {
@@ -112,6 +133,14 @@ export const services: ServiceData[] = [
     icon: Palette,
     label: "Service 3",
     title: "Vous partez de zéro ?\nJe construis votre identité de A à Z.",
+    preview: {
+      title: "Identité visuelle & Charte graphique",
+      description:
+        "Logo, couleurs, typographies, règles d'usage — une identité cohérente qui rend votre marque reconnaissable sur tous vos supports.",
+      orderMobile: 5,
+      orderMd: 4,
+      wide: true,
+    },
     description:
       "Un développeur a besoin d'éléments visuels pour travailler — logo, couleurs, typographies. Si vous n'avez rien, pas de problème : je conçois votre identité visuelle complète avant de développer votre site.",
     cardsLabel: "Ce que comprend ce service",
@@ -139,6 +168,13 @@ export const services: ServiceData[] = [
     icon: Search,
     label: "Service 4",
     title: "Soyez trouvé — sur Google,\net sur les intelligences artificielles",
+    preview: {
+      title: "Audit SEO & Visibilité GEO",
+      description:
+        "Votre site existe, mais personne ne le trouve ? J'analyse, je diagnostique et je vous donne un plan d'action concret pour remonter sur Google — et dans les IA génératives.",
+      orderMobile: 3,
+      orderMd: 3,
+    },
     description:
       "Avoir un beau site ne suffit plus. Si vos clients ne vous trouvent pas quand ils cherchent votre activité, votre site ne travaille pas pour vous. Je diagnostique ce qui bloque votre visibilité et je vous donne un plan d'action concret.",
     extra: {
@@ -186,6 +222,13 @@ export const services: ServiceData[] = [
     icon: Code2,
     label: "Service 5",
     title: "Au-delà du site : des outils qui\nstructurent et automatisent votre activité",
+    preview: {
+      title: "Développement applicatif",
+      description:
+        "Outil métier, API, back-office sur mesure — des applications robustes, testées et documentées.",
+      orderMobile: 4,
+      orderMd: 5,
+    },
     description:
       "Certains besoins dépassent ce qu'un site internet peut faire. Gestion interne, automatisation de processus, outils métier spécifiques — je conçois des applications robustes, pensées pour durer et évoluer avec vous.",
     extra: {
