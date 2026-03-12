@@ -6,6 +6,7 @@ import { MapPin, Layers, ArrowRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { HeroWrapper } from "@/components/ui/HeroWrapper";
 import { cn } from "@/lib/utils";
+import { navLinks } from "@/data/nav.data";
 
 export function HomeHero() {
   return (
@@ -32,15 +33,15 @@ export function HomeHero() {
           </p>
 
           <div className="flex flex-wrap gap-3">
-            <Link href="/services" className={cn(buttonVariants({ size: "lg" }))}>
+            <Link href={navLinks[0].href} className={cn(buttonVariants({ size: "lg" }))}>
               <Layers size={17} aria-hidden="true" />
-              Découvrir mes services
+              Découvrir mes {navLinks[0].label}
             </Link>
             <Link
-              href="/portfolio"
+              href={navLinks[1].href}
               className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
             >
-              Voir mes réalisations
+              Voir mes {navLinks[1].label}
               <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>
@@ -49,7 +50,7 @@ export function HomeHero() {
         <div className="flex items-center justify-center">
           <Image
             src="/hero.svg"
-            alt="Illustration développeur web freelance"
+            alt="Illustration création de site internet sur-mesure"
             width={540}
             height={480}
             priority

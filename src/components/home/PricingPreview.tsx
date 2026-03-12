@@ -2,72 +2,8 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-
-type Plan = {
-  name: string;
-  tagline: string;
-  price: string;
-  target: string;
-  includes: string[];
-  delay: string;
-  highlighted?: boolean;
-};
-
-const plans: Plan[] = [
-  {
-    name: "Starter",
-    tagline: "La présence en ligne essentielle",
-    price: "À partir de 400€",
-    target: "Lancement, offre ponctuelle, campagne ciblée",
-    includes: [
-      "Landing page (1 page)",
-      "Design responsive",
-      "SEO technique de base",
-      "Formulaire de contact",
-    ],
-    delay: "1 à 2 semaines",
-  },
-  {
-    name: "Pro",
-    tagline: "Votre vitrine professionnelle complète",
-    price: "À partir de 900€",
-    target: "Artisans, PME, professions libérales",
-    includes: [
-      "Site vitrine jusqu'à 8 pages",
-      "SEO technique + SEO local",
-      "Google Business Profile",
-      "Formulaire de contact",
-    ],
-    delay: "3 à 4 semaines",
-    highlighted: true,
-  },
-  {
-    name: "E-commerce & CMS",
-    tagline: "Vendez en ligne ou gérez votre contenu",
-    price: "À partir de 1 800€",
-    target: "Boutiques, restaurants, actus régulières",
-    includes: [
-      "Jusqu'à 15 pages",
-      "Interface d'administration",
-      "SEO technique + local",
-      "Formation prise en main (1h)",
-    ],
-    delay: "5 à 7 semaines",
-  },
-  {
-    name: "Sur-mesure",
-    tagline: "Pour les projets complexes",
-    price: "Sur devis",
-    target: "Entreprises, ESN, applicatif métier",
-    includes: [
-      "Application web métier",
-      "API REST ou GraphQL",
-      "Back-office & tableau de bord",
-      "Tests automatisés inclus",
-    ],
-    delay: "Selon cahier des charges",
-  },
-];
+import { webPlans } from "@/data/pricing.data";
+import { navLinks } from "@/data/nav.data";
 
 export function PricingPreview() {
   return (
@@ -85,7 +21,7 @@ export function PricingPreview() {
         />
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {plans.map((plan) => (
+          {webPlans.map((plan) => (
             <div
               key={plan.name}
               className={cn(
@@ -116,7 +52,7 @@ export function PricingPreview() {
               </p>
 
               <ul className="flex flex-col gap-1.5" aria-label="Inclus dans ce forfait">
-                {plan.includes.map((item) => (
+                {plan.features.slice(0, 4).map((item) => (
                   <li key={item} className="flex items-start gap-2 text-xs">
                     <Check size={13} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
                     <span className="text-muted-foreground">{item}</span>
@@ -133,10 +69,10 @@ export function PricingPreview() {
 
         <p className="mt-10 text-center">
           <Link
-            href="/pricing"
+            href={navLinks[1].href}
             className="text-primary inline-flex items-center gap-1.5 text-sm font-medium transition-[gap] duration-150 hover:gap-2.5"
           >
-            Voir le détail des forfaits <ArrowRight size={14} aria-hidden="true" />
+            Voir le détail des {navLinks[1].label} <ArrowRight size={14} aria-hidden="true" />
           </Link>
         </p>
       </div>
