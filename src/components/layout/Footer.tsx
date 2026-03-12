@@ -22,7 +22,7 @@ type SocialIcon = typeof Briefcase | typeof MessageCircle | typeof IconGithub | 
 
 const navLinks = [
   { href: "/services", label: "Services" },
-  { href: "/tarifs", label: "Tarifs" },
+  { href: "/pricing", label: "Tarifs" },
   { href: "/contact", label: "Contact" },
 ];
 

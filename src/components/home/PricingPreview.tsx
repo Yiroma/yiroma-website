@@ -133,7 +133,7 @@ export function PricingPreview() {
 
         <p className="mt-10 text-center">
           <Link
-            href="/tarifs"
+            href="/pricing"
             className="text-primary inline-flex items-center gap-1.5 text-sm font-medium transition-[gap] duration-150 hover:gap-2.5"
           >
             Voir le détail des forfaits <ArrowRight size={14} aria-hidden="true" />

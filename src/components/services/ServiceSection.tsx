@@ -75,7 +75,7 @@ export function ServiceSection({ service }: Props) {
             )}
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Link href="/tarifs" className={cn(buttonVariants())}>
+              <Link href="/pricing" className={cn(buttonVariants())}>
                 Voir les tarifs
                 <ArrowRight size={15} aria-hidden="true" />
               </Link>

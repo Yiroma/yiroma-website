@@ -5,7 +5,7 @@ import { Check, Clock } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import type { PricingPlan } from "./tarifs.data";
+import type { PricingPlan } from "./pricing.data";
 
 type Props = {
   plan: PricingPlan;
