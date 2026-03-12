@@ -74,7 +74,7 @@
 ```
 /                   → Home (Hero · Services aperçu bento · Pourquoi Yiroma · Projets · Tarifs résumés · CTA)
 /services           → Détail des 5 services (Création · Refonte · Identité visuelle · Audit SEO/GEO · Dev applicatif)
-/tarifs             → 4 forfaits détaillés + FAQ complète
+/pricing            → 4 forfaits détaillés + prestations complémentaires + FAQ complète
 /contact            → Formulaire + coordonnées
 ```
 
@@ -97,13 +97,13 @@
 2. Services — aperçu 3 colonnes (Création de site · Audit SEO · Dev applicatif)
 3. Pourquoi Yiroma — 3 arguments (Concepteur Bac+4 · Manager 10 ans · Code propre)
 4. Projets — aperçu 3 cartes (CarePlan · Hive · Taxi Loire Valley)
-5. Tarifs — résumé 4 forfaits (prix + cible) + CTA vers `/tarifs`
+5. Tarifs — résumé 4 forfaits (prix + cible) + CTA vers `/pricing`
 6. CTA final — `Un projet en tête ? Parlons-en.`
 7. Footer
 
 ---
 
-### `/tarifs` — Tarifs
+### `/pricing` — Tarifs
 
 **H1 :** `Des forfaits clairs, sans mauvaise surprise`
 
@@ -172,6 +172,7 @@
 - Composants dans `/components`, pages dans `/app` (App Router)
 - Pas de `any` TypeScript
 - Nommage en anglais pour le code, français pour le contenu
+- **URLs en anglais** : les routes Next.js (`/app/pricing/`, `/app/services/`, etc.) sont en anglais — prêt pour une future internationalisation. Le label affiché dans la nav reste en français (ex: `href="/pricing"` label `"Tarifs"`).
 - Commits en français, conventionnels (feat:, fix:, chore:, etc.)
 - Tester la performance Lighthouse avant chaque mise en ligne
 - Respecter les bonnes pratiques SEO : balises meta, og:tags, sitemap, robots.txt
@@ -209,7 +210,7 @@
 - [x] Développement — page cgv
 - [x] Développement — page mentions-legales
 - [x] Développement — page Services
-- [ ] Développement — page Tarifs
+- [ ] Développement — page Tarifs (`/pricing`)
 - [ ] Développement — page Contact
 - [ ] SEO — meta tags, sitemap, robots.txt
 - [ ] SEO — Google Business Profile
