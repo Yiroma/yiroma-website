@@ -18,12 +18,13 @@
 
 ## 📂 Documents de référence
 
-| Document                   | Lien                                                         |
-| -------------------------- | ------------------------------------------------------------ |
-| Brainstorm & plan de route | [docs/brainstorm.md](docs/brainstorm.md)                     |
-| Architecture déploiement   | [docs/deployment.md](docs/deployment.md)                     |
-| Design System              | [docs/design/design-system.md](docs/design/design-system.md) |
-| Audit & plan SEO/GEO       | [docs/seo-geo-audit.md](docs/seo-geo-audit.md)               |
+| Document                      | Lien                                                         |
+| ----------------------------- | ------------------------------------------------------------ |
+| Brainstorm & plan de route    | [docs/brainstorm.md](docs/brainstorm.md)                     |
+| Architecture déploiement      | [docs/deployment.md](docs/deployment.md)                     |
+| Design System                 | [docs/design/design-system.md](docs/design/design-system.md) |
+| Audit & plan SEO/GEO          | [docs/seo-geo-audit.md](docs/seo-geo-audit.md)               |
+| Plan animations Framer Motion | [docs/animations-plan.md](docs/animations-plan.md)           |
 
 > Le design system est la référence pour toutes les décisions visuelles.
 > Le fichier seo-geo-audit.md est la référence pour l'état d'avancement SEO/GEO et les actions restantes.
@@ -158,7 +159,7 @@
 - [x] CI/CD — GitHub Actions workflow lint (PR feat → dev)
 - [x] CI/CD — GitHub Actions workflow deploy (merge dev → main → Hostinger)
 - [ ] Formulaire contact — intégration EmailJS
-- [ ] ajouter des animations sur le site avec Framer Motion
+- [x] ajouter des animations sur le site avec Framer Motion
 - [x] Déploiement — export statique Next.js (`output: 'export'`)
 - [x] Déploiement — mise en ligne sur Hostinger
 - [ ] Tests Lighthouse (post-déploiement — cible > 90 sur toutes les pages)
