@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { buttonVariants } from "@/components/ui/button";
 import { webPlans } from "@/data/pricing.data";
 import { navLinks } from "@/data/nav.data";
 
@@ -67,14 +70,20 @@ export function PricingPreview() {
           ))}
         </div>
 
-        <p className="mt-10 text-center">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
           <Link
             href={navLinks[1].href}
-            className="text-primary inline-flex items-center gap-1.5 text-sm font-medium transition-[gap] duration-150 hover:gap-2.5"
+            className={cn(buttonVariants({ variant: "default", size: "sm" }), "gap-1.5")}
           >
             Voir le détail des {navLinks[1].label} <ArrowRight size={14} aria-hidden="true" />
           </Link>
-        </p>
+          <Link
+            href={`${navLinks[1].href}#faq`}
+            className="text-primary inline-flex items-center gap-1.5 text-sm font-medium transition-[gap] duration-150 hover:gap-2.5"
+          >
+            Des questions ? Consultez la FAQ <ArrowRight size={14} aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </section>
   );
