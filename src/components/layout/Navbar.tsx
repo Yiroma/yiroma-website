@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { YiromaLogo } from "@/components/ui/YiromaLogo";
 import { NavbarMobile } from "@/components/layout/NavbarMobile";
@@ -6,9 +10,23 @@ import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { navLinks } from "@/data/nav.data";
 
 export function Navbar() {
+  const pathname = usePathname();
+  const { scrollY } = useScroll();
+  const bgOpacity = useTransform(scrollY, [0, 60], [0.7, 0.95]);
+
   return (
-    <header className="border-border bg-background/80 sticky top-0 z-50 w-full border-b backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-12">
+    <motion.header
+      style={{ "--nav-bg-opacity": bgOpacity } as React.CSSProperties}
+      className="border-border sticky top-0 z-50 w-full border-b backdrop-blur-md"
+      // Opacité du fond pilotée par le scroll via une variable CSS
+      // bg-background/80 est remplacé par une inline style pour le contrôle fin
+    >
+      <div
+        className="bg-background absolute inset-0"
+        style={{ opacity: "var(--nav-bg-opacity, 0.8)" }}
+        aria-hidden="true"
+      />
+      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-12">
         <Link
           href="/"
           className={cn(
@@ -23,20 +41,31 @@ export function Navbar() {
 
         <nav aria-label="Navigation principale">
           <ul className="hidden items-center gap-6 md:flex">
-            {navLinks.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className={cn(
-                    "text-muted-foreground text-sm font-medium",
-                    "hover:text-foreground transition-colors duration-150",
-                    "focus-visible:ring-primary rounded-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
+            {navLinks.map(({ href, label }) => {
+              const isActive = pathname === href;
+              return (
+                <li key={href} className="relative">
+                  <Link
+                    href={href}
+                    className={cn(
+                      "py-1 text-sm font-medium",
+                      "transition-colors duration-150",
+                      "focus-visible:ring-primary rounded-sm focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
+                      isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground",
+                    )}
+                  >
+                    {label}
+                  </Link>
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-indicator"
+                      className="bg-primary absolute right-0 -bottom-1 left-0 h-0.5 rounded-full"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
                   )}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
@@ -56,6 +85,6 @@ export function Navbar() {
           <NavbarMobile navLinks={navLinks} />
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }
