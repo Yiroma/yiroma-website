@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ContactHero } from "@/components/contact/ContactHero";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactCtaFinal } from "@/components/contact/ContactCtaFinal";
+import { JsonLdContact } from "@/components/seo/JsonLdContact";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main>
+      <JsonLdContact />
       <ContactHero />
       <ContactForm />
       <ContactCtaFinal />

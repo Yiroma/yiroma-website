@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ServicesHero } from "@/components/services/ServicesHero";
 import { ServicesList } from "@/components/services/ServicesList";
 import { ServicesCtaFinal } from "@/components/services/ServicesCtaFinal";
+import { JsonLdServices } from "@/components/seo/JsonLdServices";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <main>
+      <JsonLdServices />
       <ServicesHero />
       <ServicesList />
       <ServicesCtaFinal />
