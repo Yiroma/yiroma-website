@@ -97,10 +97,10 @@ export function PricingPreview() {
             href={navLinks[1].href}
             className={cn(buttonVariants({ variant: "default", size: "sm" }), "gap-1.5")}
           >
-            Voir le détail des {navLinks[1].label} <ArrowRight size={14} aria-hidden="true" />
+            Voir le détail des {navLinks[2].label} <ArrowRight size={14} aria-hidden="true" />
           </Link>
           <Link
-            href={`${navLinks[1].href}#faq`}
+            href={`${navLinks[2].href}#faq`}
             className="text-primary inline-flex items-center gap-1.5 text-sm font-medium transition-[gap] duration-150 hover:gap-2.5"
           >
             Des questions ? Consultez la FAQ <ArrowRight size={14} aria-hidden="true" />

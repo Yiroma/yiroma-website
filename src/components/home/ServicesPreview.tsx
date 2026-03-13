@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { services } from "@/data/services.data";
-import { navLinks } from "@/data/nav.data";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/motion-variants";
 
 export function ServicesPreview() {
@@ -46,7 +45,8 @@ export function ServicesPreview() {
             return (
               <motion.div
                 key={service.id}
-                variants={staggerItem}
+                variants={{ ...staggerItem, cardHover: { y: -4, scale: 1.01 } }}
+                className={`bento-${service.id}`}
                 style={
                   {
                     "--order-mobile": orderMobile,
@@ -54,17 +54,17 @@ export function ServicesPreview() {
                     order: "var(--order-mobile)",
                   } as React.CSSProperties
                 }
-                whileHover={{ y: -4, scale: 1.01 }}
+                whileHover="cardHover"
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <Link
-                  href={`${navLinks[0].href}#${service.id}`}
+                  href={`/services#${service.id}`}
                   className={cn(
-                    `bento-${service.id} group`,
+                    "group",
                     "border-border bg-card flex h-full flex-col gap-3.5 rounded-xl border p-8 no-underline",
                     "transition-[background,border-color,box-shadow] duration-200",
                     "hover:bg-primary hover:border-transparent hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)]",
-                    wide && "md:flex-row md:items-center md:gap-7 md:py-6",
+                    wide && "lg:flex-row lg:items-center lg:gap-7 lg:py-6",
                   )}
                 >
                   <motion.div
@@ -74,7 +74,7 @@ export function ServicesPreview() {
                       "transition-[background,color] duration-200",
                       "group-hover:bg-white/20 group-hover:text-white",
                     )}
-                    whileHover={{ rotate: 5, scale: 1.1 }}
+                    variants={{ cardHover: { rotate: 5, scale: 1.1 } }}
                     transition={{ type: "spring", stiffness: 400, damping: 15 }}
                   >
                     <Icon size={22} className="m-auto" aria-hidden="true" />

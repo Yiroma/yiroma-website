@@ -18,7 +18,7 @@ export function ContactHero() {
           variants={staggerItem}
           className="text-primary mb-4 text-xs font-semibold tracking-[0.08em] uppercase"
         >
-          {navLinks[2].label}
+          {navLinks[3].label}
         </motion.p>
         <motion.h1
           variants={staggerItem}

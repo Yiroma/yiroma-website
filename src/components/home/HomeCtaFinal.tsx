@@ -4,8 +4,8 @@ import Link from "next/link";
 import { Mail, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { CtaWrapper } from "@/components/ui/CtaWrapper";
-import { socialLinks } from "@/data/contact.data";
 import { staggerContainer, staggerItem } from "@/lib/motion-variants";
+import { navLinks } from "@/data/nav.data";
 
 export function HomeCtaFinal() {
   return (
@@ -29,17 +29,17 @@ export function HomeCtaFinal() {
         </motion.p>
         <motion.div variants={staggerItem} className="flex flex-wrap justify-center gap-3">
           <Link
-            href={socialLinks[2].href}
+            href={navLinks[3].href}
             className="text-primary focus-visible:border-ring focus-visible:ring-ring/50 inline-flex h-10 shrink-0 items-center gap-1.5 rounded-md border border-transparent bg-white px-2.5 text-sm font-medium whitespace-nowrap transition-all hover:bg-white/90 focus-visible:ring-3"
           >
             <Mail size={17} aria-hidden="true" />
             Demander un devis gratuit
           </Link>
           <Link
-            href={socialLinks[1].href}
+            href={navLinks[2].href}
             className="focus-visible:border-ring focus-visible:ring-ring/50 inline-flex h-10 shrink-0 items-center gap-1.5 rounded-md border border-white/35 bg-white/15 px-2.5 text-sm font-medium whitespace-nowrap text-white transition-all hover:bg-white/25 focus-visible:ring-3"
           >
-            Voir mes {socialLinks[1].label}
+            Voir mes {navLinks[2].label}
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </motion.div>
