@@ -20,9 +20,9 @@ export function ServicesHero() {
           <span className="gradient-text">pour votre activité</span>
         </h1>
         <p className="text-muted-foreground mx-auto mb-9 max-w-xl text-lg leading-relaxed">
-          {`Que vous ayez besoin d&apos;une première présence en ligne, d&apos;une refonte, d&apos;un
-          meilleur référencement ou d&apos;un outil métier sur-mesure — je m&apos;adapte à votre
-          situation et à vos objectifs.`}
+          Création de site internet, refonte, audit SEO ou développement applicatif sur-mesure — je
+          m&apos;adapte à votre situation, que vous soyez basé à Orléans, dans le Loiret ou ailleurs
+          en France.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Link href={`${navLinks[1].href}`} className={cn(buttonVariants({ size: "lg" }))}>

@@ -28,7 +28,7 @@ const arguments_: Argument[] = [
     label: "Communication",
     title: "Je parle votre langue, pas que celle de la technique",
     description:
-      "10 ans de management et de relation client me permettent de comprendre vos vrais besoins, d'expliquer les choix sans jargon et de livrer ce qui était vraiment demandé.",
+      "10 ans de management et de relation client me permettent de comprendre vos vrais besoins — que vous soyez artisan, commerçant, profession libérale ou PME — et de livrer ce qui était vraiment demandé, sans jargon.",
     illustration: "/checking.svg",
     alt: "Illustration communication et relation client",
   },

@@ -1,0 +1,17 @@
+/* TEAM */
+Developer & Designer: Romaric Yi
+Contact: contact@yiroma.fr
+Location: Châteauneuf-sur-Loire, Loiret (45), France
+
+/* SITE */
+Last update: 2026-03
+Language: French
+Doctype: HTML5
+IDE: Visual Studio Code
+
+/* TECHNOLOGY */
+Framework: Next.js 16 (App Router, Static Export)
+Language: TypeScript 5
+Styling: Tailwind CSS 4
+Components: ShadcnUI, Lucide React
+Hosting: Hostinger
