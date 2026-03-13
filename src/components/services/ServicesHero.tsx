@@ -22,7 +22,7 @@ export function ServicesHero() {
           variants={staggerItem}
           className="text-primary mb-4 text-xs font-semibold tracking-[0.08em] uppercase"
         >
-          {navLinks[0].label}
+          {navLinks[1].label}
         </motion.p>
         <motion.h1
           variants={staggerItem}
@@ -46,7 +46,7 @@ export function ServicesHero() {
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
           <Link
-            href={`${navLinks[2].href}`}
+            href={`${navLinks[3].href}`}
             className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
           >
             <Mail size={17} aria-hidden="true" />
