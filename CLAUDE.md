@@ -158,7 +158,7 @@
 - [x] CI/CD — Husky (commitlint · lint-staged · protection .env)
 - [x] CI/CD — GitHub Actions workflow lint (PR feat → dev)
 - [x] CI/CD — GitHub Actions workflow deploy (merge dev → main → Hostinger)
-- [ ] Formulaire contact — intégration EmailJS
+- [x] Formulaire contact — intégration EmailJS
 - [x] ajouter des animations sur le site avec Framer Motion
 - [x] Déploiement — export statique Next.js (`output: 'export'`)
 - [x] Déploiement — mise en ligne sur Hostinger

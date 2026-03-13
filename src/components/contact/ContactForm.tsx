@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import Link from "next/link";
 import { Mail, Phone, MapPin, Lock, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -41,9 +42,26 @@ export function ContactForm() {
     e.preventDefault();
     setFormState("submitting");
 
-    // TODO: intégration EmailJS
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setFormState("success");
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: data.get("fullName"),
+          from_email: data.get("email"),
+          phone: data.get("phone") || "Non renseigné",
+          service_type: PROJECT_TYPES.find((t) => t.value === projectType)?.label ?? projectType,
+          message: data.get("message"),
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      );
+      setFormState("success");
+    } catch {
+      setFormState("error");
+    }
   }
 
   return (
