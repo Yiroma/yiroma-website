@@ -29,7 +29,8 @@ export function HomeHero() {
           </h1>
 
           <p className="text-muted-foreground mb-10 max-w-100 text-lg leading-relaxed">
-            Je conçois, je développe, vous devenez visible.
+            Je conçois, je développe — pour les artisans, commerçants et entreprises de la région
+            orléanaise et de toute la France.
           </p>
 
           <div className="flex flex-wrap gap-3">
