@@ -28,7 +28,7 @@ export function PricingCtaFinal() {
         </motion.p>
         <motion.div variants={staggerItem}>
           <Link
-            href={`${navLinks[2].href}`}
+            href={`${navLinks[3].href}`}
             className="text-primary focus-visible:border-ring focus-visible:ring-ring/50 inline-flex h-10 shrink-0 items-center gap-1.5 rounded-md border border-transparent bg-white px-4 text-sm font-medium whitespace-nowrap transition-all hover:bg-white/90 focus-visible:ring-3"
           >
             <Mail size={17} aria-hidden="true" />

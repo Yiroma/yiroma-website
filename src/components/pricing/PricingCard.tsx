@@ -19,12 +19,13 @@ export function PricingCard({ plan, ariaLabel = "Inclus dans ce forfait" }: Prop
   return (
     <motion.div
       variants={staggerItem}
+      className="h-full"
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       <Card
         className={cn(
-          "relative gap-5 py-6",
+          "relative flex h-full flex-col gap-5 py-6",
           plan.highlighted
             ? "border-primary/50 bg-primary/5 ring-primary/20"
             : "ring-foreground/10",
@@ -69,7 +70,7 @@ export function PricingCard({ plan, ariaLabel = "Inclus dans ce forfait" }: Prop
             Délai estimé : {plan.delay}
           </p>
           <Link
-            href={`${navLinks[2].href}`}
+            href={navLinks[3].href}
             className={cn(
               buttonVariants({
                 variant: plan.highlighted ? "default" : "outline",

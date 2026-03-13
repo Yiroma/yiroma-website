@@ -22,7 +22,7 @@ export function PricingHero() {
           variants={staggerItem}
           className="text-primary mb-4 text-xs font-semibold tracking-[0.08em] uppercase"
         >
-          {`${navLinks[1].label}`}
+          {`${navLinks[2].label}`}
         </motion.p>
         <motion.h1
           variants={staggerItem}
@@ -40,7 +40,7 @@ export function PricingHero() {
           une case, on en parle.
         </motion.p>
         <motion.div variants={staggerItem}>
-          <Link href={`${navLinks[2].href}`} className={cn(buttonVariants({ size: "lg" }))}>
+          <Link href={`${navLinks[3].href}`} className={cn(buttonVariants({ size: "lg" }))}>
             <Mail size={17} aria-hidden="true" />
             Demander un devis gratuit
           </Link>
