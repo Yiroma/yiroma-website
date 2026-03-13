@@ -13,7 +13,7 @@ export const webPlans: PricingPlan[] = [
   {
     name: "Starter",
     tagline: "La présence en ligne essentielle",
-    price: "À partir de 400€",
+    price: "À partir de 600€",
     target: "Lancement d'activité, offre ponctuelle, campagne ciblée",
     features: [
       "Landing page (1 page)",
@@ -29,7 +29,7 @@ export const webPlans: PricingPlan[] = [
   {
     name: "Pro",
     tagline: "Votre vitrine professionnelle complète",
-    price: "À partir de 900€",
+    price: "À partir de 1400€",
     target: "Artisans, commerçants, professions libérales, PME",
     features: [
       "Site vitrine jusqu'à 8 pages",
@@ -47,7 +47,7 @@ export const webPlans: PricingPlan[] = [
   {
     name: "E-commerce & CMS",
     tagline: "Vendez en ligne ou gérez votre contenu en autonomie",
-    price: "À partir de 1 800€",
+    price: "À partir de 3200€",
     target: "Boutiques, restaurants, structures avec actualités régulières",
     features: [
       "Jusqu'à 15 pages",
@@ -86,7 +86,7 @@ export const addonPlans: PricingPlan[] = [
   {
     name: "Création de logo",
     tagline: "Une identité visuelle qui vous ressemble",
-    price: "À partir de 150€",
+    price: "À partir de 450€",
     target: "Création d'activité, rebranding, nouveau projet",
     features: [
       "3 propositions de concepts",
@@ -100,7 +100,7 @@ export const addonPlans: PricingPlan[] = [
   {
     name: "Charte graphique",
     tagline: "Un socle visuel cohérent pour toutes vos communications",
-    price: "À partir de 350€",
+    price: "À partir de 1200€",
     target: "Structures souhaitant formaliser leur identité visuelle",
     features: [
       "Logo + variations inclus",
@@ -115,7 +115,7 @@ export const addonPlans: PricingPlan[] = [
   {
     name: "Audit SEO / GEO",
     tagline: "Identifiez ce qui freine votre visibilité en ligne",
-    price: "À partir de 250€",
+    price: "À partir de 600€",
     target: "Sites existants souhaitant améliorer leur référencement",
     features: [
       "Analyse technique complète",

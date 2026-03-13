@@ -176,7 +176,7 @@ export const services: ServiceData[] = [
       orderMd: 3,
     },
     description:
-      "Avoir un beau site ne suffit plus. Si vos clients ne vous trouvent pas quand ils cherchent votre activité, votre site ne travaille pas pour vous. Je diagnostique ce qui bloque votre visibilité et je vous donne un plan d'action concret.",
+      "Avoir un beau site ne suffit plus. Si vos clients ne vous trouvent pas sur Google — ou si votre entreprise n'est jamais citée par ChatGPT, Perplexity ou Gemini quand ils répondent à une question de votre secteur — votre site ne travaille pas pour vous. Je diagnostique ce qui bloque votre visibilité et je vous donne un plan d'action concret.",
     extra: {
       type: "minicards",
       items: [
