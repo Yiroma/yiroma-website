@@ -71,7 +71,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link
-            href={`${navLinks[2].href}`}
+            href={navLinks.find((l) => l.href === "/contact")!.href}
             className={cn(
               "bg-primary text-primary-foreground hidden rounded-md px-4 py-2 text-sm font-medium md:inline-flex",
               "transition-all duration-150 hover:brightness-90",
