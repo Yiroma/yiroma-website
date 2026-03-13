@@ -12,26 +12,21 @@
 - **Activité :** Développeur Full Stack Freelance — création de sites web, audit SEO/GEO, développement applicatif sur-mesure
 - **Localisation :** Châteauneuf-sur-Loire (45) — présentiel région orléanaise, remote toute la France
 - **Contact :** contact@yiroma.fr · 06 95 38 60 99
-- **Liens :** [GitHub](https://github.com/Yiroma) · [LinkedIn](https://linkedin.com/in/yiromaric) · [Malt](#) · [Site](https://yiroma.fr)
+- **Liens :** [GitHub](https://github.com/Yiroma) · [LinkedIn](https://linkedin.com/in/yiromaric) · [Malt](https://www.malt.fr/profile/romaricyi) · [Site](https://yiroma.fr)
 
 ---
 
 ## 📂 Documents de référence
 
-| Document                     | Lien                                                           |
-| ---------------------------- | -------------------------------------------------------------- |
-| Brainstorm & plan de route   | [docs/brainstorm.md](docs/brainstorm.md)                       |
-| Architecture déploiement     | [docs/deployment.md](docs/deployment.md)                       |
-| Design System                | [docs/design/design-system.md](docs/design/design-system.md)   |
-| Suggestions & points ouverts | [docs/suggestions.md](docs/suggestions.md)                     |
-| Copywriting Home             | [docs/copywrights/home.md](docs/copywrights/home.md)           |
-| Copywriting Services         | [docs/copywrights/services.md](docs/copywrights/services.md)   |
-| Copywriting Portfolio        | [docs/copywrights/portfolio.md](docs/copywrights/portfolio.md) |
-| Copywriting Tarifs           | [docs/copywrights/tarifs.md](docs/copywrights/tarifs.md)       |
-| Copywriting Contact          | [docs/copywrights/contact.md](docs/copywrights/contact.md)     |
+| Document                   | Lien                                                         |
+| -------------------------- | ------------------------------------------------------------ |
+| Brainstorm & plan de route | [docs/brainstorm.md](docs/brainstorm.md)                     |
+| Architecture déploiement   | [docs/deployment.md](docs/deployment.md)                     |
+| Design System              | [docs/design/design-system.md](docs/design/design-system.md) |
+| Audit & plan SEO/GEO       | [docs/seo-geo-audit.md](docs/seo-geo-audit.md)               |
 
-> Les fichiers de copywriting sont la référence pour tout le contenu des pages.
 > Le design system est la référence pour toutes les décisions visuelles.
+> Le fichier seo-geo-audit.md est la référence pour l'état d'avancement SEO/GEO et les actions restantes.
 
 ---
 
@@ -81,62 +76,6 @@
 > `/portfolio` supprimé de la v1 — 3 projets en aperçu sur la home suffisent. À recréer en v2.
 
 ---
-
-## 📄 Copywriting validé par page
-
-### `/` — Home
-
-**Sur-titre :** `Développeur Full Stack Freelance — Orléans & toute la France`
-**H1 :** `Du site vitrine à l'application métier, je construis votre présence digitale.`
-**Sous-titre :** `Je conçois, je développe — vous devenez visible.`
-**CTAs :** `Découvrir mes services` · `Voir mes réalisations`
-
-**Sections :**
-
-1. Hero
-2. Services — aperçu 3 colonnes (Création de site · Audit SEO · Dev applicatif)
-3. Pourquoi Yiroma — 3 arguments (Concepteur Bac+4 · Manager 10 ans · Code propre)
-4. Projets — aperçu 3 cartes (CarePlan · Hive · Taxi Loire Valley)
-5. Tarifs — résumé 4 forfaits (prix + cible) + CTA vers `/pricing`
-6. CTA final — `Un projet en tête ? Parlons-en.`
-7. Footer
-
----
-
-### `/pricing` — Tarifs
-
-**H1 :** `Des forfaits clairs, sans mauvaise surprise`
-
-**Base de calcul :** TJM 300€/jour (à réviser à 350€ après premières références)
-
-**4 forfaits :**
-
-| Forfait          | Prix               | Cible                                | Délai        |
-| ---------------- | ------------------ | ------------------------------------ | ------------ |
-| Starter          | À partir de 400€   | Lancement, offre ponctuelle          | 1-2 semaines |
-| Pro              | À partir de 900€   | Artisans, PME, professions libérales | 3-4 semaines |
-| E-commerce & CMS | À partir de 1 800€ | Boutiques, restaurants, actus        | 5-7 semaines |
-| Sur-mesure       | Sur devis          | Entreprises, ESN, applicatif         | Selon CDC    |
-
-**Inclus dans tous les forfaits :** design responsive, SEO technique de base, conseil hébergement
-**Option maintenance :** disponible à la demande pour tous les forfaits (pas d'abonnement)
-**Paiement en ligne (Stripe etc.) :** option disponible en supplément sur devis (forfait E-commerce)
-**Hébergement :** conseil et accompagnement inclus — le client souscrit directement
-
-**FAQ (5 questions) :**
-
-1. Délai de livraison
-2. Modification du site en autonomie
-3. Hébergement
-4. Zone géographique
-5. Projet hors forfait
-
----
-
-### `/contact` — Contact
-
-**H1 :** `Parlons de votre projet`
-**Sous-titre :** `Pas besoin d'avoir tout défini. Une idée, un besoin, une question — c'est suffisant pour commencer.`
 
 **Formulaire :**
 
@@ -210,14 +149,16 @@
 - [x] Développement — page cgv
 - [x] Développement — page mentions-legales
 - [x] Développement — page Services
-- [ ] Développement — page Tarifs (`/pricing`)
-- [ ] Développement — page Contact
-- [ ] SEO — meta tags, sitemap, robots.txt
-- [ ] SEO — Google Business Profile
+- [x] Développement — page Tarifs (`/pricing`)
+- [x] Développement — page Contact
+- [x] SEO — meta tags, sitemap, robots.txt, Open Graph, Twitter Cards, JSON-LD, canonical (voir [docs/seo-geo-audit.md](docs/seo-geo-audit.md))
+- [ ] SEO — Google Business Profile (action manuelle post-déploiement)
+- [ ] SEO — Soumettre sitemap dans Google Search Console (action manuelle post-déploiement)
 - [x] CI/CD — Husky (commitlint · lint-staged · protection .env)
 - [x] CI/CD — GitHub Actions workflow lint (PR feat → dev)
 - [x] CI/CD — GitHub Actions workflow deploy (merge dev → main → Hostinger)
 - [ ] Formulaire contact — intégration EmailJS
+- [ ] ajouter des animations sur le site avec Framer Motion
 - [x] Déploiement — export statique Next.js (`output: 'export'`)
 - [x] Déploiement — mise en ligne sur Hostinger
-- [ ] Tests Lighthouse
+- [ ] Tests Lighthouse (post-déploiement — cible > 90 sur toutes les pages)
