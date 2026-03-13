@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PricingHero } from "@/components/pricing/PricingHero";
 import { PricingSection } from "@/components/pricing/PricingSection";
 import { AddonSection } from "@/components/pricing/AddonSection";
+import { FaqSection } from "@/components/pricing/FaqSection";
 import { PricingCtaFinal } from "@/components/pricing/PricingCtaFinal";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function PricingPage() {
       <PricingHero />
       <PricingSection />
       <AddonSection />
+      <FaqSection />
       <PricingCtaFinal />
     </main>
   );
