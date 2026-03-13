@@ -45,7 +45,7 @@ export function ServicesPreview() {
             return (
               <motion.div
                 key={service.id}
-                variants={staggerItem}
+                variants={{ ...staggerItem, cardHover: { y: -4, scale: 1.01 } }}
                 className={`bento-${service.id}`}
                 style={
                   {
@@ -54,7 +54,7 @@ export function ServicesPreview() {
                     order: "var(--order-mobile)",
                   } as React.CSSProperties
                 }
-                whileHover={{ y: -4, scale: 1.01 }}
+                whileHover="cardHover"
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <Link
@@ -74,7 +74,7 @@ export function ServicesPreview() {
                       "transition-[background,color] duration-200",
                       "group-hover:bg-white/20 group-hover:text-white",
                     )}
-                    whileHover={{ rotate: 5, scale: 1.1 }}
+                    variants={{ cardHover: { rotate: 5, scale: 1.1 } }}
                     transition={{ type: "spring", stiffness: 400, damping: 15 }}
                   >
                     <Icon size={22} className="m-auto" aria-hidden="true" />
