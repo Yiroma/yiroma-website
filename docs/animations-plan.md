@@ -289,26 +289,26 @@ export function useAnimationInView(options = { once: true, amount: 0.2 }) {
 
 ### Priorité 1 — Impact visuel fort, implémentation simple
 
-1. [ ] Setup : installer framer-motion, créer `motion-variants.ts`
-2. [ ] `HomeHero.tsx` — séquence d'entrée complète
-3. [ ] `ServicesPreview.tsx` — stagger des cartes bento
-4. [ ] `WhyYiroma.tsx` — fade directionnels gauche/droite
-5. [ ] `PricingPreview.tsx` — stagger des cartes tarifs
+1. [x] Setup : installer framer-motion, créer `motion-variants.ts`
+2. [x] `HomeHero.tsx` — séquence d'entrée complète
+3. [x] `ServicesPreview.tsx` — stagger des cartes bento
+4. [x] `WhyYiroma.tsx` — fade directionnels gauche/droite
+5. [x] `PricingPreview.tsx` — stagger des cartes tarifs
 
 ### Priorité 2 — Cohérence cross-pages
 
-6. [ ] `ServicesHero.tsx` + `ServiceSection.tsx`
-7. [ ] `PricingSection.tsx` + `PricingCard.tsx`
-8. [ ] `ContactHero.tsx` + `ContactForm.tsx`
-9. [ ] Tous les `CtaFinal` (Home, Services, Pricing, Contact)
+6. [x] `ServicesHero.tsx` + `ServiceSection.tsx`
+7. [x] `PricingSection.tsx` + `PricingCard.tsx`
+8. [x] `ContactHero.tsx` + `ContactForm.tsx`
+9. [x] Tous les `CtaFinal` (Home, Services, Pricing, Contact)
 
 ### Priorité 3 — Détails et micro-interactions
 
-10. [ ] Navbar — background au scroll + `layoutId` indicateur
-11. [ ] `FaqSection.tsx` — accordion avec `AnimatePresence`
-12. [ ] `Footer.tsx` — stagger + hover liens sociaux
-13. [ ] Menu mobile (`NavbarMobile.tsx`) — slide + stagger
-14. [ ] `AddonSection.tsx`
+10. [x] Navbar — background au scroll + `layoutId` indicateur
+11. [x] `FaqSection.tsx` — accordion avec `AnimatePresence`
+12. [x] `Footer.tsx` — stagger + hover liens sociaux
+13. [x] Menu mobile (`NavbarMobile.tsx`) — slide + stagger
+14. [x] `AddonSection.tsx`
 
 ---
 
