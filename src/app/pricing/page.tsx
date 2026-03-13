@@ -6,9 +6,24 @@ import { FaqSection } from "@/components/pricing/FaqSection";
 import { PricingCtaFinal } from "@/components/pricing/PricingCtaFinal";
 
 export const metadata: Metadata = {
-  title: "Tarifs — Yiroma",
+  title: "Tarifs",
   description:
     "Forfaits clairs et transparents : Starter à partir de 400€, Pro à partir de 900€, E-commerce à partir de 1 800€, Sur-mesure sur devis. Développeur freelance, région orléanaise.",
+  alternates: {
+    canonical: "https://yiroma.fr/pricing",
+  },
+  openGraph: {
+    title: "Tarifs — Yiroma",
+    description:
+      "Forfaits clairs et transparents : Starter à partir de 400€, Pro à partir de 900€, E-commerce à partir de 1 800€, Sur-mesure sur devis. Développeur freelance, région orléanaise.",
+    url: "https://yiroma.fr/pricing",
+    type: "website",
+  },
+  twitter: {
+    title: "Tarifs — Yiroma",
+    description:
+      "Forfaits clairs et transparents : Starter à partir de 400€, Pro à partir de 900€, E-commerce à partir de 1 800€, Sur-mesure sur devis. Développeur freelance, région orléanaise.",
+  },
 };
 
 export default function PricingPage() {
