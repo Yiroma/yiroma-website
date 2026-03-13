@@ -2,36 +2,52 @@
 
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { buttonVariants } from "@/components/ui/button";
 import { webPlans } from "@/data/pricing.data";
 import { navLinks } from "@/data/nav.data";
+import { fadeInUp, staggerContainer, staggerItem } from "@/lib/motion-variants";
 
 export function PricingPreview() {
   return (
     <section className="bg-background relative z-0 py-16 md:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-8">
-        <SectionHeader
-          eyebrow="Des forfaits clairs, sans mauvaise surprise"
-          title={
-            <>
-              Vous savez ce que vous payez
-              <br />
-              et ce que vous obtenez.
-            </>
-          }
-        />
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <SectionHeader
+            eyebrow="Des forfaits clairs, sans mauvaise surprise"
+            title={
+              <>
+                Vous savez ce que vous payez
+                <br />
+                et ce que vous obtenez.
+              </>
+            }
+          />
+        </motion.div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <motion.div
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {webPlans.map((plan) => (
-            <div
+            <motion.div
               key={plan.name}
+              variants={staggerItem}
+              whileHover={{ y: -6 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className={cn(
-                "flex flex-col gap-4 rounded-xl border p-6 transition-[box-shadow,transform] duration-200",
-                plan.highlighted
-                  ? "border-primary/40 bg-primary/5 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(0,0,0,0.10)]"
-                  : "border-border bg-card hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(0,0,0,0.10)]",
+                "flex flex-col gap-4 rounded-xl border p-6",
+                plan.highlighted ? "border-primary/40 bg-primary/5" : "border-border bg-card",
               )}
             >
               <div>
@@ -66,24 +82,30 @@ export function PricingPreview() {
               <p className="text-muted-foreground mt-auto border-t border-dashed pt-3 text-[0.6875rem]">
                 Délai estimé : {plan.delay}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-3">
+        <motion.div
+          className="mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-3"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
           <Link
             href={navLinks[1].href}
             className={cn(buttonVariants({ variant: "default", size: "sm" }), "gap-1.5")}
           >
-            Voir le détail des {navLinks[1].label} <ArrowRight size={14} aria-hidden="true" />
+            Voir le détail des {navLinks[2].label} <ArrowRight size={14} aria-hidden="true" />
           </Link>
           <Link
-            href={`${navLinks[1].href}#faq`}
+            href={`${navLinks[2].href}#faq`}
             className="text-primary inline-flex items-center gap-1.5 text-sm font-medium transition-[gap] duration-150 hover:gap-2.5"
           >
             Des questions ? Consultez la FAQ <ArrowRight size={14} aria-hidden="true" />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

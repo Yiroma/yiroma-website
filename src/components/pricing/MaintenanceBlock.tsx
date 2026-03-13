@@ -24,7 +24,7 @@ export function MaintenanceBlock() {
         </div>
       </div>
       <Link
-        href={`${navLinks[2].href}`}
+        href={`${navLinks[3].href}`}
         className={cn(buttonVariants({ variant: "outline", size: "sm" }), "shrink-0")}
       >
         Me contacter

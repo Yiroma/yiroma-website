@@ -3,10 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
+import { motion } from "framer-motion";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { YiromaLogo } from "@/components/ui/YiromaLogo";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { staggerContainer, staggerItem } from "@/lib/motion-variants";
 
 interface NavbarMobileProps {
   navLinks: { href: string; label: string }[];
@@ -43,10 +45,15 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
           </SheetTitle>
         </SheetHeader>
 
-        <nav aria-label="Navigation mobile">
+        <motion.nav
+          aria-label="Navigation mobile"
+          variants={staggerContainer}
+          initial="hidden"
+          animate={open ? "visible" : "hidden"}
+        >
           <ul className="flex flex-col gap-1">
             {navLinks.map(({ href, label }) => (
-              <li key={href}>
+              <motion.li key={href} variants={staggerItem}>
                 <Link
                   href={href}
                   onClick={() => setOpen(false)}
@@ -58,23 +65,25 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
                 >
                   {label}
                 </Link>
-              </li>
+              </motion.li>
             ))}
           </ul>
-        </nav>
+        </motion.nav>
 
-        <Link
-          href={`${navLinks[2].href}`}
-          onClick={() => setOpen(false)}
-          className={cn(
-            "bg-primary flex w-full items-center justify-center rounded-md px-4 py-2.5",
-            "text-primary-foreground text-sm font-medium",
-            "transition-all duration-150 hover:brightness-90",
-            "focus-visible:ring-primary focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
-          )}
-        >
-          Demander un devis
-        </Link>
+        <motion.div variants={staggerItem} animate={open ? "visible" : "hidden"} initial="hidden">
+          <Link
+            href={navLinks.find((l) => l.href === "/contact")!.href}
+            onClick={() => setOpen(false)}
+            className={cn(
+              "bg-primary mt-4 flex w-full items-center justify-center rounded-md px-4 py-2.5",
+              "text-primary-foreground text-sm font-medium",
+              "transition-all duration-150 hover:brightness-90",
+              "focus-visible:ring-primary focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
+            )}
+          >
+            Demander un devis
+          </Link>
+        </motion.div>
 
         <div className="border-border mt-6 flex items-center justify-between border-t pt-6">
           <span className="text-muted-foreground pl-3 text-sm">Thème</span>
