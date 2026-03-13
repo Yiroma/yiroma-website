@@ -41,8 +41,8 @@ export function ServicesHero() {
           en France.
         </motion.p>
         <motion.div variants={staggerItem} className="flex flex-wrap justify-center gap-3">
-          <Link href={`${navLinks[1].href}`} className={cn(buttonVariants({ size: "lg" }))}>
-            Voir les {`${navLinks[1].label}`}
+          <Link href={`${navLinks[2].href}`} className={cn(buttonVariants({ size: "lg" }))}>
+            Voir les {`${navLinks[2].label}`}
             <ArrowRight size={16} aria-hidden="true" />
           </Link>
           <Link

@@ -50,15 +50,15 @@ export function HomeHero() {
           </motion.p>
 
           <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
-            <Link href={navLinks[0].href} className={cn(buttonVariants({ size: "lg" }))}>
+            <Link href={navLinks[1].href} className={cn(buttonVariants({ size: "lg" }))}>
               <Layers size={17} aria-hidden="true" />
-              Découvrir mes {navLinks[0].label}
+              Découvrir mes {navLinks[1].label}
             </Link>
             <Link
-              href={navLinks[1].href}
+              href={navLinks[2].href}
               className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
             >
-              Voir mes {navLinks[1].label}
+              Voir mes {navLinks[2].label}
               <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </motion.div>
