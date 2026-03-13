@@ -11,9 +11,36 @@ interface ThemeToggleProps {
 export function ThemeToggle({ className }: ThemeToggleProps) {
   const { resolvedTheme, setTheme } = useTheme();
 
+  function handleToggle(e: React.MouseEvent<HTMLButtonElement>) {
+    const nextTheme = resolvedTheme === "dark" ? "light" : "dark";
+
+    // Fallback sans animation si l'API n'est pas disponible ou si reduced-motion est activé
+    if (
+      !("startViewTransition" in document) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setTheme(nextTheme);
+      return;
+    }
+
+    const { clientX: x, clientY: y } = e;
+    const radius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    );
+
+    document.documentElement.style.setProperty("--vt-x", `${x}px`);
+    document.documentElement.style.setProperty("--vt-y", `${y}px`);
+    document.documentElement.style.setProperty("--vt-r", `${radius}px`);
+
+    (document as Document & { startViewTransition: (cb: () => void) => void }).startViewTransition(
+      () => setTheme(nextTheme),
+    );
+  }
+
   return (
     <button
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      onClick={handleToggle}
       aria-label={resolvedTheme === "dark" ? "Activer le mode clair" : "Activer le mode sombre"}
       className={cn(
         "flex h-9 w-9 items-center justify-center rounded-md",
