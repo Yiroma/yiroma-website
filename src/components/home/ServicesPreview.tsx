@@ -87,7 +87,7 @@ export function ServicesPreview() {
                     <p className="text-muted-foreground flex-1 text-sm leading-[1.65] transition-colors duration-200 group-hover:text-white/80">
                       {description}
                     </p>
-                    <span className="text-primary mt-1 inline-flex items-center gap-1.5 text-sm font-medium transition-[color] duration-200 group-hover:text-white">
+                    <span className="text-primary mt-1 inline-flex items-center gap-1.5 text-sm font-medium transition-[color] duration-200 group-hover:text-white dark:text-blue-400">
                       En savoir plus <ArrowRight size={14} aria-hidden="true" />
                     </span>
                   </div>
