@@ -1,23 +1,18 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
+import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const fontSans = Plus_Jakarta_Sans({
+const fontSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-const fontSerif = Inter({
+const fontHeading = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-serif",
-});
-
-const fontMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-heading",
 });
 
 const siteUrl = "https://yiroma.fr";
@@ -220,7 +215,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable}`}
+      className={`${fontSans.variable} ${fontHeading.variable}`}
       suppressHydrationWarning
     >
       <body className="antialiased">

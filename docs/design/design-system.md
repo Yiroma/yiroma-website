@@ -24,7 +24,7 @@ Les couleurs sont définies en tant que variables CSS au format **OKLCH** (utili
 | `--background`                 | `#FFFFFF` | `oklch(1 0 0)`               | Fond principal des pages                   |
 | `--foreground`                 | `#0F172A` | `oklch(0.208 0.042 264.695)` | Texte principal                            |
 | `--muted`                      | `#F1F5F9` | `oklch(0.968 0.007 247.896)` | Fond sections alternées, inputs désactivés |
-| `--muted-foreground`           | `#64748B` | `oklch(0.554 0.046 257.417)` | Texte secondaire, labels, placeholders     |
+| `--muted-foreground`           | `#4B5B6E` | `oklch(0.48 0.046 257.417)`  | Texte secondaire, labels, placeholders     |
 | `--card`                       | `#FFFFFF` | `oklch(1 0 0)`               | Fond des cards                             |
 | `--card-foreground`            | `#0F172A` | `oklch(0.208 0.042 264.695)` | Texte dans les cards                       |
 | `--primary`                    | `#2563eb` | `oklch(0.546 0.245 262.881)` | CTA principaux, liens actifs, highlights   |

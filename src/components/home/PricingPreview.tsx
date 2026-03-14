@@ -62,7 +62,7 @@ export function PricingPreview() {
                 <p className="text-muted-foreground text-xs">{plan.tagline}</p>
               </div>
 
-              <p className="text-foreground font-sans text-[1.0625rem] leading-snug font-bold">
+              <p className="text-foreground font-heading text-[1.0625rem] leading-snug font-bold">
                 {plan.price}
               </p>
 

@@ -90,10 +90,10 @@ export function ContactForm() {
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link
-                  href={navLinks[1].href}
+                  href={navLinks[2].href}
                   className={cn(buttonVariants({ variant: "outline" }))}
                 >
-                  Voir les {navLinks[1].label}
+                  Voir les {navLinks[2].label}
                 </Link>
               </div>
             </motion.div>

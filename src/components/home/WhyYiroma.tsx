@@ -108,7 +108,7 @@ export function WhyYiroma() {
                   <p className="text-primary text-xs font-semibold tracking-[0.08em] uppercase">
                     {arg.label}
                   </p>
-                  <h3 className="text-foreground font-sans text-[clamp(1.125rem,2vw,1.375rem)] leading-snug font-bold">
+                  <h3 className="text-foreground font-heading text-[clamp(1.125rem,2vw,1.375rem)] leading-snug font-bold">
                     {arg.title}
                   </h3>
                   <p className="text-muted-foreground text-[0.9375rem] leading-[1.75]">
