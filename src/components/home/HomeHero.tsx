@@ -30,7 +30,7 @@ export function HomeHero() {
 
           <motion.h1
             variants={fadeInUp}
-            className="text-foreground mb-5 font-sans text-[clamp(2rem,4vw,3.25rem)] leading-[1.15] font-extrabold tracking-[-0.02em]"
+            className="text-foreground font-heading mb-5 text-[clamp(2rem,4vw,3.25rem)] leading-[1.15] font-extrabold tracking-[-0.02em]"
           >
             Du site vitrine à
             <br />

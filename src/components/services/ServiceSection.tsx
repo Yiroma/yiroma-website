@@ -44,7 +44,7 @@ export function ServiceSection({ service }: Props) {
             <p className="text-primary mb-2 text-xs font-semibold tracking-[0.08em] uppercase">
               {label}
             </p>
-            <h2 className="text-foreground font-sans text-[clamp(1.375rem,2.5vw,1.875rem)] leading-snug font-bold">
+            <h2 className="text-foreground font-heading text-[clamp(1.375rem,2.5vw,1.875rem)] leading-snug font-bold">
               {titleLines.map((line, i) => (
                 <span key={i}>
                   {line}
@@ -152,7 +152,7 @@ export function ServiceSection({ service }: Props) {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   className="border-border bg-card rounded-xl border p-6 transition-shadow duration-200 hover:shadow-md"
                 >
-                  <h3 className="text-foreground mb-2 font-sans text-base font-semibold">
+                  <h3 className="text-foreground font-heading mb-2 text-base font-semibold">
                     {card.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-[1.7]">{card.description}</p>

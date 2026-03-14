@@ -17,7 +17,7 @@ export function ContactCtaFinal() {
       >
         <motion.h2
           variants={staggerItem}
-          className="mb-3 font-sans text-[clamp(1.5rem,3vw,2.25rem)] leading-tight font-bold text-white"
+          className="font-heading mb-3 text-[clamp(1.5rem,3vw,2.25rem)] leading-tight font-bold text-white"
         >
           Vous préférez passer par une plateforme ?
         </motion.h2>
