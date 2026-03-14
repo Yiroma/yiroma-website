@@ -25,7 +25,7 @@ export function HomeHero() {
             className="border-primary/25 bg-primary/10 text-primary mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[0.8125rem] font-medium"
           >
             <MapPin size={13} aria-hidden="true" />
-            Développeur Full Stack Freelance — Orléans &amp; toute la France
+            {`Création de site internet à Orléans`}
           </motion.span>
 
           <motion.h1
