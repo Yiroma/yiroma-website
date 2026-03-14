@@ -22,7 +22,7 @@ export function ContactHero() {
         </motion.p>
         <motion.h1
           variants={staggerItem}
-          className="text-foreground mb-5 font-sans text-[clamp(1.875rem,4vw,3rem)] leading-[1.15] font-extrabold tracking-[-0.02em]"
+          className="text-foreground font-heading mb-5 text-[clamp(1.875rem,4vw,3rem)] leading-[1.15] font-extrabold tracking-[-0.02em]"
         >
           Parlons de votre projet
         </motion.h1>

@@ -54,9 +54,9 @@ export function Footer() {
           </motion.div>
 
           <motion.div variants={staggerItem} className="text-right">
-            <h4 className="text-muted-foreground mb-4 text-xs font-semibold tracking-widest uppercase">
+            <p className="text-muted-foreground mb-4 text-xs font-semibold tracking-widest uppercase">
               Navigation
-            </h4>
+            </p>
             <ul className="flex flex-col gap-2.5">
               {navLinks.map(({ href, label }) => (
                 <li key={href}>

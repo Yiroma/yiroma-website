@@ -42,7 +42,7 @@ export const services: ServiceData[] = [
     id: "creation",
     bg: "background",
     icon: Globe,
-    label: "Service 1",
+    label: "Création de site internet",
     title: "Votre site web, enfin à la hauteur\nde votre activité",
     preview: {
       title: "Création de site web",
@@ -87,7 +87,7 @@ export const services: ServiceData[] = [
     id: "refonte",
     bg: "muted",
     icon: RefreshCw,
-    label: "Service 2",
+    label: "Refonte de site internet",
     title: "Votre site vieillit mal ?\nReconstruisons-le sur des bases saines.",
     preview: {
       title: "Refonte de site",
@@ -131,7 +131,7 @@ export const services: ServiceData[] = [
     id: "charte",
     bg: "background",
     icon: Palette,
-    label: "Service 3",
+    label: "Identité visuelle & charte graphique",
     title: "Vous partez de zéro ?\nJe construis votre identité de A à Z.",
     preview: {
       title: "Identité visuelle & Charte graphique",
@@ -166,7 +166,7 @@ export const services: ServiceData[] = [
     id: "seo",
     bg: "muted",
     icon: Search,
-    label: "Service 4",
+    label: "Audit",
     title: "Soyez trouvé — sur Google,\net sur les intelligences artificielles",
     preview: {
       title: "Audit SEO & Visibilité GEO",
@@ -220,7 +220,7 @@ export const services: ServiceData[] = [
     id: "devapp",
     bg: "background",
     icon: Code2,
-    label: "Service 5",
+    label: "Développement applicatif",
     title: "Au-delà du site : des outils qui\nstructurent et automatisent votre activité",
     preview: {
       title: "Développement applicatif",

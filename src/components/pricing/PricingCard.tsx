@@ -50,7 +50,9 @@ export function PricingCard({ plan, ariaLabel = "Inclus dans ce forfait" }: Prop
         </CardHeader>
 
         <CardContent className="flex flex-col gap-5">
-          <p className="text-foreground font-sans text-lg leading-snug font-bold">{plan.price}</p>
+          <p className="text-foreground font-heading text-lg leading-snug font-bold">
+            {plan.price}
+          </p>
 
           <p className="text-muted-foreground text-xs leading-normal">Idéal pour : {plan.target}</p>
 

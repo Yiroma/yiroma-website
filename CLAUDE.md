@@ -154,7 +154,7 @@
 - [x] Développement — page Contact
 - [x] SEO — meta tags, sitemap, robots.txt, Open Graph, Twitter Cards, JSON-LD, canonical (voir [docs/seo-geo-audit.md](docs/seo-geo-audit.md))
 - [ ] SEO — Google Business Profile (action manuelle post-déploiement)
-- [ ] SEO — Soumettre sitemap dans Google Search Console (action manuelle post-déploiement)
+- [x] SEO — Soumettre sitemap dans Google Search Console (action manuelle post-déploiement)
 - [x] CI/CD — Husky (commitlint · lint-staged · protection .env)
 - [x] CI/CD — GitHub Actions workflow lint (PR feat → dev)
 - [x] CI/CD — GitHub Actions workflow deploy (merge dev → main → Hostinger)
@@ -162,4 +162,7 @@
 - [x] ajouter des animations sur le site avec Framer Motion
 - [x] Déploiement — export statique Next.js (`output: 'export'`)
 - [x] Déploiement — mise en ligne sur Hostinger
-- [ ] Tests Lighthouse (post-déploiement — cible > 90 sur toutes les pages)
+- [x] Tests Lighthouse (post-déploiement — cible > 90 sur toutes les pages)
+- [ ] Gatcha pour le formulaire de contact
+- [ ] Analytics — ajoute les trackers analytics
+- [ ] Coockies — ajoute un popup de consentement de coockies

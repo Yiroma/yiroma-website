@@ -81,13 +81,13 @@ export function ServicesPreview() {
                   </motion.div>
 
                   <div className={cn("flex flex-col gap-2.5", wide && "min-w-0 flex-1")}>
-                    <h3 className="text-foreground font-sans text-[1.0625rem] font-semibold transition-colors duration-200 group-hover:text-white">
+                    <h3 className="text-foreground font-heading text-[1.0625rem] font-semibold transition-colors duration-200 group-hover:text-white">
                       {title}
                     </h3>
                     <p className="text-muted-foreground flex-1 text-sm leading-[1.65] transition-colors duration-200 group-hover:text-white/80">
                       {description}
                     </p>
-                    <span className="text-primary mt-1 inline-flex items-center gap-1.5 text-sm font-medium transition-[color] duration-200 group-hover:text-white">
+                    <span className="text-primary mt-1 inline-flex items-center gap-1.5 text-sm font-medium transition-[color] duration-200 group-hover:text-white dark:text-blue-400">
                       En savoir plus <ArrowRight size={14} aria-hidden="true" />
                     </span>
                   </div>

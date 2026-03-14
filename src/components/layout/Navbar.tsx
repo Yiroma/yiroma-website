@@ -73,7 +73,7 @@ export function Navbar() {
           <Link
             href={navLinks.find((l) => l.href === "/contact")!.href}
             className={cn(
-              "bg-primary text-primary-foreground hidden rounded-md px-4 py-2 text-sm font-medium md:inline-flex",
+              "bg-primary text-primary-foreground hidden rounded-md px-4 py-2 text-sm font-medium md:inline-flex dark:bg-blue-700",
               "transition-all duration-150 hover:brightness-90",
               "focus-visible:ring-primary focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
             )}
