@@ -110,7 +110,7 @@ Les couleurs sont définies en tant que variables CSS au format **OKLCH** (utili
 | Rôle   | Police                | Source       | Variable CSS     |
 | ------ | --------------------- | ------------ | ---------------- |
 | Titres | **Plus Jakarta Sans** | Google Fonts | `--font-heading` |
-| Corps  | **Inter**             | Google Fonts | `--font-body`    |
+| Corps  | **DM sans**           | Google Fonts | `--font-body`    |
 | Code   | **JetBrains Mono**    | Google Fonts | `--font-mono`    |
 
 > Chargement via `next/font/google` — pas de FOUT, optimisé pour les performances.
@@ -127,7 +127,7 @@ Les couleurs sont définies en tant que variables CSS au format **OKLCH** (utili
 | Small / label | `0.875rem` (14px) | `0.875rem`        | 400     | 1.5        |
 | Caption       | `0.75rem` (12px)  | `0.75rem`         | 400     | 1.4        |
 
-> Tous les titres utilisent **Plus Jakarta Sans**, le reste **Inter**.
+> Tous les titres utilisent **Plus Jakarta Sans**, le reste **DM sans**.
 
 ---
 

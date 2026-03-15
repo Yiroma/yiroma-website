@@ -198,18 +198,84 @@
   animation: shimmer 5s ease-in-out infinite;
 }
 
-/* Sections Hero + WhyYiroma : même fond teinté, grille, fondu et orbe */
+/* Sections Hero + CTA */
 .section-primary-bg {
   background: color-mix(in oklch, var(--color-primary) 4%, var(--color-background));
 }
 
-.section-grid-bg {
-  background-image:
-    linear-gradient(to right, var(--color-border) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
-  background-size: 48px 48px;
+.section-blob-1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.15;
+  top: -10%;
+  left: 5%;
+  background: color-mix(in oklch, var(--color-primary) 70%, transparent);
+  pointer-events: none;
 }
 
+.section-blob-2 {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.2;
+  top: -5%;
+  right: 5%;
+  background: color-mix(in oklch, var(--color-primary) 55%, var(--color-background));
+  pointer-events: none;
+}
+
+.section-blob-3 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  bottom: -10%;
+  left: 40%;
+  background: color-mix(in oklch, var(--color-primary) 45%, var(--color-background));
+  pointer-events: none;
+}
+
+/* Diagonal */
+.section-diagonal {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-border) 0,
+    var(--color-border) 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 20px 20px;
+  opacity: 0.16;
+}
+
+/* Spotlights */
+.section-spotlights {
+  background:
+    radial-gradient(
+      ellipse 55% 60% at 5% 10%,
+      color-mix(in oklch, var(--color-primary) 14%, transparent) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 40% 45% at 95% 90%,
+      color-mix(in oklch, var(--color-primary) 9%, transparent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 30% 30% at 50% 0%,
+      color-mix(in oklch, var(--color-primary) 7%, transparent) 0%,
+      transparent 70%
+    );
+}
+
+/* fade radial */
 .section-fade {
   background: radial-gradient(
     ellipse 100% 100% at 50% 50%,
@@ -218,14 +284,15 @@
   );
 }
 
+/* Orbs light */
 .glow-orb {
   width: 2000px;
   height: 2000px;
   border-radius: 100%;
   background: radial-gradient(
     circle at center,
-    color-mix(in oklch, var(--color-primary) 18%, transparent) 0%,
-    transparent 70%
+    color-mix(in oklch, var(--color-primary) 10%, transparent) 0%,
+    transparent 65%
   );
   transform: translate(-50%, -50%);
   top: 40%;
@@ -236,7 +303,7 @@
 }
 
 /* =====================
-   CTA FINAL — highlights radial (pseudo-élément, inexprimable en Tailwind)
+   CTA FINAL — highlights radial
 ===================== */
 .cta-box::before {
   content: "";
@@ -249,7 +316,7 @@
 }
 
 /* =====================
-   PROJETS — shimmer top border (pseudo-élément, inexprimable en Tailwind)
+   PROJETS — shimmer top border
 ===================== */
 .project-card::before {
   content: "";
@@ -270,10 +337,8 @@
 }
 
 /* =====================
-   BENTO GRID — grid-template-areas (non exprimable en Tailwind pur)
+   BENTO GRID — grid-template-areas
 ===================== */
-
-/* Ordre tablet (md = 768px) : bascule sur --order-md */
 @media (min-width: 768px) {
   .bento-grid > * {
     order: var(--order-md);
