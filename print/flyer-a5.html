@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flyer A5 — Yiroma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f1f5f9;
+        font-family: "DM Sans", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 48px;
+        padding: 48px 24px;
+      }
+
+      h1 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: #4b5b6e;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .label {
+        font-size: 11px;
+        color: #94a3b8;
+        text-align: center;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      /* A5 = 148 × 210 mm → à 96dpi ≈ 559 × 794 px */
+      .flyer {
+        width: 559px;
+        height: 794px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+        position: relative;
+      }
+
+      .logo-svg {
+        display: block;
+      }
+
+      /* ==============================
+       RECTO
+    ============================== */
+      .flyer-recto {
+        background: #0f172a;
+        display: flex;
+        flex-direction: column;
+        height: 794px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Diagonale montante ↗ */
+      .flyer-recto::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: repeating-linear-gradient(
+          -45deg,
+          rgba(255, 255, 255, 0.012) 0,
+          rgba(255, 255, 255, 0.012) 1px,
+          transparent 0,
+          transparent 50%
+        );
+        background-size: 22px 22px;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .deco-blob-1 {
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        background: #2563eb;
+        filter: blur(90px);
+        opacity: 0.22;
+        top: -100px;
+        left: -60px;
+        pointer-events: none;
+      }
+
+      .deco-blob-2 {
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: #3b82f6;
+        filter: blur(80px);
+        opacity: 0.16;
+        top: -60px;
+        right: -60px;
+        pointer-events: none;
+      }
+
+      .deco-blob-3 {
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: #60a5fa;
+        filter: blur(70px);
+        opacity: 0.14;
+        bottom: 120px;
+        left: -60px;
+        pointer-events: none;
+      }
+
+      .deco-spotlights {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse 55% 40% at 5% 8%, rgba(37, 99, 235, 0.2) 0%, transparent 60%),
+          radial-gradient(ellipse 40% 35% at 95% 85%, rgba(96, 165, 250, 0.12) 0%, transparent 55%),
+          radial-gradient(ellipse 30% 20% at 50% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 65%);
+        pointer-events: none;
+      }
+
+      .deco-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #2563eb, #0ea5e9);
+        z-index: 1;
+      }
+
+      /* Header */
+      .recto-header {
+        padding: 36px 44px 0;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .header-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .header-brand-name {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        color: #ffffff;
+        letter-spacing: -0.03em;
+      }
+
+      .badge {
+        background: rgba(37, 99, 235, 0.15);
+        border: 1px solid rgba(37, 99, 235, 0.3);
+        color: #93c5fd;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        border-radius: 999px;
+      }
+
+      /* Hero */
+      .recto-hero {
+        padding: 20px 44px 0;
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+
+      .recto-hero-text {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        color: #ffffff;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+        text-align: center;
+      }
+
+      .hero-title .gradient-text {
+        background: linear-gradient(
+          90deg,
+          #2563eb 0%,
+          #60a5fa 35%,
+          #bfdbfe 55%,
+          #60a5fa 75%,
+          #2563eb 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-subtitle {
+        font-size: 12px;
+        color: #94a3b8;
+        line-height: 1.65;
+        max-width: 360px;
+        margin: 0 auto 20px;
+        text-align: center;
+      }
+
+      .services-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 16px;
+        width: 100%;
+        margin: auto 28px;
+      }
+
+      .service-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        color: #e2e8f0;
+      }
+
+      .service-row .icon {
+        width: 20px;
+        height: 20px;
+        background: rgba(37, 99, 235, 0.2);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .service-row .icon svg {
+        width: 11px;
+        height: 11px;
+        stroke: #60a5fa;
+        fill: none;
+        stroke-width: 2;
+      }
+
+      /* Illustration hero */
+      .recto-hero-illustration {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0 6px;
+        flex-shrink: 0;
+      }
+
+      .recto-hero-illustration img {
+        height: 240px;
+        width: auto;
+        opacity: 0.92;
+        filter: drop-shadow(0 12px 32px rgba(37, 99, 235, 0.35));
+      }
+
+      /* Bandeau arguments */
+      .args-strip {
+        background: rgba(37, 99, 235, 0.08);
+        border-top: 1px solid rgba(37, 99, 235, 0.15);
+        padding: 16px 44px;
+        display: flex;
+        position: relative;
+        z-index: 1;
+      }
+
+      .arg-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3px;
+        padding: 0 8px;
+        border-right: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .arg-item:last-child {
+        border-right: none;
+      }
+
+      .arg-value {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        color: #2563eb;
+        line-height: 1;
+      }
+
+      .arg-label {
+        font-size: 8.5px;
+        color: #64748b;
+        line-height: 1.3;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      /* Footer recto */
+      .recto-footer {
+        background: rgba(15, 23, 42, 0.9);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 16px 44px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+      }
+
+      .footer-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .footer-contact-row {
+        font-size: 10px;
+        color: #a0afc6;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .footer-contact-row .dot {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: #2563eb;
+      }
+
+      .footer-contact-row strong {
+        color: #a0afc6;
+        font-weight: 500;
+      }
+
+      .footer-qr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .qr-box {
+        width: 52px;
+        height: 52px;
+        background: #ffffff;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+      }
+
+      .qr-box img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .qr-label {
+        font-size: 8px;
+        color: #a0afc6;
+        text-align: center;
+        letter-spacing: 0.04em;
+      }
+
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+          gap: 0;
+        }
+        h1,
+        .label,
+        p {
+          display: none;
+        }
+        .flyer {
+          box-shadow: none;
+          border-radius: 0;
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flyer A5 — Yiroma · Aperçu</h1>
+    <p
+      style="
+        font-size: 12px;
+        color: #64748b;
+        text-align: center;
+        max-width: 500px;
+        line-height: 1.6;
+      "
+    >
+      Format A5 148 × 210 mm · Recto et verso · Cible TPE/PME
+    </p>
+
+    <!-- ======================== RECTO ======================== -->
+    <div>
+      <p class="label">Recto</p>
+      <div class="flyer flyer-recto">
+        <div class="deco-line"></div>
+        <div class="deco-blob-1"></div>
+        <div class="deco-blob-2"></div>
+        <div class="deco-blob-3"></div>
+        <div class="deco-spotlights"></div>
+
+        <div class="recto-header">
+          <div class="header-brand">
+            <svg
+              class="logo-svg"
+              width="36"
+              height="27"
+              viewBox="0 0 381 287"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              style="color: #2563eb"
+            >
+              <path
+                d="M104.435 276.388L256.989 11.1829C257.373 10.5163 256.892 9.6843 256.122 9.6843H11.359C10.4702 9.6843 10.023 10.757 10.6487 11.3883L106.515 108.104C106.834 108.425 106.897 108.921 106.669 109.312L9.83648 275.385C9.44777 276.052 9.92866 276.889 10.7004 276.889H103.568C103.926 276.889 104.257 276.698 104.435 276.388Z"
+                fill="currentColor"
+              />
+              <path
+                d="M371.152 100.343C371.152 41.4702 314.657 13.4598 307.255 10.0425C306.795 9.83001 306.268 10.0157 306.016 10.4554L153.889 275.391C153.507 276.058 153.988 276.889 154.757 276.889H368.776C369.661 276.889 370.11 275.823 369.491 275.19L292.629 196.597C292.089 196.045 292.332 195.117 293.077 194.913C316.981 188.358 371.152 161.868 371.152 100.343Z"
+                fill="currentColor"
+              />
+              <path
+                d="M104.435 276.388L256.989 11.1829C257.373 10.5163 256.892 9.6843 256.122 9.6843H11.359C10.4702 9.6843 10.023 10.757 10.6487 11.3883L106.515 108.104C106.834 108.425 106.897 108.921 106.669 109.312L9.83648 275.385C9.44777 276.052 9.92866 276.889 10.7004 276.889H103.568C103.926 276.889 104.257 276.698 104.435 276.388Z"
+                stroke="currentColor"
+                stroke-width="19.3686"
+              />
+              <path
+                d="M371.152 100.343C371.152 41.4702 314.657 13.4598 307.255 10.0425C306.795 9.83001 306.268 10.0157 306.016 10.4554L153.889 275.391C153.507 276.058 153.988 276.889 154.757 276.889H368.776C369.661 276.889 370.11 275.823 369.491 275.19L292.629 196.597C292.089 196.045 292.332 195.117 293.077 194.913C316.981 188.358 371.152 161.868 371.152 100.343Z"
+                stroke="currentColor"
+                stroke-width="19.3686"
+              />
+            </svg>
+            <div class="header-brand-name">Yiroma</div>
+          </div>
+          <div class="badge">Création de site internet & Solutions digitales</div>
+        </div>
+
+        <div class="recto-hero">
+          <div class="recto-hero-illustration">
+            <img src="../public/hero.svg" alt="Illustration développeur web" />
+          </div>
+
+          <div class="recto-hero-text">
+            <h2 class="hero-title">
+              Du site vitrine à l'application métier,<br />
+              je construis votre
+              <span class="gradient-text">présence digitale.</span>
+            </h2>
+            <p class="hero-subtitle">
+              Je conçois, je développe — pour les artisans, commerçants et entreprises de la région
+              orléanaise et de toute la France.
+            </p>
+
+            <div class="services-list">
+              <div class="service-row">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M3 9h18" />
+                    <path d="M9 21V9" />
+                  </svg>
+                </div>
+                Création de site internet
+              </div>
+              <div class="service-row">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                </div>
+                Audit SEO &amp; référencement
+              </div>
+              <div class="service-row">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 20h9" />
+                    <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                  </svg>
+                </div>
+                Refonte &amp; modernisation
+              </div>
+              <div class="service-row">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="16 18 22 12 16 6" />
+                    <polyline points="8 6 2 12 8 18" />
+                  </svg>
+                </div>
+                Développement sur-mesure
+              </div>
+              <div class="service-row">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 1.657-1.343 3-3 3h-1.5a2 2 0 0 0-2 2c0 .552.225 1.052.586 1.414A2 2 0 0 1 16 20a4 4 0 0 1-4 2z"
+                    />
+                    <circle cx="8.5" cy="10.5" r="1" />
+                    <circle cx="12" cy="7.5" r="1" />
+                    <circle cx="15.5" cy="10.5" r="1" />
+                  </svg>
+                </div>
+                Identité visuelle &amp; charte
+              </div>
+              <div class="service-row">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <path d="M8 21h8" />
+                    <path d="M12 17v4" />
+                  </svg>
+                </div>
+                Application web métier
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bandeau arguments clés -->
+        <div class="args-strip">
+          <div class="arg-item">
+            <div class="arg-value">Devis</div>
+            <div class="arg-label">Gratuit · 24h</div>
+          </div>
+          <div class="arg-item">
+            <div class="arg-value">A → Z</div>
+            <div class="arg-label">Livraison complète</div>
+          </div>
+          <div class="arg-item">
+            <div class="arg-value">Site rapide</div>
+            <div class="arg-label">& professionnel</div>
+          </div>
+          <div class="arg-item">
+            <div class="arg-value">SEO & IA</div>
+            <div class="arg-label">Visible & bien classé</div>
+          </div>
+        </div>
+
+        <div class="recto-footer">
+          <div class="footer-contact">
+            <div class="footer-contact-row">
+              <span class="dot"></span>
+              <span><strong>contact@yiroma.fr</strong></span>
+            </div>
+            <div class="footer-contact-row">
+              <span class="dot"></span>
+              <span><strong>06 95 38 60 99</strong></span>
+            </div>
+            <div class="footer-contact-row">
+              <span class="dot"></span>
+              <span>Orléans & région · Remote France</span>
+            </div>
+          </div>
+
+          <div class="footer-qr">
+            <div class="qr-box">
+              <img src="../public/qr-yiroma.svg" alt="QR code yiroma.fr" />
+            </div>
+            <div class="qr-label">yiroma.fr</div>
+          </div>
+        </div>
+        <div style="background:rgba(0,0,0,0.25);border-top:1px solid rgba(255,255,255,0.06);padding:5px 44px;display:flex;justify-content:flex-end;position:relative;z-index:1;">
+          <span style="font-size:7.5px;color:#475569;letter-spacing:0.03em;">Illustration : vectorjuice on Freepik</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
