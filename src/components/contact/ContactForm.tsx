@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import emailjs from "@emailjs/browser";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Mail, Phone, MapPin, Lock, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -34,33 +33,79 @@ const PROJECT_TYPES = [
   { value: "unknown", label: "Je ne sais pas encore" },
 ] as const;
 
+declare global {
+  interface Window {
+    turnstile: {
+      render: (container: HTMLElement, options: Record<string, unknown>) => string;
+      reset: (widgetId: string) => void;
+    };
+  }
+}
+
 export function ContactForm() {
   const [formState, setFormState] = useState<FormState>("idle");
   const [projectType, setProjectType] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    const scriptId = "turnstile-script";
+    if (document.getElementById(scriptId)) return;
+
+    const script = document.createElement("script");
+    script.id = scriptId;
+    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      if (turnstileRef.current && window.turnstile) {
+        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+          sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
+          callback: (token: string) => setTurnstileToken(token),
+          "expired-callback": () => setTurnstileToken(null),
+          "error-callback": () => setTurnstileToken(null),
+          appearance: "always",
+          theme: "auto",
+        });
+      }
+    };
+    document.head.appendChild(script);
+  }, []);
 
   async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    if (!turnstileToken) return;
+
     setFormState("submitting");
 
     const form = e.currentTarget;
     const data = new FormData(form);
 
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
+      const response = await fetch(process.env.NEXT_PUBLIC_WORKER_URL!, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          turnstileToken,
           from_name: data.get("fullName"),
           from_email: data.get("email"),
           phone: data.get("phone") || "Non renseigné",
           service_type: PROJECT_TYPES.find((t) => t.value === projectType)?.label ?? projectType,
           message: data.get("message"),
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
-      );
+        }),
+      });
+
+      if (!response.ok) throw new Error("Worker error");
+
       setFormState("success");
     } catch {
       setFormState("error");
+      if (widgetIdRef.current && window.turnstile) {
+        window.turnstile.reset(widgetIdRef.current);
+        setTurnstileToken(null);
+      }
     }
   }
 
@@ -196,6 +241,10 @@ export function ContactForm() {
                       />
                     </motion.div>
 
+                    <motion.div variants={staggerItem}>
+                      <div ref={turnstileRef} />
+                    </motion.div>
+
                     <AnimatePresence>
                       {formState === "error" && (
                         <motion.p
@@ -223,7 +272,7 @@ export function ContactForm() {
                     >
                       <button
                         type="submit"
-                        disabled={formState === "submitting"}
+                        disabled={formState === "submitting" || !turnstileToken}
                         className={cn(
                           buttonVariants({ size: "lg" }),
                           "disabled:cursor-not-allowed disabled:opacity-60",
