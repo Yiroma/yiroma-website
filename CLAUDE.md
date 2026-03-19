@@ -163,6 +163,6 @@
 - [x] Déploiement — export statique Next.js (`output: 'export'`)
 - [x] Déploiement — mise en ligne sur Hostinger
 - [x] Tests Lighthouse (post-déploiement — cible > 90 sur toutes les pages)
-- [ ] Gatcha pour le formulaire de contact
-- [ ] Analytics — ajoute les trackers analytics
-- [ ] Coockies — ajoute un popup de consentement de coockies
+- [x] Gatcha pour le formulaire de contact
+- [x] Analytics — GA4 intégré (NEXT_PUBLIC_GA_ID, chargement conditionnel au consentement)
+- [x] Cookies — popup consentement RGPD (CookieBanner + useCookieConsent + localStorage)
