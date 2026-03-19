@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { CookieBanner } from "@/components/analytics/CookieBanner";
 
 const fontSans = DM_Sans({
   subsets: ["latin"],
@@ -229,9 +231,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <GoogleAnalytics />
           <Navbar />
           {children}
           <Footer />
+          <CookieBanner />
         </ThemeProvider>
       </body>
     </html>
