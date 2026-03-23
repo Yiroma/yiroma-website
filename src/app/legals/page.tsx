@@ -182,9 +182,6 @@ export default function MentionsLegales() {
               vectorjuice on Freepik
             </a>
           </li>
-          <li>Page « services » : en cours</li>
-          <li>Page « tarifs » : en cours</li>
-          <li>Page « contact » : en cours</li>
         </ul>
       </section>
     </main>

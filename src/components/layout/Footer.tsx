@@ -77,7 +77,7 @@ export function Footer() {
 
           <div className="flex gap-4">
             <Link
-              href="/mentions-legales"
+              href="/legals"
               className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-150"
             >
               Mentions légales
