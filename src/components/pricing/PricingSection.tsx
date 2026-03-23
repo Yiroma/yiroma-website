@@ -37,7 +37,9 @@ export function PricingSection() {
           viewport={{ once: true, amount: 0.1 }}
         >
           {webPlans.map((plan) => (
-            <PricingCard key={plan.name} plan={plan} />
+            <div key={plan.name} id={plan.id}>
+              <PricingCard plan={plan} />
+            </div>
           ))}
         </motion.div>
 

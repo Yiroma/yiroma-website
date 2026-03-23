@@ -1,6 +1,6 @@
 # Yiroma — Site vitrine freelance
 
-Site vitrine de **Romaric Yi**, développeur Full Stack Freelance. Conçu pour démarcher les entreprises locales de la région orléanaise et servir de vitrine technique (performance, SEO, accessibilité).
+Site vitrine de **Yiroma**, développeur Full Stack Freelance. Conçu pour démarcher les entreprises locales de la région orléanaise et servir de vitrine technique (performance, SEO, accessibilité).
 
 **Production :** [yiroma.fr](https://yiroma.fr)
 
@@ -15,7 +15,7 @@ Site vitrine de **Romaric Yi**, développeur Full Stack Freelance. Conçu pour d
 | Style       | Tailwind CSS 4 · ShadcnUI                       |
 | Composants  | @base-ui/react · Lucide React · next-themes     |
 | Animations  | Framer Motion 12                                |
-| Formulaire  | EmailJS (client-side, sans backend)             |
+| Formulaire  | Cloudflare Worker + Turnstile (captcha RGPD)    |
 | Analytics   | Google Analytics 4 (consentement RGPD)          |
 | Déploiement | Export statique → rsync SSH → Hostinger         |
 | CI/CD       | GitHub Actions (lint + deploy)                  |
@@ -26,14 +26,14 @@ Site vitrine de **Romaric Yi**, développeur Full Stack Freelance. Conçu pour d
 
 ## Pages
 
-| Route               | Description                                          |
-| ------------------- | ---------------------------------------------------- |
-| `/`                 | Home — Hero, services, différenciateurs, tarifs, CTA |
-| `/services`         | Détail des 5 services                                |
-| `/pricing`          | 4 forfaits + add-ons + FAQ                           |
-| `/contact`          | Formulaire de contact + coordonnées                  |
-| `/cgv`              | Conditions Générales de Vente                        |
-| `/mentions-legales` | Mentions légales                                     |
+| Route       | Description                                          |
+| ----------- | ---------------------------------------------------- |
+| `/`         | Home — Hero, services, différenciateurs, tarifs, CTA |
+| `/services` | Détail des 5 services                                |
+| `/pricing`  | 4 forfaits + add-ons + FAQ                           |
+| `/contact`  | Formulaire de contact + coordonnées                  |
+| `/cgv`      | Conditions Générales de Vente                        |
+| `/legals`   | Mentions légales                                     |
 
 ---
 
@@ -58,11 +58,11 @@ Copier le fichier d'environnement et renseigner les valeurs :
 cp .env.sample .env.local
 ```
 
-| Variable                         | Description                                 |
-| -------------------------------- | ------------------------------------------- |
-| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Clé publique Cloudflare Turnstile (captcha) |
-| `NEXT_PUBLIC_WORKER_URL`         | URL du Worker pour le formulaire contact    |
-| `NEXT_PUBLIC_GA_ID`              | Identifiant de mesure Google Analytics 4    |
+| Variable                         | Description                                      |
+| -------------------------------- | ------------------------------------------------ |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Clé publique Cloudflare Turnstile (captcha)      |
+| `NEXT_PUBLIC_WORKER_URL`         | URL du Cloudflare Worker (formulaire de contact) |
+| `NEXT_PUBLIC_GA_ID`              | Identifiant de mesure Google Analytics 4         |
 
 ---
 
@@ -98,15 +98,15 @@ Déclenché sur chaque **push vers `main`** :
 
 **Secrets GitHub requis :**
 
-| Secret                           | Description                       |
-| -------------------------------- | --------------------------------- |
-| `SSH_PRIVATE_KEY`                | Clé privée SSH                    |
-| `SSH_HOST`                       | Hôte du serveur                   |
-| `SSH_PORT`                       | Port SSH                          |
-| `SSH_USERNAME`                   | Utilisateur SSH                   |
-| `SSH_TARGET_PATH`                | Chemin cible (ex: `public_html/`) |
-| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Clé Turnstile (build)             |
-| `NEXT_PUBLIC_WORKER_URL`         | URL Worker (build)                |
+| Secret                           | Description                             |
+| -------------------------------- | --------------------------------------- |
+| `SSH_PRIVATE_KEY`                | Clé privée SSH                          |
+| `SSH_HOST`                       | Hôte du serveur                         |
+| `SSH_PORT`                       | Port SSH                                |
+| `SSH_USERNAME`                   | Utilisateur SSH                         |
+| `SSH_TARGET_PATH`                | Chemin cible (ex: `public_html/`)       |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Clé Turnstile injectée au build         |
+| `NEXT_PUBLIC_WORKER_URL`         | URL Cloudflare Worker injectée au build |
 
 ### Stratégie de branches
 
@@ -138,7 +138,7 @@ Sur chaque commit :
 
 ### Cible de performance
 
-Lighthouse > 90 sur toutes les pages (performance, accessibilité, SEO, best practices).
+Lighthouse 100% sur toutes les pages (performance, accessibilité, SEO, best practices).
 
 ---
 
@@ -169,11 +169,8 @@ docs/                 # Documentation du projet
 
 | Document                 | Lien                                                         |
 | ------------------------ | ------------------------------------------------------------ |
-| Brainstorm & plan        | [docs/brainstorm.md](docs/brainstorm.md)                     |
 | Architecture déploiement | [docs/deployment.md](docs/deployment.md)                     |
 | Design System            | [docs/design/design-system.md](docs/design/design-system.md) |
-| Audit SEO/GEO            | [docs/seo-geo-audit.md](docs/seo-geo-audit.md)               |
-| Plan animations          | [docs/animations-plan.md](docs/animations-plan.md)           |
 | Instructions Claude      | [CLAUDE.md](CLAUDE.md)                                       |
 
 ---

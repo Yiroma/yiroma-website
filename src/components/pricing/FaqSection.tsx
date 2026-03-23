@@ -32,7 +32,7 @@ export function FaqSection() {
         >
           <Accordion multiple>
             {faqs.map((faq, index) => (
-              <motion.div key={index} variants={staggerItem}>
+              <motion.div key={faq.question} variants={staggerItem}>
                 <AccordionItem value={String(index)}>
                   <AccordionTrigger className="text-foreground text-sm font-semibold hover:no-underline">
                     {faq.question}

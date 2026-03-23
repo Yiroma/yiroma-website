@@ -72,7 +72,7 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
 
         <motion.div variants={staggerItem} animate={open ? "visible" : "hidden"} initial="hidden">
           <Link
-            href={navLinks.find((l) => l.href === "/contact")!.href}
+            href={navLinks[3].href}
             onClick={() => setOpen(false)}
             className={cn(
               "bg-primary mt-4 flex w-full items-center justify-center rounded-md px-4 py-2.5",

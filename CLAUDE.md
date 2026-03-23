@@ -18,16 +18,13 @@
 
 ## 📂 Documents de référence
 
-| Document                      | Lien                                                         |
-| ----------------------------- | ------------------------------------------------------------ |
-| Brainstorm & plan de route    | [docs/brainstorm.md](docs/brainstorm.md)                     |
-| Architecture déploiement      | [docs/deployment.md](docs/deployment.md)                     |
-| Design System                 | [docs/design/design-system.md](docs/design/design-system.md) |
-| Audit & plan SEO/GEO          | [docs/seo-geo-audit.md](docs/seo-geo-audit.md)               |
-| Plan animations Framer Motion | [docs/animations-plan.md](docs/animations-plan.md)           |
+| Document                 | Lien                                                         |
+| ------------------------ | ------------------------------------------------------------ |
+| Architecture déploiement | [docs/deployment.md](docs/deployment.md)                     |
+| Design System            | [docs/design/design-system.md](docs/design/design-system.md) |
+| Conventions              | [docs/conventions/](docs/conventions/)                       |
 
 > Le design system est la référence pour toutes les décisions visuelles.
-> Le fichier seo-geo-audit.md est la référence pour l'état d'avancement SEO/GEO et les actions restantes.
 
 ---
 
@@ -129,40 +126,3 @@
 - Pattern correct pour un bouton-lien : `<Link className={cn(buttonVariants({ ... }))}>`
 - Tailwind en priorité ; CSS vanilla uniquement pour ce qui est inexprimable (ex : `grid-template-areas`)
 - `z-index` : utiliser le minimum nécessaire, ne pas dupliquer sur un enfant si le parent crée déjà le stacking context
-
----
-
-## 🚧 Statut du projet
-
-- [x] Brainstorming & positionnement
-- [x] Architecture des pages (wireframes)
-- [x] Copywriting home
-- [x] Copywriting services (5 services : Création · Refonte · Identité visuelle · Audit SEO/GEO · Dev applicatif)
-- [x] Copywriting tarifs
-- [x] Copywriting contact
-- [x] Design system (palette, typo, composants, tokens ShadcnUI)
-- [x] Prototype visuel home
-- [x] Développement — mise en place du projet Next.js
-- [x] Développement — configuration ESLint / Prettier
-- [x] Développement — stratégie de branches Git (main ← dev ← feat/\*)
-- [x] Développement — composants communs (Navbar ✅ · Footer ✅ · CTA)
-- [x] Développement — page Home (Hero ✅ · Services ✅ · Pourquoi Yiroma ✅ · Projets · Tarifs résumés · CTA final)
-- [x] Développement — page cgv
-- [x] Développement — page mentions-legales
-- [x] Développement — page Services
-- [x] Développement — page Tarifs (`/pricing`)
-- [x] Développement — page Contact
-- [x] SEO — meta tags, sitemap, robots.txt, Open Graph, Twitter Cards, JSON-LD, canonical (voir [docs/seo-geo-audit.md](docs/seo-geo-audit.md))
-- [ ] SEO — Google Business Profile (action manuelle post-déploiement)
-- [x] SEO — Soumettre sitemap dans Google Search Console (action manuelle post-déploiement)
-- [x] CI/CD — Husky (commitlint · lint-staged · protection .env)
-- [x] CI/CD — GitHub Actions workflow lint (PR feat → dev)
-- [x] CI/CD — GitHub Actions workflow deploy (merge dev → main → Hostinger)
-- [x] Formulaire contact — intégration EmailJS
-- [x] ajouter des animations sur le site avec Framer Motion
-- [x] Déploiement — export statique Next.js (`output: 'export'`)
-- [x] Déploiement — mise en ligne sur Hostinger
-- [x] Tests Lighthouse (post-déploiement — cible > 90 sur toutes les pages)
-- [x] Gatcha pour le formulaire de contact
-- [x] Analytics — GA4 intégré (NEXT_PUBLIC_GA_ID, chargement conditionnel au consentement)
-- [x] Cookies — popup consentement RGPD (CookieBanner + useCookieConsent + localStorage)
