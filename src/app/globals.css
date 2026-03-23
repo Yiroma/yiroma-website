@@ -205,11 +205,11 @@
 
 .section-blob-1 {
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
   border-radius: 50%;
   filter: blur(90px);
-  opacity: 0.15;
+  opacity: 0.22;
   top: -10%;
   left: 5%;
   background: color-mix(in oklch, var(--color-primary) 70%, transparent);
@@ -218,11 +218,11 @@
 
 .section-blob-2 {
   position: absolute;
-  width: 480px;
-  height: 480px;
+  width: 560px;
+  height: 560px;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.2;
+  opacity: 0.28;
   top: -5%;
   right: 5%;
   background: color-mix(in oklch, var(--color-primary) 55%, var(--color-background));
@@ -231,11 +231,11 @@
 
 .section-blob-3 {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 480px;
+  height: 480px;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.15;
+  opacity: 0.2;
   bottom: -10%;
   left: 40%;
   background: color-mix(in oklch, var(--color-primary) 45%, var(--color-background));
@@ -284,23 +284,6 @@
   );
 }
 
-/* Orbs light */
-.glow-orb {
-  width: 2000px;
-  height: 2000px;
-  border-radius: 100%;
-  background: radial-gradient(
-    circle at center,
-    color-mix(in oklch, var(--color-primary) 10%, transparent) 0%,
-    transparent 65%
-  );
-  transform: translate(-50%, -50%);
-  top: 40%;
-  left: 30%;
-  transition:
-    top 0.08s ease-out,
-    left 0.08s ease-out;
-}
 
 /* =====================
    CTA FINAL — highlights radial
@@ -399,8 +382,5 @@
   * {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
-  }
-  .glow-orb {
-    transition: none !important;
   }
 }

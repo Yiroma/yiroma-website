@@ -171,4 +171,4 @@
 - [x] fix: défaut d'animation dans la navbar. La ligne bleu qui signale se quel page on se trouve ne fonctionne plus sur "Services, Tarifs et Contact" (n'apparait que sous "Accueil")
 - [x] fix: erreur de link de "PricingPreview". le bouton "Voir le détail des tarifs pointe vers "Services" au lieu de "Tarifs".
 - [x] chore: Intituler inexact dans le footer.
-- [ ] style: Améliorer l'annimation orbEffect et blob. L'orbEffect ne suis plus le curseur. il semblerait que le calcule de trajectoire créer un ping.
+- [x] style: Suppression de l'orbEffect (lag/reflow), blobs légèrement agrandis et plus visibles pour compenser.
