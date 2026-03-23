@@ -18,7 +18,7 @@ export function Footer() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <motion.div variants={staggerItem} className="max-w-xs">
+          <motion.div variants={staggerItem}>
             <Link
               href="/"
               className="text-foreground mb-3 inline-flex items-center gap-2 font-bold"
@@ -45,7 +45,7 @@ export function Footer() {
             </div>
 
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Développeur Full Stack Freelance
+              Création de sites internet, refonte & développement sur-mesure
               <br />
               Châteauneuf-sur-Loire (45) · Région Orléanaise
               <br />
