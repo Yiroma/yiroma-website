@@ -10,17 +10,15 @@ src/
 │   ├── globals.css             # CSS global, tokens Tailwind
 │   ├── services/
 │   │   └── page.tsx
-│   ├── portfolio/
-│   │   └── page.tsx
-│   ├── tarifs/
+│   ├── pricing/
 │   │   └── page.tsx
 │   └── contact/
 │       └── page.tsx
 ├── components/
 │   ├── ui/                     # Composants ShadcnUI (ne pas modifier directement)
 │   ├── layout/                 # Navbar, Footer
-│   ├── sections/               # Sections de page (Hero, Services, Portfolio...)
-│   └── theme-provider.tsx
+│   └── home/ services/ pricing/ contact/  # Sections par page
+├── data/                       # Données statiques (nav, pricing, services...)
 ├── lib/
 │   └── utils.ts                # Fonction cn() et utilitaires
 ├── hooks/                      # Hooks React custom
@@ -110,7 +108,5 @@ export function ServiceCard({ title, description, icon }: ServiceCardProps) {
 
 ## Contenu
 
-- Le contenu des pages est défini dans [docs/copywrights/](../copywrights/)
-- Ne jamais écrire du contenu directement dans le code sans se référer au copywriting validé
 - La langue du contenu est le **français** (vouvoiement)
 - Les identifiants, classes et variables restent en **anglais**
