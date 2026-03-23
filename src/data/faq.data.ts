@@ -4,7 +4,6 @@ export type FaqItem = {
 };
 
 export const faqs: FaqItem[] = [
-  // Avant de contacter
   {
     question: "Le devis est-il vraiment gratuit et sans engagement ?",
     answer:
@@ -20,7 +19,6 @@ export const faqs: FaqItem[] = [
     answer:
       "Avec une agence, vous avez un commercial, un chef de projet, un designer, un développeur — et une facture qui reflète tout ça. Avec moi, vous avez un interlocuteur unique qui gère de A à Z : conception, développement, mise en ligne. Moins d'intermédiaires, plus de réactivité, et des tarifs cohérents avec la réalité d'un projet TPE/PME.",
   },
-  // Pendant le projet
   {
     question: "Comment se passe le paiement ?",
     answer:
@@ -36,7 +34,6 @@ export const faqs: FaqItem[] = [
     answer:
       "Je travaille en présentiel sur Châteauneuf-sur-Loire et la région orléanaise, et en full remote pour toute la France.",
   },
-  // Après livraison
   {
     question: "À qui appartient le site une fois livré ?",
     answer:
@@ -52,7 +49,6 @@ export const faqs: FaqItem[] = [
     answer:
       "Je vous conseille et vous accompagne dans le choix de votre hébergeur selon votre budget et vos besoins. Vous souscrivez directement — vous restez propriétaire de votre infrastructure.",
   },
-  // Technique
   {
     question: "Avec quelles technologies travaillez-vous ?",
     answer:

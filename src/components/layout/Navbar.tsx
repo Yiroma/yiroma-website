@@ -18,8 +18,6 @@ export function Navbar() {
     <motion.header
       style={{ "--nav-bg-opacity": bgOpacity } as React.CSSProperties}
       className="border-border sticky top-0 z-50 w-full border-b backdrop-blur-md"
-      // Opacité du fond pilotée par le scroll via une variable CSS
-      // bg-background/80 est remplacé par une inline style pour le contrôle fin
     >
       <div
         className="bg-background absolute inset-0"
@@ -71,7 +69,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link
-            href={navLinks.find((l) => l.href === "/contact")!.href}
+            href={navLinks[3].href}
             className={cn(
               "bg-primary text-primary-foreground hidden rounded-md px-4 py-2 text-sm font-medium md:inline-flex dark:bg-blue-700",
               "transition-all duration-150 hover:brightness-90",

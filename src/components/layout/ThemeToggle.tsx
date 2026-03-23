@@ -41,7 +41,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
   return (
     <button
       onClick={handleToggle}
-      aria-label={resolvedTheme === "dark" ? "Activer le mode clair" : "Activer le mode sombre"}
+      aria-label="Changer le thème"
       className={cn(
         "flex h-9 w-9 items-center justify-center rounded-md",
         "border-border bg-background text-muted-foreground border",

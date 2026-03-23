@@ -3,9 +3,9 @@
 import { useCookieConsent } from "@/hooks/useCookieConsent";
 
 export function CookieBanner() {
-  const { hasDecided, accept, refuse } = useCookieConsent();
+  const { hasDecided, isHydrated, accept, refuse } = useCookieConsent();
 
-  if (hasDecided) return null;
+  if (!isHydrated || hasDecided) return null;
 
   return (
     <div className="border-border bg-background/95 fixed right-0 bottom-0 left-0 z-50 border-t px-4 py-4 shadow-lg backdrop-blur-sm sm:px-6">

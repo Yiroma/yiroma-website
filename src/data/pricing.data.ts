@@ -1,4 +1,5 @@
 export type PricingPlan = {
+  id: string;
   name: string;
   tagline: string;
   price: string;
@@ -11,6 +12,7 @@ export type PricingPlan = {
 
 export const webPlans: PricingPlan[] = [
   {
+    id: "starter",
     name: "Starter",
     tagline: "La présence en ligne essentielle",
     price: "À partir de 600€",
@@ -27,6 +29,7 @@ export const webPlans: PricingPlan[] = [
     cta: "Demander un devis",
   },
   {
+    id: "pro",
     name: "Pro",
     tagline: "Votre vitrine professionnelle complète",
     price: "À partir de 1400€",
@@ -45,6 +48,7 @@ export const webPlans: PricingPlan[] = [
     cta: "Demander un devis",
   },
   {
+    id: "ecommerce",
     name: "E-commerce & CMS",
     tagline: "Vendez en ligne ou gérez votre contenu en autonomie",
     price: "À partir de 3200€",
@@ -64,6 +68,7 @@ export const webPlans: PricingPlan[] = [
     cta: "Demander un devis",
   },
   {
+    id: "sur-mesure",
     name: "Sur-mesure",
     tagline: "Pour les projets complexes et les besoins spécifiques",
     price: "Sur devis",
@@ -84,6 +89,7 @@ export const webPlans: PricingPlan[] = [
 
 export const addonPlans: PricingPlan[] = [
   {
+    id: "logo",
     name: "Création de logo",
     tagline: "Une identité visuelle qui vous ressemble",
     price: "À partir de 450€",
@@ -98,6 +104,7 @@ export const addonPlans: PricingPlan[] = [
     cta: "Demander un devis",
   },
   {
+    id: "charte",
     name: "Charte graphique",
     tagline: "Un socle visuel cohérent pour toutes vos communications",
     price: "À partir de 1200€",
@@ -113,6 +120,7 @@ export const addonPlans: PricingPlan[] = [
     cta: "Demander un devis",
   },
   {
+    id: "audit-seo",
     name: "Audit SEO / GEO",
     tagline: "Identifiez ce qui freine votre visibilité en ligne",
     price: "À partir de 600€",

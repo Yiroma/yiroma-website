@@ -1,18 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type ConsentStatus = "accepted" | "refused" | null;
 
 const STORAGE_KEY = "cookie_consent";
 
-function getStoredConsent(): ConsentStatus {
-  if (typeof window === "undefined") return null;
-  return localStorage.getItem(STORAGE_KEY) as ConsentStatus;
-}
-
 export function useCookieConsent() {
-  const [consent, setConsent] = useState<ConsentStatus>(getStoredConsent);
+  const [consent, setConsent] = useState<ConsentStatus>(null);
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setConsent(localStorage.getItem(STORAGE_KEY) as ConsentStatus);
+    setIsHydrated(true);
+  }, []);
 
   function accept() {
     localStorage.setItem(STORAGE_KEY, "accepted");
@@ -26,6 +28,7 @@ export function useCookieConsent() {
 
   return {
     consent,
+    isHydrated,
     hasDecided: consent !== null,
     isAccepted: consent === "accepted",
     accept,
