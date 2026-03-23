@@ -10,6 +10,8 @@ import { webPlans } from "@/data/pricing.data";
 import { navLinks } from "@/data/nav.data";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/motion-variants";
 
+const pricingHref = navLinks.find((l) => l.href === "/pricing/")!.href;
+
 export function PricingPreview() {
   return (
     <section className="bg-background relative z-0 py-16 md:py-24">
@@ -79,9 +81,19 @@ export function PricingPreview() {
                 ))}
               </ul>
 
-              <p className="text-muted-foreground mt-auto border-t border-dashed pt-3 text-[0.6875rem]">
+              <p className="text-muted-foreground border-t border-dashed pt-3 text-[0.6875rem]">
                 Délai estimé : {plan.delay}
               </p>
+
+              <Link
+                href={`${pricingHref}#${plan.id}`}
+                className={cn(
+                  buttonVariants({ variant: plan.highlighted ? "default" : "outline", size: "sm" }),
+                  "mt-auto w-full justify-center text-xs",
+                )}
+              >
+                Voir le détail
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -94,13 +106,7 @@ export function PricingPreview() {
           viewport={{ once: true, amount: 0.5 }}
         >
           <Link
-            href={navLinks[1].href}
-            className={cn(buttonVariants({ variant: "default", size: "sm" }), "gap-1.5")}
-          >
-            Voir le détail des {navLinks[2].label} <ArrowRight size={14} aria-hidden="true" />
-          </Link>
-          <Link
-            href={`${navLinks[2].href}#faq`}
+            href={`${pricingHref}#faq`}
             className="text-primary inline-flex items-center gap-1.5 text-sm font-medium transition-[gap] duration-150 hover:gap-2.5"
           >
             Des questions ? Consultez la FAQ <ArrowRight size={14} aria-hidden="true" />
