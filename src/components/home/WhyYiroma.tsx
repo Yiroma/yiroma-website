@@ -15,7 +15,7 @@ type Argument = {
   alt: string;
 };
 
-const arguments_: Argument[] = [
+const argumentsList: Argument[] = [
   {
     id: "conception",
     label: "Conception",
@@ -77,7 +77,7 @@ export function WhyYiroma() {
         </motion.div>
 
         <div className="flex flex-col">
-          {arguments_.map((arg, index) => {
+          {argumentsList.map((arg, index) => {
             const isEven = index % 2 === 1;
             return (
               <motion.article
