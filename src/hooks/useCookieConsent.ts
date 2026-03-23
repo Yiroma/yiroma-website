@@ -1,32 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useSyncExternalStore } from "react";
 
 type ConsentStatus = "accepted" | "refused" | null;
 
 const STORAGE_KEY = "cookie_consent";
 
-function getStoredConsent(): ConsentStatus {
-  if (typeof window === "undefined") return null;
+function getSnapshot(): ConsentStatus {
   return localStorage.getItem(STORAGE_KEY) as ConsentStatus;
 }
 
+function getServerSnapshot(): ConsentStatus {
+  return null;
+}
+
+function subscribe(callback: () => void) {
+  window.addEventListener("storage", callback);
+  return () => window.removeEventListener("storage", callback);
+}
+
+function dispatchStorage() {
+  window.dispatchEvent(new Event("storage"));
+}
+
 export function useCookieConsent() {
-  const [consent, setConsent] = useState<ConsentStatus>(getStoredConsent);
+  const consent = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   function accept() {
     localStorage.setItem(STORAGE_KEY, "accepted");
-    setConsent("accepted");
+    dispatchStorage();
   }
 
   function refuse() {
     localStorage.setItem(STORAGE_KEY, "refused");
-    setConsent("refused");
+    dispatchStorage();
   }
 
   return {
     consent,
     hasDecided: consent !== null,
+    isHydrated: typeof window !== "undefined",
     isAccepted: consent === "accepted",
     accept,
     refuse,

@@ -167,7 +167,7 @@
 - [x] Analytics — GA4 intégré (NEXT_PUBLIC_GA_ID, chargement conditionnel au consentement)
 - [x] Cookies — popup consentement RGPD (CookieBanner + useCookieConsent + localStorage)
 - [x] fix: error 404 de l'icône 192x192. Vérifier l'erreur et le manifest.
-- [ ] fix: défaut de comportement de CoockieBanner. Si consentement déjà validé dans le local storage, la bannière s'affiche qu'en même et le bouton d'accpetation ou de refus ne fonctionne plus.
+- [x] fix: défaut de comportement de CoockieBanner. Si consentement déjà validé dans le local storage, la bannière s'affiche qu'en même et le bouton d'accpetation ou de refus ne fonctionne plus.
 - [ ] fix: défaut d'animation dans la navbar. La ligne bleu qui signale se quel page on se trouve ne fonctionne plus sur "Services, Tarifs et Contact" (n'apparait que sous "Accueil")
 - [ ] fix: erreur de link de "PricingPreview". le bouton "Voir le détail des tarifs pointe vers "Services" au lieu de "Tarifs".
 - [ ] chore: Intituler inexact dans le footer.
