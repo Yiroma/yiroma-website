@@ -45,7 +45,7 @@ export function HomeHero() {
             variants={fadeInUp}
             className="text-muted-foreground mb-10 max-w-100 text-lg leading-relaxed"
           >
-            Je conçois, je développe — pour les artisans, commerçants et entreprises de la région
+            Je conçois et je développe pour les artisans, commerçants et entreprises de la région
             orléanaise et de toute la France.
           </motion.p>
 

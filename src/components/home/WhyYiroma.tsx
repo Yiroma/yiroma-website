@@ -21,7 +21,7 @@ const argumentsList: Argument[] = [
     label: "Conception",
     title: "Un concepteur, pas seulement un développeur",
     description:
-      "Diplômé Concepteur Développeur d'Application (Bac+4), je pense vos projets en amont — architecture, sécurité, expérience utilisateur — avant d'écrire la première ligne de code.",
+      "Diplômé Concepteur Développeur d'Application (Bac+4), je pense vos projets en amont (architecture, sécurité, expérience utilisateur) avant d'écrire la première ligne de code.",
     illustration: "/brainstrom.svg",
     alt: "Illustration conception et architecture",
   },
@@ -30,7 +30,7 @@ const argumentsList: Argument[] = [
     label: "Communication",
     title: "Je parle votre langue, pas que celle de la technique",
     description:
-      "10 ans de management et de relation client me permettent de comprendre vos vrais besoins — que vous soyez artisan, commerçant, profession libérale ou PME — et de livrer ce qui était vraiment demandé, sans jargon.",
+      "10 ans de management et de relation client me permettent de comprendre vos vrais besoins, que vous soyez artisan, commerçant, profession libérale ou PME, et de livrer ce qui était vraiment demandé, sans jargon.",
     illustration: "/checking.svg",
     alt: "Illustration communication et relation client",
   },
@@ -39,7 +39,7 @@ const argumentsList: Argument[] = [
     label: "Qualité",
     title: "Du code propre, livré dans les temps",
     description:
-      "Architecture structurée, tests automatisés, documentation soignée. Vous recevez un projet maintenable — pas une boîte noire que personne ne peut faire évoluer.",
+      "Architecture structurée, tests automatisés, documentation soignée. Vous recevez un projet maintenable dans le temps.",
     illustration: "/setup.svg",
     alt: "Illustration qualité et rigueur technique",
   },

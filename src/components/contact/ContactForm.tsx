@@ -237,7 +237,7 @@ export function ContactForm() {
                         name="message"
                         required
                         rows={6}
-                        placeholder="Décrivez votre activité, votre besoin ou votre idée — même approximativement."
+                        placeholder="Décrivez votre activité, votre besoin ou votre idée, même approximativement."
                         className="resize-y px-4 py-3"
                       />
                     </motion.div>

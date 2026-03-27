@@ -36,9 +36,9 @@ export function ServicesHero() {
           variants={staggerItem}
           className="text-muted-foreground mx-auto mb-9 max-w-xl text-lg leading-relaxed"
         >
-          Création de site internet, refonte, audit SEO ou développement applicatif sur-mesure — je
-          m&apos;adapte à votre situation, que vous soyez basé à Orléans, dans le Loiret ou ailleurs
-          en France.
+          {`Création de site internet, refonte, audit SEO ou développement applicatif sur-mesure : je
+          m'adapte à votre situation, que vous soyez basé à Orléans, dans le Loiret ou ailleurs
+          en France.`}
         </motion.p>
         <motion.div variants={staggerItem} className="flex flex-wrap justify-center gap-3">
           <Link href={`${navLinks[2].href}`} className={cn(buttonVariants({ size: "lg" }))}>
