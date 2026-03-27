@@ -26,7 +26,7 @@ export const hostContact = {
 
 export const socialLinks = [
   {
-    href: "https://linkedin.com/in/yiromaric",
+    href: "https://www.linkedin.com/company/yiroma",
     label: "LinkedIn",
     icon: IconLinkedin,
   },

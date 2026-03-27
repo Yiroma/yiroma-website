@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ServicesHero } from "@/components/services/ServicesHero";
 import { ServicesList } from "@/components/services/ServicesList";
+import { ProcessSection } from "@/components/services/ProcessSection";
 import { ServicesCtaFinal } from "@/components/services/ServicesCtaFinal";
 import { JsonLdServices } from "@/components/seo/JsonLdServices";
 
@@ -31,6 +32,7 @@ export default function ServicesPage() {
       <JsonLdServices />
       <ServicesHero />
       <ServicesList />
+      <ProcessSection />
       <ServicesCtaFinal />
     </main>
   );

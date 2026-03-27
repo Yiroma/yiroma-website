@@ -23,7 +23,7 @@ const contactJsonLd = {
       addressCountry: "FR",
     },
     sameAs: [
-      "https://linkedin.com/in/yiromaric",
+      "https://www.linkedin.com/company/yiroma",
       "https://github.com/Yiroma",
       "https://www.malt.fr/profile/romaricyi",
     ],
