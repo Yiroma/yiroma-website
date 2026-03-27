@@ -24,8 +24,8 @@ export function ServicesCtaFinal() {
           Pas sûr de ce dont vous avez besoin ?
         </motion.h2>
         <motion.p variants={staggerItem} className="mx-auto mb-9 max-w-md text-base text-white/80">
-          C&apos;est normal. Décrivez-moi votre situation en quelques mots — je vous oriente vers la
-          solution la plus adaptée, sans engagement.
+          {`C'est normal. Décrivez-moi votre situation en quelques mots : je vous oriente vers la
+          solution la plus adaptée, sans engagement.`}
         </motion.p>
         <motion.div variants={staggerItem} className="flex flex-wrap justify-center gap-3">
           <Link
