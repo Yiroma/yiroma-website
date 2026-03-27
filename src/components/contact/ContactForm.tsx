@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin, Lock, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -376,6 +377,18 @@ export function ContactForm() {
                       ))}
                     </div>
                   </div>
+
+                  <motion.div variants={staggerItem} className="flex justify-center">
+                    <Image
+                      src="/contact.svg"
+                      alt=""
+                      width={260}
+                      height={260}
+                      className="h-auto w-65"
+                      loading="eager"
+                      aria-hidden="true"
+                    />
+                  </motion.div>
                 </motion.aside>
               </div>
             </motion.div>
