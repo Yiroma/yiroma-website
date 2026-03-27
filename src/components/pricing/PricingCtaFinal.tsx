@@ -24,7 +24,7 @@ export function PricingCtaFinal() {
           Un projet en tête ?
         </motion.h2>
         <motion.p variants={staggerItem} className="mx-auto mb-9 max-w-md text-base text-white/80">
-          Tous les devis sont gratuits et sans engagement. Je réponds sous 24h.
+          Tous les devis sont gratuits et sans engagement. <br /> Je réponds sous 24h.
         </motion.p>
         <motion.div variants={staggerItem}>
           <Link

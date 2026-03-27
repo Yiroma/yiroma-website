@@ -24,7 +24,7 @@ export function MaintenanceBlock() {
           <p className="text-foreground mb-1 text-sm font-semibold">
             {`Besoin d'un coup de main après livraison ?`}
           </p>
-          <p className="text-muted-foreground max-w-lg text-sm leading-relaxed">
+          <p className="text-muted-foreground text-sm leading-relaxed">
             {`Je propose une maintenance à la demande : corrections, mises à jour, évolutions mineures.`}{" "}
             <br />
             {` Sans abonnement : vous faites appel à moi quand vous en avez besoin.`}
