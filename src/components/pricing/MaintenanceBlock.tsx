@@ -25,7 +25,9 @@ export function MaintenanceBlock() {
             {`Besoin d'un coup de main après livraison ?`}
           </p>
           <p className="text-muted-foreground max-w-lg text-sm leading-relaxed">
-            {`Je propose une maintenance à la demande : corrections, mises à jour, évolutions mineures. Pas d'abonnement — vous faites appel à moi quand vous en avez besoin.`}
+            {`Je propose une maintenance à la demande : corrections, mises à jour, évolutions mineures.`}{" "}
+            <br />
+            {` Sans abonnement : vous faites appel à moi quand vous en avez besoin.`}
           </p>
         </div>
       </div>

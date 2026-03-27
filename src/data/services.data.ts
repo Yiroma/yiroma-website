@@ -47,12 +47,12 @@ export const services: ServiceData[] = [
     preview: {
       title: "Création de site web",
       description:
-        "Landing page, site vitrine, portfolio ou e-commerce — un site professionnel, rapide et pensé pour convertir, taillé pour votre secteur et vos clients.",
+        "Landing page, site vitrine, portfolio ou e-commerce : un site professionnel, rapide et pensé pour convertir, taillé pour votre secteur et vos clients.",
       orderMobile: 1,
       orderMd: 1,
     },
     description:
-      "Un site internet, c'est votre vitrine ouverte 24h/24. Il doit être rapide, clair, et convaincre vos visiteurs de vous contacter. Je conçois des sites pensés pour vos clients — pas pour faire plaisir aux développeurs.",
+      "Un site internet, c'est votre vitrine ouverte 24h/24. Il doit être rapide, clair, et convaincre vos visiteurs de vous contacter. Je conçois des sites pensés pour vos clients, et non pour faire plaisir aux développeurs.",
     extra: {
       type: "checklist",
       label: "Ce qui est toujours inclus",
@@ -113,7 +113,7 @@ export const services: ServiceData[] = [
       {
         title: "Audit de l'existant",
         description:
-          "J'analyse votre site actuel : performances, SEO, UX, contenu — pour identifier précisément ce qui freine vos résultats avant de reconstruire.",
+          "J'analyse votre site actuel (performances, SEO, UX, contenu) afin d'identifier précisément ce qui freine vos résultats avant de reconstruire.",
       },
       {
         title: "Redesign & modernisation",
@@ -136,13 +136,13 @@ export const services: ServiceData[] = [
     preview: {
       title: "Identité visuelle & Charte graphique",
       description:
-        "Logo, couleurs, typographies, règles d'usage — une identité cohérente qui rend votre marque reconnaissable sur tous vos supports.",
+        "Logo, couleurs, typographies, règles d'usage : une identité cohérente qui rend votre marque reconnaissable sur tous vos supports.",
       orderMobile: 5,
       orderMd: 4,
       wide: true,
     },
     description:
-      "Un développeur a besoin d'éléments visuels pour travailler — logo, couleurs, typographies. Si vous n'avez rien, pas de problème : je conçois votre identité visuelle complète avant de développer votre site.",
+      "Un développeur a besoin d'éléments visuels pour travailler (logo, couleurs, typographies). Si vous n'avez rien, pas de problème : je conçois votre identité visuelle complète avant de développer votre site.",
     cardsLabel: "Ce que comprend ce service",
     cards: [
       {
@@ -153,12 +153,12 @@ export const services: ServiceData[] = [
       {
         title: "Charte graphique",
         description:
-          "Palette de couleurs, typographies, règles d'usage — un guide clair pour garantir la cohérence de votre image sur tous vos canaux.",
+          "Palette de couleurs, typographies, règles d'usage : un guide clair pour garantir la cohérence de votre image sur tous vos canaux.",
       },
       {
         title: "Maquettes & prototype",
         description:
-          "Wireframes, maquettes desktop et mobile, prototype interactif — vous validez le rendu avant que le développement commence.",
+          "Wireframes, maquettes desktop et mobile, prototype interactif : vous validez le rendu avant que le développement commence.",
       },
     ],
   },
@@ -167,23 +167,23 @@ export const services: ServiceData[] = [
     bg: "muted",
     icon: Search,
     label: "Audit",
-    title: "Soyez trouvé — sur Google,\net sur les intelligences artificielles",
+    title: "Soyez trouvé sur Google\net sur les intelligences artificielles",
     preview: {
       title: "Audit SEO & Visibilité GEO",
       description:
-        "Votre site existe, mais personne ne le trouve ? J'analyse, je diagnostique et je vous donne un plan d'action concret pour remonter sur Google — et dans les IA génératives.",
+        "Votre site existe, mais personne ne le trouve ? J'analyse, je diagnostique et je vous donne un plan d'action concret pour remonter sur Google et dans les IA génératives.",
       orderMobile: 3,
       orderMd: 3,
     },
     description:
-      "Avoir un beau site ne suffit plus. Si vos clients ne vous trouvent pas sur Google — ou si votre entreprise n'est jamais citée par ChatGPT, Perplexity ou Gemini quand ils répondent à une question de votre secteur — votre site ne travaille pas pour vous. Je diagnostique ce qui bloque votre visibilité et je vous donne un plan d'action concret.",
+      "Avoir un beau site ne suffit plus. Si vos clients ne vous trouvent pas sur Google, ou si votre entreprise n'est jamais citée par ChatGPT, Perplexity ou Gemini quand ils répondent à une question de votre secteur, votre site ne travaille pas pour vous. Je diagnostique ce qui bloque votre visibilité et je vous donne un plan d'action concret.",
     extra: {
       type: "minicards",
       items: [
         {
           title: "Livrable",
           description:
-            "Vous recevez un rapport détaillé, clair et priorisé — avec des actions classées par impact et par effort. Pas de jargon, des décisions concrètes.",
+            "Vous recevez un rapport détaillé, clair et priorisé, avec des actions classées par impact et par effort. Pas de jargon, des décisions concrètes.",
         },
         {
           title: "Option suivi",
@@ -197,7 +197,7 @@ export const services: ServiceData[] = [
       {
         title: "Audit technique",
         description:
-          "Vitesse de chargement, sécurité, structure du code, compatibilité mobile — je vérifie tout ce que Google analyse pour vous classer.",
+          "Vitesse de chargement, sécurité, structure du code, compatibilité mobile : je vérifie tout ce que Google analyse pour vous classer.",
       },
       {
         title: "Audit contenu & mots-clés",
@@ -210,7 +210,7 @@ export const services: ServiceData[] = [
           "Votre fiche Google est souvent le premier contact avec un client local. Je l'optimise pour maximiser votre visibilité sur les recherches de proximité.",
       },
       {
-        title: "GEO — Visibilité sur les IA",
+        title: "GEO : Visibilité sur les IA",
         description:
           "ChatGPT, Perplexity, Gemini... Les intelligences artificielles recommandent désormais des entreprises. Je structure votre contenu pour que vous soyez cité par ces nouveaux moteurs de recherche.",
       },
@@ -225,12 +225,12 @@ export const services: ServiceData[] = [
     preview: {
       title: "Développement applicatif",
       description:
-        "Outil métier, API, back-office sur mesure — des applications robustes, testées et documentées.",
+        "Outil métier, API, back-office sur mesure : des applications robustes, testées et documentées.",
       orderMobile: 4,
       orderMd: 5,
     },
     description:
-      "Certains besoins dépassent ce qu'un site internet peut faire. Gestion interne, automatisation de processus, outils métier spécifiques — je conçois des applications robustes, pensées pour durer et évoluer avec vous.",
+      "Certains besoins dépassent ce qu'un site internet peut faire. Gestion interne, automatisation de processus, outils métier spécifiques : je conçois des applications robustes, pensées pour durer et évoluer avec vous.",
     extra: {
       type: "checklist",
       label: "Ma méthode",
@@ -246,7 +246,7 @@ export const services: ServiceData[] = [
       {
         title: "Application web métier",
         description:
-          "Un outil pensé pour votre activité spécifique : gestion de plannings, suivi client, tableau de bord — conçu sur-mesure, pas adapté d'un template générique.",
+          "Un outil pensé pour votre activité spécifique (gestion de plannings, suivi client, tableau de bord), conçu sur-mesure et non adapté d'un template générique.",
       },
       {
         title: "API REST & GraphQL",
@@ -256,7 +256,7 @@ export const services: ServiceData[] = [
       {
         title: "Back-office & tableau de bord",
         description:
-          "Une interface d'administration claire pour piloter votre activité, gérer vos données et suivre vos indicateurs — sans dépendre d'un développeur pour chaque modification.",
+          "Une interface d'administration claire pour piloter votre activité, gérer vos données et suivre vos indicateurs, sans dépendre d'un développeur pour chaque modification.",
       },
       {
         title: "Automatisation & intégrations",

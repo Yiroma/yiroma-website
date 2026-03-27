@@ -7,17 +7,17 @@ export const faqs: FaqItem[] = [
   {
     question: "Le devis est-il vraiment gratuit et sans engagement ?",
     answer:
-      "Oui, sans exception. Vous décrivez votre besoin, je prépare un devis détaillé — aucune obligation de donner suite. Le projet ne démarre qu'après votre accord écrit et le versement de l'acompte.",
+      "Oui, sans exception. Vous décrivez votre besoin, je prépare un devis détaillé, sans aucune obligation de donner suite. Le projet ne démarre qu'après votre accord écrit et le versement de l'acompte.",
   },
   {
     question: "Et si mon projet ne rentre pas dans un forfait ?",
     answer:
-      "C'est souvent le cas — et c'est normal. Décrivez-moi votre besoin, je vous prépare un devis sur-mesure sans engagement.",
+      "C'est souvent le cas, et c'est normal. Décrivez-moi votre besoin, je vous prépare un devis sur-mesure sans engagement.",
   },
   {
     question: "Quelle est la différence entre vous et une agence web ?",
     answer:
-      "Avec une agence, vous avez un commercial, un chef de projet, un designer, un développeur — et une facture qui reflète tout ça. Avec moi, vous avez un interlocuteur unique qui gère de A à Z : conception, développement, mise en ligne. Moins d'intermédiaires, plus de réactivité, et des tarifs cohérents avec la réalité d'un projet TPE/PME.",
+      "Avec une agence, vous avez un commercial, un chef de projet, un designer, un développeur, et une facture qui reflète tout ça. Avec moi, vous avez un interlocuteur unique qui gère de A à Z : conception, développement, mise en ligne. Moins d'intermédiaires, plus de réactivité, et des tarifs cohérents avec la réalité d'un projet TPE/PME.",
   },
   {
     question: "Comment se passe le paiement ?",
@@ -37,21 +37,21 @@ export const faqs: FaqItem[] = [
   {
     question: "À qui appartient le site une fois livré ?",
     answer:
-      "Le site vous appartient intégralement. Code source, nom de domaine, hébergement — tout est à votre nom. Vous n'êtes lié à aucun abonnement ni dépendant de ma personne pour faire vivre votre site.",
+      "Le site vous appartient intégralement. Code source, nom de domaine, hébergement : tout est à votre nom. Vous n'êtes lié à aucun abonnement ni dépendant de ma personne pour faire vivre votre site.",
   },
   {
     question: "Est-ce que je pourrai modifier mon site seul ?",
     answer:
-      "Pour les forfaits avec CMS, oui — je vous forme à l'utilisation lors d'une session d'1h incluse. Pour les autres forfaits, les modifications mineures peuvent passer par mon option maintenance.",
+      "Pour les forfaits avec CMS, oui : je vous forme à l'utilisation lors d'une session d'1h incluse. Pour les autres forfaits, les modifications mineures peuvent passer par mon option maintenance.",
   },
   {
     question: "Vous vous occupez de l'hébergement ?",
     answer:
-      "Je vous conseille et vous accompagne dans le choix de votre hébergeur selon votre budget et vos besoins. Vous souscrivez directement — vous restez propriétaire de votre infrastructure.",
+      "Je vous conseille et vous accompagne dans le choix de votre hébergeur selon votre budget et vos besoins. Vous souscrivez directement et restez propriétaire de votre infrastructure.",
   },
   {
     question: "Avec quelles technologies travaillez-vous ?",
     answer:
-      "Front-end : React, Next.js, TypeScript, Tailwind CSS. Back-end : Node.js, Express, GraphQL, Java/Spring Boot. Bases de données : PostgreSQL, MySQL, SQLite. Tout est versionné, testé et documenté — le code livré vous appartient intégralement.",
+      "Front-end : React, Next.js, TypeScript, Tailwind CSS. Back-end : Node.js, Express, GraphQL, Java/Spring Boot. Bases de données : PostgreSQL, MySQL, SQLite. Tout est versionné, testé et documenté. Le code livré vous appartient intégralement.",
   },
 ];
