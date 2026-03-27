@@ -38,7 +38,7 @@ export function FaqSection() {
               alt=""
               width={400}
               height={400}
-              className="w-full"
+              className="h-auto w-full"
               aria-hidden="true"
             />
           </motion.div>
