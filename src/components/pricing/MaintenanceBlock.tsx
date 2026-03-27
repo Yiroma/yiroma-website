@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { Wrench } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -10,10 +10,16 @@ import { navLinks } from "@/data/nav.data";
 export function MaintenanceBlock() {
   return (
     <Card className="flex flex-col gap-5 px-6 py-6 sm:flex-row sm:items-center sm:justify-between md:px-8">
-      <div className="flex items-start gap-4">
-        <div className="bg-primary/10 shrink-0 rounded-lg p-2.5">
-          <Wrench size={20} className="text-primary" aria-hidden="true" />
-        </div>
+      <div className="flex items-center gap-4">
+        <Image
+          src="/maintenance.svg"
+          alt=""
+          width={64}
+          height={64}
+          className="h-36 w-auto shrink-0"
+          style={{ width: "auto" }}
+          aria-hidden="true"
+        />
         <div>
           <p className="text-foreground mb-1 text-sm font-semibold">
             {`Besoin d'un coup de main après livraison ?`}
