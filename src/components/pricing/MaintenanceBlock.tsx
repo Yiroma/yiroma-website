@@ -9,7 +9,7 @@ import { navLinks } from "@/data/nav.data";
 
 export function MaintenanceBlock() {
   return (
-    <Card className="flex-row items-center justify-between gap-5 px-6 py-6 md:px-8">
+    <Card className="flex flex-col gap-5 px-6 py-6 sm:flex-row sm:items-center sm:justify-between md:px-8">
       <div className="flex items-start gap-4">
         <div className="bg-primary/10 shrink-0 rounded-lg p-2.5">
           <Wrench size={20} className="text-primary" aria-hidden="true" />
@@ -25,7 +25,10 @@ export function MaintenanceBlock() {
       </div>
       <Link
         href={`${navLinks[3].href}`}
-        className={cn(buttonVariants({ variant: "outline", size: "sm" }), "shrink-0")}
+        className={cn(
+          buttonVariants({ variant: "outline", size: "sm" }),
+          "w-full justify-center text-xs sm:w-auto sm:shrink-0",
+        )}
       >
         Me contacter
       </Link>
