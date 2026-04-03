@@ -39,6 +39,7 @@ declare global {
     turnstile: {
       render: (container: HTMLElement, options: Record<string, unknown>) => string;
       reset: (widgetId: string) => void;
+      remove: (widgetId: string) => void;
     };
   }
 }
@@ -51,15 +52,7 @@ export function ContactForm() {
   const widgetIdRef = useRef<string | null>(null);
 
   useEffect(() => {
-    const scriptId = "turnstile-script";
-    if (document.getElementById(scriptId)) return;
-
-    const script = document.createElement("script");
-    script.id = scriptId;
-    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-    script.async = true;
-    script.defer = true;
-    script.onload = () => {
+    const renderWidget = () => {
       if (turnstileRef.current && window.turnstile) {
         widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
           sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
@@ -71,7 +64,26 @@ export function ContactForm() {
         });
       }
     };
-    document.head.appendChild(script);
+
+    const scriptId = "turnstile-script";
+    if (document.getElementById(scriptId)) {
+      renderWidget();
+    } else {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+      script.async = true;
+      script.defer = true;
+      script.onload = renderWidget;
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      if (widgetIdRef.current && window.turnstile) {
+        window.turnstile.remove(widgetIdRef.current);
+        widgetIdRef.current = null;
+      }
+    };
   }, []);
 
   async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
@@ -385,6 +397,7 @@ export function ContactForm() {
                       width={260}
                       height={260}
                       className="h-auto w-65"
+                      style={{ width: "auto", height: "auto", maxWidth: "260px" }}
                       loading="eager"
                       aria-hidden="true"
                     />
