@@ -2,10 +2,10 @@ import { services } from "@/data/services.data";
 
 const siteUrl = "https://yiroma.fr";
 
-const servicesJsonLd = {
+export const servicesJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Services — Yiroma",
+  name: "Yiroma — Services",
   description:
     "Services digitaux : création de site web, refonte, identité visuelle, audit SEO & GEO, développement applicatif",
   url: `${siteUrl}/services`,
@@ -17,27 +17,17 @@ const servicesJsonLd = {
       "@id": `${siteUrl}/services#${service.id}`,
       name: service.preview.title,
       description: service.preview.description,
-      provider: {
-        "@id": `${siteUrl}/#organization`,
-      },
-      areaServed: {
-        "@type": "Country",
-        name: "France",
-      },
+      provider: { "@id": `${siteUrl}/#organization` },
+      areaServed: { "@type": "Country", name: "France" },
     },
   })),
 };
 
-const breadcrumbJsonLd = {
+export const servicesBreadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Accueil",
-      item: siteUrl,
-    },
+    { "@type": "ListItem", position: 1, name: "Accueil", item: siteUrl },
     {
       "@type": "ListItem",
       position: 2,
@@ -46,18 +36,3 @@ const breadcrumbJsonLd = {
     },
   ],
 };
-
-export function JsonLdServices() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-    </>
-  );
-}

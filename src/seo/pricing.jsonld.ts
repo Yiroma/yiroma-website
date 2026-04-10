@@ -3,23 +3,20 @@ import { webPlans, addonPlans } from "@/data/pricing.data";
 
 const siteUrl = "https://yiroma.fr";
 
-const faqJsonLd = {
+export const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqs.map((faq) => ({
     "@type": "Question",
     name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
   })),
 };
 
-const pricingJsonLd = {
+export const pricingJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Forfaits — Yiroma",
+  name: "Yiroma — Forfaits",
   description: "Forfaits de création de site web et services digitaux",
   url: `${siteUrl}/pricing`,
   itemListElement: [...webPlans, ...addonPlans].map((plan, index) => ({
@@ -29,9 +26,7 @@ const pricingJsonLd = {
       "@type": "Service",
       name: plan.name,
       description: plan.tagline,
-      provider: {
-        "@id": `${siteUrl}/#organization`,
-      },
+      provider: { "@id": `${siteUrl}/#organization` },
       offers: {
         "@type": "Offer",
         priceCurrency: "EUR",
@@ -44,26 +39,22 @@ const pricingJsonLd = {
               }
             : undefined,
         description: plan.price,
-        eligibleRegion: {
-          "@type": "Country",
-          name: "France",
-        },
+        eligibleRegion: { "@type": "Country", name: "France" },
       },
     },
   })),
 };
 
-export function JsonLdPricing() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingJsonLd) }}
-      />
-    </>
-  );
-}
+export const pricingBreadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: siteUrl },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Tarifs",
+      item: `${siteUrl}/pricing`,
+    },
+  ],
+};
