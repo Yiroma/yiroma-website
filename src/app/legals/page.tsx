@@ -1,14 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
+import Link from "next/link";
 import { userContact, hostContact } from "@/data/contact.data";
 import { formatPhoneNumberFR } from "@/lib/utils";
+import { legalsMetadata } from "@/seo/legals.metadata";
+import { navLegalsLinks } from "@/data/nav.data";
 
-export const metadata: Metadata = {
-  title: "Yiroma — Mentions légales",
-  description:
-    "Mentions légales du site yiroma.fr : éditeur, hébergeur, propriété intellectuelle, données personnelles et cookies.",
-  robots: { index: false, follow: false },
-};
+export const metadata: Metadata = legalsMetadata;
 
 export default function MentionsLegales() {
   return (
@@ -86,53 +84,17 @@ export default function MentionsLegales() {
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-4 text-xl font-semibold">Données personnelles</h2>
+        <h2 className="mb-4 text-xl font-semibold">Données personnelles et cookies</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Conformément au Règlement Général sur la Protection des Données (RGPD), les informations
-          personnelles collectées via ce site (formulaires de contact, devis, etc.) sont traitées de
-          manière confidentielle.
-        </p>
-        <p className="text-muted-foreground mt-3 leading-relaxed">
-          <span className="text-foreground font-medium">Responsable du traitement :</span>{" "}
-          {userContact.firstname} {userContact.lastname}
-        </p>
-        <p className="text-muted-foreground mt-3 leading-relaxed">
-          Les données sont collectées dans le cadre de la gestion des relations commerciales (devis,
-          factures, contacts). Elles ne seront jamais transmises à des tiers sans votre consentement
-          explicite, sauf en cas de nécessité légale.
-        </p>
-        <p className="text-muted-foreground mt-4 leading-relaxed">
-          Conformément à la loi Informatique et Libertés du 6 janvier 1978 modifiée et au RGPD, vous
-          disposez des droits suivants :
-        </p>
-        <ul className="text-muted-foreground mt-2 list-disc space-y-1 pl-5 leading-relaxed">
-          <li>Droit d'accès, de rectification et de suppression de vos données personnelles</li>
-          <li>Droit à la portabilité de vos données</li>
-          <li>Droit de limiter ou de vous opposer au traitement de vos données</li>
-          <li>Droit d'introduire une réclamation auprès de la CNIL</li>
-        </ul>
-        <p className="text-muted-foreground mt-3 leading-relaxed">
-          Pour exercer ces droits, vous pouvez adresser une demande à{" "}
-          <a
-            href={`mailto:${userContact.email}`}
+          La collecte et le traitement des données personnelles ainsi que l'utilisation des cookies
+          sont détaillés dans notre{" "}
+          <Link
+            href={navLegalsLinks[1].href}
             className="text-foreground underline underline-offset-4"
           >
-            {userContact.email}
-          </a>
-          . Une réponse vous sera apportée dans un délai maximal d'un mois.
-        </p>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="mb-4 text-xl font-semibold">Cookies</h2>
-        <p className="text-muted-foreground leading-relaxed">
-          Le site peut utiliser des cookies pour améliorer l'expérience utilisateur et réaliser des
-          statistiques de visite. Vous avez la possibilité de refuser l'utilisation des cookies lors
-          de votre première visite via un bandeau d'information.
-        </p>
-        <p className="text-muted-foreground mt-3 leading-relaxed">
-          Vous pouvez également configurer votre navigateur pour bloquer les cookies ou les
-          supprimer.
+            {navLegalsLinks[1].label}
+          </Link>
+          .
         </p>
       </section>
 
@@ -170,19 +132,14 @@ export default function MentionsLegales() {
       <section>
         <h2 className="mb-4 text-xl font-semibold">Crédits</h2>
         <h3 className="text-foreground mb-2 font-medium">Images / illustrations :</h3>
-        <ul className="text-muted-foreground space-y-1 leading-relaxed">
-          <li>
-            Page « accueil » :{" "}
-            <a
-              href="https://www.freepik.com/author/vectorjuice"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground underline underline-offset-4"
-            >
-              vectorjuice on Freepik
-            </a>
-          </li>
-        </ul>
+        <a
+          href="https://www.freepik.com/author/vectorjuice"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-foreground underline underline-offset-4"
+        >
+          vectorjuice on Freepik
+        </a>
       </section>
     </main>
   );

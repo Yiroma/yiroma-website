@@ -1,36 +1,29 @@
-import type { Metadata } from "next";
 import { PricingHero } from "@/components/pricing/PricingHero";
 import { PricingSection } from "@/components/pricing/PricingSection";
 import { AddonSection } from "@/components/pricing/AddonSection";
 import { FaqSection } from "@/components/pricing/FaqSection";
 import { PricingCtaFinal } from "@/components/pricing/PricingCtaFinal";
-import { JsonLdPricing } from "@/components/seo/JsonLdPricing";
+import { faqJsonLd, pricingJsonLd, pricingBreadcrumbJsonLd } from "@/seo/pricing.jsonld";
+import { pricingMetadata } from "@/seo/pricing.metadata";
+import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Tarifs",
-  description:
-    "Forfaits clairs et transparents : Starter à partir de 600€, Pro à partir de 1 400€, E-commerce à partir de 3 200€, Sur-mesure sur devis. Développeur freelance, région orléanaise.",
-  alternates: {
-    canonical: "https://yiroma.fr/pricing",
-  },
-  openGraph: {
-    title: "Tarifs — Yiroma",
-    description:
-      "Forfaits clairs et transparents : Starter à partir de 600€, Pro à partir de 1 400€, E-commerce à partir de 3 200€, Sur-mesure sur devis. Développeur freelance, région orléanaise.",
-    url: "https://yiroma.fr/pricing",
-    type: "website",
-  },
-  twitter: {
-    title: "Tarifs — Yiroma",
-    description:
-      "Forfaits clairs et transparents : Starter à partir de 600€, Pro à partir de 1 400€, E-commerce à partir de 3 200€, Sur-mesure sur devis. Développeur freelance, région orléanaise.",
-  },
-};
+export const metadata: Metadata = pricingMetadata;
 
 export default function PricingPage() {
   return (
     <main>
-      <JsonLdPricing />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingBreadcrumbJsonLd) }}
+      />
       <PricingHero />
       <PricingSection />
       <AddonSection />
