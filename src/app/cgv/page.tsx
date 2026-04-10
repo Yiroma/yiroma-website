@@ -18,9 +18,8 @@ export default function CGV() {
             {userContact.firstname} {userContact.lastname}
           </strong>
           , utilisant pour nom commercial <strong>{userContact.nickname}</strong>, est une
-          Entreprise Individuelle sous le statut de
-          {userContact.businessStatus}, domicilié au {userContact.address}, Siret n°{" "}
-          {userContact.siret}.
+          Entreprise Individuelle sous le statut de {userContact.businessStatus}, domicilié au{" "}
+          {userContact.address}, Siret n° {userContact.siret}.
         </p>
         <p className="text-muted-foreground mt-3 leading-relaxed">
           Dans les présentes conditions générales de vente, est dénommée le client ou le prospect, «
@@ -293,6 +292,13 @@ export default function CGV() {
         <p className="text-muted-foreground mt-3 leading-relaxed">
           En cas de litige, le Client a le droit d'introduire une réclamation auprès de la CNIL
           (Commission Nationale de l'Informatique et des Libertés).
+        </p>
+        <p className="text-muted-foreground mt-3 leading-relaxed">
+          Pour le détail complet des traitements, sous-traitants et droits RGPD, consultez notre{" "}
+          <a href="/privacy" className="text-foreground underline underline-offset-4">
+            politique de confidentialité
+          </a>
+          .
         </p>
       </section>
 
