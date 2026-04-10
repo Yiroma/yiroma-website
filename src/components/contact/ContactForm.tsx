@@ -21,6 +21,7 @@ import { userContact, socialLinks } from "@/data/contact.data";
 import { fadeInUp, fadeIn, staggerContainer, staggerItem } from "@/lib/motion-variants";
 import { SuccessModal } from "./SuccessModal";
 import { useTurnstile } from "@/hooks/useTurnstile";
+import { navLegalsLinks } from "@/data/nav.data";
 
 type FormState = "idle" | "submitting" | "error";
 
@@ -234,8 +235,14 @@ export function ContactForm() {
 
                   <p className="text-muted-foreground flex items-center gap-1.5 text-xs">
                     <Lock size={12} aria-hidden="true" className="shrink-0" />
-                    Vos données sont utilisées uniquement pour répondre à votre demande. Aucun
-                    démarchage, aucune revente.
+                    Vos données sont traitées conformément à notre{" "}
+                    <a
+                      href={navLegalsLinks[1].href}
+                      className="text-foreground underline underline-offset-2"
+                    >
+                      {navLegalsLinks[1].label}
+                    </a>
+                    .
                   </p>
                 </motion.div>
               </form>

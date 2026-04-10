@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { YiromaLogo } from "@/components/ui/YiromaLogo";
-import { navLinks } from "@/data/nav.data";
+import { navLinks, navLegalsLinks } from "@/data/nav.data";
 import { socialLinks } from "@/data/contact.data";
 import { staggerContainer, staggerItem } from "@/lib/motion-variants";
 
@@ -77,16 +77,22 @@ export function Footer() {
 
           <div className="flex gap-4">
             <Link
-              href="/legals"
+              href={navLegalsLinks[0].href}
               className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-150"
             >
-              Mentions légales
+              {navLegalsLinks[0].label}
             </Link>
             <Link
-              href="/cgv"
+              href={navLegalsLinks[1].href}
               className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-150"
             >
-              CGV
+              {navLegalsLinks[1].label}
+            </Link>
+            <Link
+              href={navLegalsLinks[2].href}
+              className="text-muted-foreground hover:text-foreground text-sm transition-colors duration-150"
+            >
+              {navLegalsLinks[2].label}
             </Link>
           </div>
         </div>
