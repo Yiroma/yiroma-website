@@ -2,13 +2,9 @@
 import type { Metadata } from "next";
 import { userContact, hostContact } from "@/data/contact.data";
 import { formatPhoneNumberFR } from "@/lib/utils";
+import { legalsMetadata } from "@/seo/legals.metadata";
 
-export const metadata: Metadata = {
-  title: "Yiroma — Mentions légales",
-  description:
-    "Mentions légales du site yiroma.fr : éditeur, hébergeur, propriété intellectuelle, données personnelles et cookies.",
-  robots: { index: false, follow: false },
-};
+export const metadata: Metadata = legalsMetadata;
 
 export default function MentionsLegales() {
   return (
@@ -170,19 +166,14 @@ export default function MentionsLegales() {
       <section>
         <h2 className="mb-4 text-xl font-semibold">Crédits</h2>
         <h3 className="text-foreground mb-2 font-medium">Images / illustrations :</h3>
-        <ul className="text-muted-foreground space-y-1 leading-relaxed">
-          <li>
-            Page « accueil » :{" "}
-            <a
-              href="https://www.freepik.com/author/vectorjuice"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground underline underline-offset-4"
-            >
-              vectorjuice on Freepik
-            </a>
-          </li>
-        </ul>
+        <a
+          href="https://www.freepik.com/author/vectorjuice"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-foreground underline underline-offset-4"
+        >
+          vectorjuice on Freepik
+        </a>
       </section>
     </main>
   );
