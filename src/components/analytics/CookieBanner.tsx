@@ -1,6 +1,9 @@
 "use client";
 
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { useCookieConsent } from "@/hooks/useCookieConsent";
+import { navLegalsLinks } from "@/data/nav.data";
 
 export function CookieBanner() {
   const { hasDecided, isHydrated, accept, refuse } = useCookieConsent();
@@ -12,28 +15,20 @@ export function CookieBanner() {
       <div className="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-muted-foreground text-sm">
           Ce site utilise des cookies pour mesurer l&apos;audience et améliorer votre expérience.
-          Vos données sont traitées conformément au{" "}
-          <a
-            href="/mentions-legales"
+          Vos données sont traitées conformément à notre{" "}
+          <Link
+            href={navLegalsLinks[1].href}
             className="hover:text-foreground underline underline-offset-4"
           >
-            RGPD
-          </a>
+            {navLegalsLinks[1].label}
+          </Link>
           .
         </p>
         <div className="flex shrink-0 gap-3">
-          <button
-            onClick={refuse}
-            className="border-border bg-background text-foreground hover:bg-accent rounded-md border px-4 py-2 text-sm font-medium transition-colors"
-          >
+          <Button onClick={refuse} variant="outline">
             Refuser
-          </button>
-          <button
-            onClick={accept}
-            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-4 py-2 text-sm font-medium transition-colors"
-          >
-            Accepter
-          </button>
+          </Button>
+          <Button onClick={accept}>Accepter</Button>
         </div>
       </div>
     </div>
