@@ -13,11 +13,15 @@ export { rootMetadata as metadata };
 const fontSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+  preload: true,
 });
 
 const fontHeading = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-heading",
+  display: "swap",
+  preload: false,
 });
 
 export default function RootLayout({
