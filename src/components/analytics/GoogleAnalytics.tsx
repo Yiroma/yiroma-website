@@ -1,25 +1,39 @@
 "use client";
 
 import Script from "next/script";
+import { useEffect } from "react";
 import { useCookieConsent } from "@/hooks/useCookieConsent";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
-export function GoogleAnalytics() {
-  const { isAccepted } = useCookieConsent();
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+  }
+}
 
-  if (!GA_ID || !isAccepted) return null;
+export function GoogleAnalytics() {
+  const { isAccepted, isHydrated } = useCookieConsent();
+
+  useEffect(() => {
+    if (!isHydrated || !GA_ID) return;
+    if (typeof window.gtag !== "function") return;
+    window.gtag("consent", "update", {
+      analytics_storage: isAccepted ? "granted" : "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+    });
+  }, [isAccepted, isHydrated]);
+
+  if (!GA_ID) return null;
 
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
+      <Script id="google-analytics" strategy="lazyOnload">
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', '${GA_ID}', { anonymize_ip: true });
         `}

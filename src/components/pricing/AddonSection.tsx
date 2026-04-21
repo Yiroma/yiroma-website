@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { addonPlans } from "@/data/pricing.data";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { PricingCard } from "./PricingCard";
@@ -10,7 +10,7 @@ export function AddonSection() {
   return (
     <section className="bg-background relative z-10 py-16 md:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-8">
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -26,9 +26,9 @@ export function AddonSection() {
               </>
             }
           />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="grid grid-cols-1 gap-4 sm:grid-cols-3"
           variants={staggerContainer}
           initial="hidden"
@@ -38,7 +38,7 @@ export function AddonSection() {
           {addonPlans.map((plan) => (
             <PricingCard key={plan.name} plan={plan} ariaLabel="Inclus dans cette prestation" />
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

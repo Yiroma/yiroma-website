@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { m, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { YiromaLogo } from "@/components/ui/YiromaLogo";
 import { NavbarMobile } from "@/components/layout/NavbarMobile";
@@ -15,7 +15,7 @@ export function Navbar() {
   const bgOpacity = useTransform(scrollY, [0, 60], [0.7, 0.95]);
 
   return (
-    <motion.header
+    <m.header
       style={{ "--nav-bg-opacity": bgOpacity } as React.CSSProperties}
       className="border-border sticky top-0 z-50 w-full border-b backdrop-blur-md"
     >
@@ -55,7 +55,7 @@ export function Navbar() {
                     {label}
                   </Link>
                   {isActive && (
-                    <motion.div
+                    <m.div
                       layoutId="nav-indicator"
                       className="bg-primary absolute right-0 -bottom-1 left-0 h-0.5 rounded-full"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
@@ -83,6 +83,6 @@ export function Navbar() {
           <NavbarMobile navLinks={navLinks} />
         </div>
       </div>
-    </motion.header>
+    </m.header>
   );
 }

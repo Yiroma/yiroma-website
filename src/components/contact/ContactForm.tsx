@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import { Mail, Phone, MapPin, Lock } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -96,24 +96,24 @@ export function ContactForm() {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto max-w-7xl px-4 sm:px-8">
-          <motion.div
+          <m.div
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
             <SectionHeader eyebrow="Formulaire" title="Envoyez-moi un message" />
-          </motion.div>
+          </m.div>
 
           <div className="grid gap-12 lg:grid-cols-[1fr_360px] lg:gap-16 xl:gap-24">
-            <motion.div
+            <m.div
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
               <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-6">
-                <motion.div variants={staggerItem} className="space-y-1.5">
+                <m.div variants={staggerItem} className="space-y-1.5">
                   <Label htmlFor="fullName">
                     Prénom et Nom <span className="text-primary">*</span>
                   </Label>
@@ -126,9 +126,9 @@ export function ContactForm() {
                     placeholder="Jean Dupont"
                     className="h-11 px-4"
                   />
-                </motion.div>
+                </m.div>
 
-                <motion.div variants={staggerItem} className="grid gap-6 sm:grid-cols-2">
+                <m.div variants={staggerItem} className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-1.5">
                     <Label htmlFor="email">
                       Email <span className="text-primary">*</span>
@@ -158,9 +158,9 @@ export function ContactForm() {
                       className="h-11 px-4"
                     />
                   </div>
-                </motion.div>
+                </m.div>
 
-                <motion.div variants={staggerItem} className="space-y-1.5">
+                <m.div variants={staggerItem} className="space-y-1.5">
                   <Label htmlFor="projectType">
                     Type de besoin <span className="text-primary">*</span>
                   </Label>
@@ -177,9 +177,9 @@ export function ContactForm() {
                     </SelectContent>
                   </Select>
                   <input type="hidden" name="projectType" value={projectType ?? ""} />
-                </motion.div>
+                </m.div>
 
-                <motion.div variants={staggerItem} className="space-y-1.5">
+                <m.div variants={staggerItem} className="space-y-1.5">
                   <Label htmlFor="message">
                     Message <span className="text-primary">*</span>
                   </Label>
@@ -191,15 +191,15 @@ export function ContactForm() {
                     placeholder="Décrivez votre activité, votre besoin ou votre idée, même approximativement."
                     className="resize-y px-4 py-3"
                   />
-                </motion.div>
+                </m.div>
 
-                <motion.div variants={staggerItem}>
+                <m.div variants={staggerItem}>
                   <div ref={turnstileRef} />
-                </motion.div>
+                </m.div>
 
                 <AnimatePresence>
                   {formState === "error" && (
-                    <motion.p
+                    <m.p
                       variants={fadeIn}
                       initial="hidden"
                       animate="visible"
@@ -214,11 +214,11 @@ export function ContactForm() {
                         contacter directement par email
                       </a>
                       .
-                    </motion.p>
+                    </m.p>
                   )}
                 </AnimatePresence>
 
-                <motion.div
+                <m.div
                   variants={staggerItem}
                   className="flex flex-col gap-4 sm:flex-row sm:items-center"
                 >
@@ -244,11 +244,11 @@ export function ContactForm() {
                     </a>
                     .
                   </p>
-                </motion.div>
+                </m.div>
               </form>
-            </motion.div>
+            </m.div>
 
-            <motion.aside
+            <m.aside
               className="bg-muted space-y-8 rounded-2xl p-8"
               variants={staggerContainer}
               initial="hidden"
@@ -256,14 +256,14 @@ export function ContactForm() {
               viewport={{ once: true, amount: 0.1 }}
             >
               <div>
-                <motion.p
+                <m.p
                   variants={staggerItem}
                   className="text-foreground mb-5 text-sm font-semibold tracking-wide uppercase"
                 >
                   Réponse garantie sous 24h
-                </motion.p>
+                </m.p>
                 <ul className="space-y-4">
-                  <motion.li variants={staggerItem} className="flex items-start gap-3">
+                  <m.li variants={staggerItem} className="flex items-start gap-3">
                     <Mail size={18} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
                     <a
                       href={`mailto:${userContact.email}`}
@@ -271,8 +271,8 @@ export function ContactForm() {
                     >
                       {userContact.email}
                     </a>
-                  </motion.li>
-                  <motion.li variants={staggerItem} className="flex items-start gap-3">
+                  </m.li>
+                  <m.li variants={staggerItem} className="flex items-start gap-3">
                     <Phone size={18} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
                     <a
                       href={`tel:${userContact.phone}`}
@@ -280,8 +280,8 @@ export function ContactForm() {
                     >
                       {formatPhoneNumberFR(userContact.phone)}
                     </a>
-                  </motion.li>
-                  <motion.li variants={staggerItem} className="flex items-start gap-3">
+                  </m.li>
+                  <m.li variants={staggerItem} className="flex items-start gap-3">
                     <MapPin size={18} className="text-primary mt-0.5 shrink-0" aria-hidden="true" />
                     <p className="text-foreground text-sm leading-relaxed">
                       {userContact.location}
@@ -290,20 +290,20 @@ export function ContactForm() {
                       <br />
                       <span className="text-muted-foreground">{userContact.remote}</span>
                     </p>
-                  </motion.li>
+                  </m.li>
                 </ul>
               </div>
 
               <div className="border-border border-t pt-8">
-                <motion.p
+                <m.p
                   variants={staggerItem}
                   className="text-muted-foreground mb-4 text-xs font-semibold tracking-wide uppercase"
                 >
                   Retrouvez-moi sur
-                </motion.p>
+                </m.p>
                 <div className="flex flex-wrap gap-2">
                   {socialLinks.map(({ href, label, icon: Icon }) => (
-                    <motion.a
+                    <m.a
                       key={href}
                       variants={staggerItem}
                       href={href}
@@ -315,12 +315,12 @@ export function ContactForm() {
                     >
                       <Icon aria-hidden="true" />
                       {label}
-                    </motion.a>
+                    </m.a>
                   ))}
                 </div>
               </div>
 
-              <motion.div variants={staggerItem} className="flex justify-center">
+              <m.div variants={staggerItem} className="flex justify-center">
                 <Image
                   src="/contact.svg"
                   alt=""
@@ -331,8 +331,8 @@ export function ContactForm() {
                   loading="eager"
                   aria-hidden="true"
                 />
-              </motion.div>
-            </motion.aside>
+              </m.div>
+            </m.aside>
           </div>
         </div>
       </section>

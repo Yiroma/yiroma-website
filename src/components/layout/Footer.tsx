@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { YiromaLogo } from "@/components/ui/YiromaLogo";
 import { navLinks, navLegalsLinks } from "@/data/nav.data";
 import { socialLinks } from "@/data/contact.data";
@@ -11,14 +11,14 @@ export function Footer() {
   return (
     <footer className="border-border bg-muted relative z-10 border-t shadow-[0_-20px_24px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.06)]">
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-12">
-        <motion.div
+        <m.div
           className="mb-12 flex flex-col gap-10 sm:flex-row sm:justify-between"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <motion.div variants={staggerItem}>
+          <m.div variants={staggerItem}>
             <Link
               href="/"
               className="text-foreground mb-3 inline-flex items-center gap-2 font-bold"
@@ -29,7 +29,7 @@ export function Footer() {
 
             <div className="mb-3 flex gap-2">
               {socialLinks.map(({ href, label, icon: Icon }) => (
-                <motion.a
+                <m.a
                   key={label}
                   href={href}
                   target="_blank"
@@ -40,7 +40,7 @@ export function Footer() {
                   transition={{ type: "spring", stiffness: 400, damping: 15 }}
                 >
                   <Icon size={14} strokeWidth={1.5} />
-                </motion.a>
+                </m.a>
               ))}
             </div>
 
@@ -51,9 +51,9 @@ export function Footer() {
               <br />
               Remote toute la France
             </p>
-          </motion.div>
+          </m.div>
 
-          <motion.div variants={staggerItem} className="text-right">
+          <m.div variants={staggerItem} className="text-right">
             <p className="text-muted-foreground mb-4 text-xs font-semibold tracking-widest uppercase">
               Navigation
             </p>
@@ -69,8 +69,8 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
 
         <div className="border-border flex flex-col items-center justify-between gap-4 border-t pt-6 sm:flex-row">
           <p className="text-muted-foreground text-sm">© 2024–{new Date().getFullYear()} Yiroma</p>

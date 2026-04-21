@@ -10,7 +10,7 @@ export const rootJsonLd = {
       url: siteUrl,
       logo: {
         "@type": "ImageObject",
-        url: `${siteUrl}/og-1200x630.png`,
+        url: `${siteUrl}/og.webp`,
       },
       description:
         "Développeur Full Stack Freelance — Création de sites web, audit SEO/GEO, développement applicatif sur-mesure.",
@@ -33,7 +33,7 @@ export const rootJsonLd = {
       "@id": `${siteUrl}/#localbusiness`,
       name: "Yiroma",
       url: siteUrl,
-      image: `${siteUrl}/og-1200x630.png`,
+      image: `${siteUrl}/og.webp`,
       telephone: "+33695386099",
       email: "contact@yiroma.fr",
       priceRange: "€€",

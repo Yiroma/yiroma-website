@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { webPlans } from "@/data/pricing.data";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { PricingCard } from "./PricingCard";
@@ -11,7 +11,7 @@ export function PricingSection() {
   return (
     <section className="bg-muted/40 relative z-10 py-16 md:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-8">
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -27,9 +27,9 @@ export function PricingSection() {
               </>
             }
           />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
           variants={staggerContainer}
           initial="hidden"
@@ -41,7 +41,7 @@ export function PricingSection() {
               <PricingCard plan={plan} />
             </div>
           ))}
-        </motion.div>
+        </m.div>
 
         <div className="mt-8">
           <MaintenanceBlock />

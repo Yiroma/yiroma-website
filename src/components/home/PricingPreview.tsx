@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { buttonVariants } from "@/components/ui/button";
@@ -16,7 +16,7 @@ export function PricingPreview() {
   return (
     <section className="bg-background relative z-0 py-16 md:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-8">
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -32,9 +32,9 @@ export function PricingPreview() {
               </>
             }
           />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
           variants={staggerContainer}
           initial="hidden"
@@ -42,7 +42,7 @@ export function PricingPreview() {
           viewport={{ once: true, amount: 0.1 }}
         >
           {webPlans.map((plan) => (
-            <motion.div
+            <m.div
               key={plan.name}
               variants={staggerItem}
               whileHover={{ y: -6 }}
@@ -94,11 +94,11 @@ export function PricingPreview() {
               >
                 Voir le détail
               </Link>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="mt-10 flex flex-wrap items-center justify-center gap-x-4 gap-y-3"
           variants={fadeInUp}
           initial="hidden"
@@ -111,7 +111,7 @@ export function PricingPreview() {
           >
             Des questions ? Consultez la FAQ <ArrowRight size={14} aria-hidden="true" />
           </Link>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/motion-variants";
 
@@ -47,7 +47,7 @@ export function ProcessSection() {
   return (
     <section className="bg-muted/40 relative z-10 py-16 md:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-8">
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -61,10 +61,10 @@ export function ProcessSection() {
             Voici comment je travaille avec vous, de A à Z. Chaque étape est claire, planifiée et
             validée ensemble.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Mobile : liste verticale */}
-        <motion.ol
+        <m.ol
           className="mt-12 flex flex-col gap-10 lg:hidden"
           variants={staggerContainer}
           initial="hidden"
@@ -72,7 +72,7 @@ export function ProcessSection() {
           viewport={{ once: true, amount: 0.1 }}
         >
           {steps.map((step) => (
-            <motion.li key={step.number} variants={staggerItem} className="flex gap-5">
+            <m.li key={step.number} variants={staggerItem} className="flex gap-5">
               <div className="flex flex-col items-center">
                 <span className="border-primary text-primary flex size-9 shrink-0 items-center justify-center rounded-full border text-xs font-bold">
                   {step.number}
@@ -81,7 +81,7 @@ export function ProcessSection() {
                   className="bg-border/40 relative mt-2 w-px grow overflow-hidden"
                   aria-hidden="true"
                 >
-                  <motion.div
+                  <m.div
                     className="bg-primary/60 absolute inset-x-0 top-0 h-full origin-top"
                     variants={{
                       hidden: { scaleY: 0 },
@@ -105,12 +105,12 @@ export function ProcessSection() {
                 <p className="text-foreground mb-1 text-sm font-semibold">{step.title}</p>
                 <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
               </div>
-            </motion.li>
+            </m.li>
           ))}
-        </motion.ol>
+        </m.ol>
 
         {/* Desktop : frise horizontale */}
-        <motion.div
+        <m.div
           className="mt-12 hidden lg:block"
           variants={staggerContainer}
           initial="hidden"
@@ -122,7 +122,7 @@ export function ProcessSection() {
               className="border-border absolute top-6 right-0 left-0 border-t border-dashed"
               aria-hidden="true"
             />
-            <motion.div
+            <m.div
               className="bg-primary/60 absolute top-5.75 left-0 h-px origin-left"
               style={{ right: 0 }}
               initial={{ scaleX: 0 }}
@@ -135,7 +135,7 @@ export function ProcessSection() {
 
           <div className="grid grid-cols-5 gap-4">
             {steps.map((step) => (
-              <motion.div
+              <m.div
                 key={step.number}
                 variants={staggerItem}
                 className="flex flex-1 flex-col items-center"
@@ -158,10 +158,10 @@ export function ProcessSection() {
                     {step.description}
                   </p>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

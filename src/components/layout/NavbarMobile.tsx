@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { YiromaLogo } from "@/components/ui/YiromaLogo";
@@ -45,7 +45,7 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
           </SheetTitle>
         </SheetHeader>
 
-        <motion.nav
+        <m.nav
           aria-label="Navigation mobile"
           variants={staggerContainer}
           initial="hidden"
@@ -53,7 +53,7 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
         >
           <ul className="flex flex-col gap-1">
             {navLinks.map(({ href, label }) => (
-              <motion.li key={href} variants={staggerItem}>
+              <m.li key={href} variants={staggerItem}>
                 <Link
                   href={href}
                   onClick={() => setOpen(false)}
@@ -65,12 +65,12 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
                 >
                   {label}
                 </Link>
-              </motion.li>
+              </m.li>
             ))}
           </ul>
-        </motion.nav>
+        </m.nav>
 
-        <motion.div variants={staggerItem} animate={open ? "visible" : "hidden"} initial="hidden">
+        <m.div variants={staggerItem} animate={open ? "visible" : "hidden"} initial="hidden">
           <Link
             href={navLinks[3].href}
             onClick={() => setOpen(false)}
@@ -83,7 +83,7 @@ export function NavbarMobile({ navLinks }: NavbarMobileProps) {
           >
             Demander un devis
           </Link>
-        </motion.div>
+        </m.div>
 
         <div className="border-border mt-6 flex items-center justify-between border-t pt-6">
           <span className="text-muted-foreground pl-3 text-sm">Thème</span>
