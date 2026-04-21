@@ -150,6 +150,56 @@
 }
 
 /* =====================
+   HERO — animations d'entrée
+===================== */
+@keyframes hero-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-anim-badge {
+  animation: hero-scale-in 0.35s ease-out both;
+}
+.hero-anim-title {
+  animation: hero-fade-up 0.5s ease-out 0.08s both;
+}
+.hero-anim-desc {
+  animation: hero-fade-up 0.5s ease-out 0.16s both;
+}
+.hero-anim-cta {
+  animation: hero-fade-up 0.5s ease-out 0.24s both;
+}
+.hero-anim-image {
+  animation: hero-fade-in 0.6s ease-out 0.4s both;
+}
+
+/* =====================
    HERO — gradient animé + glow souris
 ===================== */
 @keyframes shimmer {
