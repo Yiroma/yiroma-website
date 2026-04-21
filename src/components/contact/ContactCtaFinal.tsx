@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { CtaWrapper } from "@/components/ui/CtaWrapper";
 import { socialLinks } from "@/data/contact.data";
 import { staggerContainer, staggerItem } from "@/lib/motion-variants";
@@ -8,24 +8,24 @@ import { staggerContainer, staggerItem } from "@/lib/motion-variants";
 export function ContactCtaFinal() {
   return (
     <CtaWrapper>
-      <motion.div
+      <m.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.4 }}
         className="flex flex-col items-center"
       >
-        <motion.h2
+        <m.h2
           variants={staggerItem}
           className="font-heading mb-3 text-[clamp(1.5rem,3vw,2.25rem)] leading-tight font-bold text-white"
         >
           Vous préférez passer par une plateforme ?
-        </motion.h2>
-        <motion.p variants={staggerItem} className="mx-auto mb-9 max-w-md text-base text-white/80">
+        </m.h2>
+        <m.p variants={staggerItem} className="mx-auto mb-9 max-w-md text-base text-white/80">
           Retrouvez-moi également sur {socialLinks[2].label} pour les missions freelance en
           entreprise.
-        </motion.p>
-        <motion.div variants={staggerItem}>
+        </m.p>
+        <m.div variants={staggerItem}>
           <a
             href={socialLinks[2].href}
             target="_blank"
@@ -34,8 +34,8 @@ export function ContactCtaFinal() {
           >
             Voir mon profil {socialLinks[2].label}
           </a>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </CtaWrapper>
   );
 }

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Check, Clock } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -17,7 +17,7 @@ type Props = {
 
 export function PricingCard({ plan, ariaLabel = "Inclus dans ce forfait" }: Props) {
   return (
-    <motion.div
+    <m.div
       variants={staggerItem}
       className="h-full"
       whileHover={{ y: -6 }}
@@ -85,6 +85,6 @@ export function PricingCard({ plan, ariaLabel = "Inclus dans ce forfait" }: Prop
           </Link>
         </CardFooter>
       </Card>
-    </motion.div>
+    </m.div>
   );
 }
