@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const siteUrl = "https://yiroma.fr";
-const ogImage = `${siteUrl}/og-1200x630.png`;
+const ogImage = `${siteUrl}/og.webp`;
 
 export const rootMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -36,6 +36,7 @@ export const rootMetadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
+        type: "image/webp",
         alt: "Yiroma — Développeur Full Stack Freelance",
       },
     ],
