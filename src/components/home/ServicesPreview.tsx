@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { services } from "@/data/services.data";
@@ -13,7 +13,7 @@ export function ServicesPreview() {
   return (
     <section className="bg-muted relative z-10 py-16 shadow-[0_-20px_24px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.06)] md:py-24">
       <div className="relative container mx-auto max-w-7xl px-4 sm:px-8">
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -30,9 +30,9 @@ export function ServicesPreview() {
             }
             align="center"
           />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="bento-grid grid grid-cols-1 gap-4 md:grid-cols-2"
           variants={staggerContainer}
           initial="hidden"
@@ -43,7 +43,7 @@ export function ServicesPreview() {
             const Icon = service.icon;
             const { title, description, orderMobile, orderMd, wide } = service.preview;
             return (
-              <motion.div
+              <m.div
                 key={service.id}
                 variants={{ ...staggerItem, cardHover: { y: -4, scale: 1.01 } }}
                 className={`bento-${service.id}`}
@@ -67,7 +67,7 @@ export function ServicesPreview() {
                     wide && "lg:flex-row lg:items-center lg:gap-7 lg:py-6",
                   )}
                 >
-                  <motion.div
+                  <m.div
                     className={cn(
                       "justify-content flex size-12 shrink-0 items-center rounded-[10px]",
                       "bg-primary/10 text-primary",
@@ -78,7 +78,7 @@ export function ServicesPreview() {
                     transition={{ type: "spring", stiffness: 400, damping: 15 }}
                   >
                     <Icon size={22} className="m-auto" aria-hidden="true" />
-                  </motion.div>
+                  </m.div>
 
                   <div className={cn("flex flex-col gap-2.5", wide && "min-w-0 flex-1")}>
                     <h3 className="text-foreground font-heading text-[1.0625rem] font-semibold transition-colors duration-200 group-hover:text-white">
@@ -92,10 +92,10 @@ export function ServicesPreview() {
                     </span>
                   </div>
                 </Link>
-              </motion.div>
+              </m.div>
             );
           })}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

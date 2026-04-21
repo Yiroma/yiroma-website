@@ -1,7 +1,7 @@
 "use client";
 
 import { CheckCircle, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const overlayVariants = {
   hidden: { opacity: 0 },
@@ -28,7 +28,7 @@ export function SuccessModal({ show, onClose }: SuccessModalProps) {
   return (
     <AnimatePresence>
       {show && (
-        <motion.div
+        <m.div
           key="overlay"
           variants={overlayVariants}
           initial="hidden"
@@ -37,7 +37,7 @@ export function SuccessModal({ show, onClose }: SuccessModalProps) {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4 backdrop-blur-sm"
           onClick={onClose}
         >
-          <motion.div
+          <m.div
             key="modal"
             variants={modalVariants}
             initial="hidden"
@@ -54,7 +54,7 @@ export function SuccessModal({ show, onClose }: SuccessModalProps) {
               <X size={20} aria-hidden="true" />
             </button>
 
-            <motion.div
+            <m.div
               initial={{ scale: 0 }}
               animate={{
                 scale: 1,
@@ -69,7 +69,7 @@ export function SuccessModal({ show, onClose }: SuccessModalProps) {
                   aria-hidden="true"
                 />
               </div>
-            </motion.div>
+            </m.div>
 
             <h2 className="text-foreground mb-3 text-xl font-bold">Message envoyé !</h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -77,15 +77,15 @@ export function SuccessModal({ show, onClose }: SuccessModalProps) {
             </p>
 
             <div className="bg-muted mt-6 h-1 w-full overflow-hidden rounded-full">
-              <motion.div
+              <m.div
                 className="bg-primary h-full"
                 initial={{ width: "100%" }}
                 animate={{ width: "0%" }}
                 transition={{ duration: 3, ease: "linear" }}
               />
             </div>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

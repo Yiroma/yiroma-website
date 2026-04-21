@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { useBlobAnimation } from "@/hooks/useBlobAnimation";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from "@/lib/motion-variants";
@@ -58,7 +58,7 @@ export function WhyYiroma() {
       <div className="section-fade pointer-events-none absolute inset-0" />
 
       <div className="relative z-10 container mx-auto max-w-7xl px-4 sm:px-8">
-        <motion.div
+        <m.div
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -74,13 +74,13 @@ export function WhyYiroma() {
               </>
             }
           />
-        </motion.div>
+        </m.div>
 
         <div className="flex flex-col">
           {argumentsList.map((arg, index) => {
             const isEven = index % 2 === 1;
             return (
-              <motion.article
+              <m.article
                 key={arg.id}
                 variants={staggerContainer}
                 initial="hidden"
@@ -88,7 +88,7 @@ export function WhyYiroma() {
                 viewport={{ once: true, amount: 0.3 }}
                 className="border-border grid grid-cols-1 items-center gap-10 border-b py-12 last:border-b-0 md:grid-cols-2 md:gap-18 md:py-14"
               >
-                <motion.div
+                <m.div
                   variants={isEven ? fadeInRight : fadeInLeft}
                   className={`flex justify-center ${isEven ? "md:order-2" : ""}`}
                 >
@@ -99,9 +99,9 @@ export function WhyYiroma() {
                     height={320}
                     className="w-full max-w-sm drop-shadow-[0_8px_24px_rgba(37,99,235,0.12)] dark:brightness-[0.92] dark:drop-shadow-[0_8px_32px_rgba(59,130,246,0.25)] dark:saturate-[0.9]"
                   />
-                </motion.div>
+                </m.div>
 
-                <motion.div
+                <m.div
                   variants={isEven ? fadeInLeft : fadeInRight}
                   className={`flex flex-col gap-4 ${isEven ? "md:order-1" : ""}`}
                 >
@@ -114,8 +114,8 @@ export function WhyYiroma() {
                   <p className="text-muted-foreground text-[0.9375rem] leading-[1.75]">
                     {arg.description}
                   </p>
-                </motion.div>
-              </motion.article>
+                </m.div>
+              </m.article>
             );
           })}
         </div>

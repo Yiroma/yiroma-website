@@ -1,6 +1,7 @@
 import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
@@ -46,11 +47,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <GoogleAnalytics />
-          <Navbar />
-          {children}
-          <Footer />
-          <CookieBanner />
+          <MotionProvider>
+            <GoogleAnalytics />
+            <Navbar />
+            {children}
+            <Footer />
+            <CookieBanner />
+          </MotionProvider>
         </ThemeProvider>
       </body>
     </html>
