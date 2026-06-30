@@ -1,1 +1,15 @@
 ErrorDocument 404 /404.html
+
+RewriteEngine On
+
+# Ancien site WordPress — pages disparues, redirigées vers leurs équivalents Next.js
+RedirectMatch 301 ^/devisgratuit/?$ /pricing/
+RedirectMatch 301 ^/prestations/?$ /services/
+RedirectMatch 301 ^/maintenance/?$ /services/
+RedirectMatch 301 ^/portfolio/?$ /
+RedirectMatch 301 ^/finalisation/?$ /contact/
+
+# Normalisation trailing slash — évite le duplicate content /contact vs /contact/
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ /$1/ [L,R=301]
