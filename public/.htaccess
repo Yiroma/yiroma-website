@@ -8,6 +8,7 @@ RedirectMatch 301 ^/prestations/?$ /services/
 RedirectMatch 301 ^/maintenance/?$ /services/
 RedirectMatch 301 ^/portfolio/?$ /
 RedirectMatch 301 ^/finalisation/?$ /contact/
+RedirectMatch 301 ^/a-propos/?$ /
 
 # Normalisation trailing slash — évite le duplicate content /contact vs /contact/
 RewriteCond %{REQUEST_FILENAME} -d

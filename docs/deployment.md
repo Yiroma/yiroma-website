@@ -13,7 +13,7 @@ Le site `yiroma.fr` est une vitrine freelance sans backend propre :
 - Pas d'API Routes dynamiques
 - Pas de Server Actions côté serveur
 - Pas de base de données
-- Le seul besoin "dynamique" est le formulaire de contact → traité via **EmailJS** (appel API depuis le navigateur, sans serveur)
+- Le seul besoin "dynamique" est le formulaire de contact → traité via un **Cloudflare Worker** (appel API depuis le navigateur, protégé par **Cloudflare Turnstile**)
 
 ### Options considérées
 
@@ -40,12 +40,12 @@ Code source (Next.js + TypeScript)
         ▼
 GitHub Actions (CI/CD)
         │
-        ├── PR feat/* → dev : lint + build check
+        ├── PR → dev : lint + build check
         │
-        └── merge dev → main : build export → deploy FTP Hostinger
+        └── push → main : build export → deploy SSH/rsync Hostinger
                                         │
                                         ▼
-                              /home/.../yiroma.fr/public_html/
+                              Répertoire cible Hostinger (SSH_TARGET_PATH)
 ```
 
 ---
@@ -71,51 +71,56 @@ Cela génère un dossier `out/` contenant les fichiers statiques prêts à dépl
 
 ---
 
-## Formulaire de contact — EmailJS
+## Formulaire de contact — Cloudflare Worker + Turnstile
 
-Le formulaire `/contact` utilise **EmailJS** pour envoyer les mails directement depuis le navigateur.
+Le formulaire `/contact` poste vers un **Cloudflare Worker** (`NEXT_PUBLIC_WORKER_URL`) qui envoie le mail côté serveur (Worker), pas de backend applicatif requis côté Next.js.
 
-- Pas de backend requis
-- Gratuit jusqu'à 200 emails/mois (suffisant pour une vitrine)
-- Les clés EmailJS (service ID, template ID, public key) sont des clés **publiques** → peuvent être en clair dans le code ou en variables d'environnement préfixées `NEXT_PUBLIC_`
+- Protection anti-bot via **Cloudflare Turnstile** (`NEXT_PUBLIC_TURNSTILE_SITE_KEY`) — le token Turnstile est vérifié par le Worker avant envoi
+- Le Worker Cloudflare et sa configuration ne font pas partie de ce dépôt
+- Les clés (`NEXT_PUBLIC_*`) sont publiques → exposées côté client par construction, injectées au build via les secrets GitHub Actions
 
-Documentation : https://www.emailjs.com/docs/
+Voir [src/hooks/useTurnstile.ts](../src/hooks/useTurnstile.ts) et [src/components/contact/ContactForm.tsx](../src/components/contact/ContactForm.tsx).
 
 ---
 
 ## CI/CD — GitHub Actions
 
-### Workflow 1 : `ci.yml` — Lint (PR feat/\* → dev)
+### Workflow 1 : [ci.yml](../.github/workflows/ci.yml) — CI — Lint & Build (PR → dev)
 
 Déclenché sur : `pull_request` ciblant `dev`
 
 Étapes :
 
 1. Checkout
-2. Setup Node.js
+2. Setup Node.js 20.x
 3. `npm ci`
 4. `npm run lint`
 5. `npm run build` (vérifie que l'export statique compile)
 
-### Workflow 2 : `deploy.yml` — Deploy (push main)
+### Workflow 2 : [deploy.yml](../.github/workflows/deploy.yml) — Deploy — Export & SSH (push main)
 
 Déclenché sur : `push` vers `main`
 
 Étapes :
 
 1. Checkout
-2. Setup Node.js
+2. Setup Node.js 20.x
 3. `npm ci`
-4. `npm run build` (génère `out/`)
-5. Upload FTP vers Hostinger via `SamKirkland/FTP-Deploy-Action`
+4. `npm run build` (génère `out/`, avec `NEXT_PUBLIC_TURNSTILE_SITE_KEY` et `NEXT_PUBLIC_WORKER_URL` injectées depuis les secrets)
+5. Configuration de la clé SSH (`~/.ssh/deploy_key`) + `ssh-keyscan` vers `known_hosts`
+6. Déploiement via `rsync -avz --delete` du dossier `out/` vers Hostinger en SSH
 
 #### Secrets GitHub requis
 
-| Secret         | Description                                 |
-| -------------- | ------------------------------------------- |
-| `FTP_SERVER`   | Adresse FTP Hostinger (ex: `ftp.yiroma.fr`) |
-| `FTP_USERNAME` | Identifiant FTP Hostinger                   |
-| `FTP_PASSWORD` | Mot de passe FTP Hostinger                  |
+| Secret                           | Description                                       |
+| -------------------------------- | ------------------------------------------------- |
+| `SSH_PRIVATE_KEY`                | Clé privée SSH pour l'accès Hostinger             |
+| `SSH_HOST`                       | Hôte SSH Hostinger                                |
+| `SSH_PORT`                       | Port SSH Hostinger                                |
+| `SSH_USERNAME`                   | Identifiant SSH Hostinger                         |
+| `SSH_TARGET_PATH`                | Chemin cible du déploiement sur le serveur        |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Clé publique Cloudflare Turnstile (formulaire)    |
+| `NEXT_PUBLIC_WORKER_URL`         | URL du Cloudflare Worker qui traite le formulaire |
 
 Ces secrets sont à configurer dans : GitHub → Settings → Secrets and variables → Actions
 
@@ -133,13 +138,14 @@ Ces secrets sont à configurer dans : GitHub → Settings → Secrets and variab
 
 ## Variables d'environnement
 
-Fichier `.env.sample` à la racine (à créer, commité) :
+Fichier [.env.sample](../.env.sample) à la racine (commité) :
 
 ```env
-# EmailJS — clés publiques (NEXT_PUBLIC_ = exposées côté client)
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_turnstile_site_key
+NEXT_PUBLIC_WORKER_URL=your_worker_url
+NEXT_PUBLIC_GA_ID=your_ga_measurement_id
 ```
+
+Ces variables sont publiques (`NEXT_PUBLIC_` = exposées côté client) → peuvent être en clair dans le code ou en variables d'environnement.
 
 > Le fichier `.env.local` (avec les vraies valeurs) est dans `.gitignore` et ne doit **jamais** être commité.
