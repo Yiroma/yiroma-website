@@ -91,9 +91,10 @@ export default function PolitiqueConfidentialite() {
         </p>
         <ul className="text-muted-foreground list-disc space-y-3 pl-5 leading-relaxed">
           <li>
-            <span className="text-foreground font-medium">EmailJS</span> (États-Unis) — envoi des
-            messages du formulaire de contact. Les données transitent par leurs serveurs. EmailJS
-            est soumis au Data Privacy Framework UE–États-Unis.
+            <span className="text-foreground font-medium">Cloudflare</span> (États-Unis) — envoi des
+            messages du formulaire de contact (Worker) et protection anti-bot (Turnstile). Les
+            données transitent par leurs serveurs. Cloudflare est soumis au Data Privacy Framework
+            UE–États-Unis.
           </li>
           <li>
             <span className="text-foreground font-medium">Google Analytics</span> (États-Unis) —
