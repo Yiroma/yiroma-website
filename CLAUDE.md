@@ -57,7 +57,7 @@
 | Style       | Tailwind CSS 4 · ShadcnUI                                         |
 | Composants  | ShadcnUI v4 · Lucide React · next-themes                          |
 | Déploiement | Export statique Next.js → Hostinger (mutualisé)                   |
-| Mail        | EmailJS (formulaire de contact, sans backend)                     |
+| Mail        | Cloudflare Worker + Turnstile (formulaire de contact)             |
 | Qualité     | ESLint 9 (flat config) · Prettier 3 · prettier-plugin-tailwindcss |
 
 ---
