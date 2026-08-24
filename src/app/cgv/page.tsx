@@ -35,10 +35,14 @@ export default function CGV() {
       <section className="mb-10">
         <h2 className="mb-4 text-xl font-semibold">1. Acceptation des CGV</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Toute commande passée auprès du Prestataire implique l'acceptation pleine et entière des
-          présentes CGV. Celles-ci prévalent sur tout autre document, sauf dérogation expresse
-          convenue entre les parties. Le Client reconnaît avoir pris connaissance des CGV avant de
-          signer le devis ou tout autre document contractuel.
+          Les présentes CGV s'appliquent exclusivement aux prestations réalisées pour des clients
+          professionnels, agissant dans le cadre de leur activité commerciale, industrielle,
+          artisanale, libérale ou agricole (y compris les personnes morales et les entrepreneurs
+          individuels). Le Prestataire ne propose pas ses services aux consommateurs au sens du Code
+          de la consommation. Toute commande passée auprès du Prestataire implique l'acceptation
+          pleine et entière des présentes CGV. Celles-ci prévalent sur tout autre document, sauf
+          dérogation expresse convenue entre les parties. Le Client reconnaît avoir pris
+          connaissance des CGV avant de signer le devis ou tout autre document contractuel.
         </p>
       </section>
 
@@ -89,7 +93,11 @@ export default function CGV() {
         <p className="text-muted-foreground leading-relaxed">
           <span className="text-foreground font-medium">4.3. Retard de paiement :</span> Tout retard
           de paiement entraînera, de plein droit, l'application de pénalités de retard calculées sur
-          la base de trois fois le taux d'intérêt légal en vigueur, par jour de retard.
+          la base de trois fois le taux d'intérêt légal en vigueur, par jour de retard. Une
+          indemnité forfaitaire de 40 € pour frais de recouvrement sera également due, de plein
+          droit, en sus des pénalités de retard, conformément à l'article L. 441-10 du Code de
+          commerce. Si les frais de recouvrement effectivement engagés sont supérieurs à ce montant,
+          une indemnisation complémentaire pourra être demandée, sur justificatif.
         </p>
       </section>
 
@@ -205,19 +213,15 @@ export default function CGV() {
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-4 text-xl font-semibold">11. Rétractation, Annulation et Résiliation</h2>
+        <h2 className="mb-4 text-xl font-semibold">11. Annulation et Résiliation</h2>
+
         <p className="text-muted-foreground mb-3 leading-relaxed">
-          <span className="text-foreground font-medium">11.1. Rétractation :</span> Conformément aux
-          dispositions légales en vigueur, le droit de rétractation de 14 jours est applicable aux{" "}
-          <strong>clients consommateurs</strong>. Ce droit ne s'applique pas aux entreprises (B2B).
-        </p>
-        <p className="text-muted-foreground mb-3 leading-relaxed">
-          <span className="text-foreground font-medium">11.2. Annulation :</span> En cas
+          <span className="text-foreground font-medium">11.1. Annulation :</span> En cas
           d'annulation d'une commande par le Client après validation du devis, les acomptes versés
           ne seront pas remboursés.
         </p>
         <p className="text-muted-foreground mb-3 leading-relaxed">
-          <span className="text-foreground font-medium">11.3. Résiliation :</span> Si le Client
+          <span className="text-foreground font-medium">11.2. Résiliation :</span> Si le Client
           résilie le contrat avant la fin du projet, il sera redevable d'une somme correspondant aux
           prestations déjà réalisées à titre de compensation pour les pertes encourues par le
           Prestataire :
