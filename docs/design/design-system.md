@@ -1,7 +1,7 @@
 # Design System — Yiroma
 
 > Source de vérité pour l'identité visuelle du site. À utiliser comme référence lors du prototypage et du développement.
-> Stack UI : **Next.js · Tailwind CSS · ShadcnUI · tweakcn**
+> Stack UI : **Next.js 16 · Tailwind CSS 4 · ShadcnUI (style `base-vega`) · @base-ui/react · tweakcn**
 
 ---
 
@@ -12,7 +12,8 @@ Direction choisie : **Marine & Bleu Pur** — sobre, tech, rassurant.
 ### Tokens sémantiques
 
 Les couleurs sont définies en tant que variables CSS au format **OKLCH** (utilisé par tweakcn et ShadcnUI v4+).
-À déclarer dans `globals.css` sous `:root` (light) et `.dark` (dark mode).
+Déclarées dans [src/app/globals.css](src/app/globals.css) sous `:root` (light) et `.dark` (dark mode).
+Tailwind 4 : pas de `tailwind.config.ts` — les tokens sont exposés à Tailwind via `@theme inline` dans le même fichier, et le dark mode est activé par `@custom-variant dark (&:is(.dark *))`.
 
 > OKLCH : `oklch(L C H)` — Lightness (0–1) · Chroma (0–0.4) · Hue (0–360)
 > Avantage : espace colorimétrique perceptuellement uniforme, meilleur rendu des couleurs vives.
@@ -56,50 +57,50 @@ Les couleurs sont définies en tant que variables CSS au format **OKLCH** (utili
 
 ### Mode Sombre (Dark)
 
-| Token sémantique               | Hex       | OKLCH                        | Usage                                  |
-| ------------------------------ | --------- | ---------------------------- | -------------------------------------- |
-| `--background`                 | `#0F172A` | `oklch(0.208 0.042 264.695)` | Fond principal                         |
-| `--foreground`                 | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte principal                        |
-| `--muted`                      | `#1E293B` | `oklch(0.279 0.041 260.031)` | Fond sections alternées                |
-| `--muted-foreground`           | `#94A3B8` | `oklch(0.704 0.04 256.788)`  | Texte secondaire                       |
-| `--card`                       | `#1E293B` | `oklch(0.279 0.041 260.031)` | Fond des cards                         |
-| `--card-foreground`            | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte dans les cards                   |
-| `--primary`                    | `#3b82f6` | `oklch(0.661 0.214 264.052)` | CTA principaux (légèrement plus clair) |
-| `--primary-foreground`         | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur fond primary                 |
-| `--secondary`                  | `#1E293B` | `oklch(0.279 0.041 260.031)` | Boutons secondaires                    |
-| `--secondary-foreground`       | `#E2E8F0` | `oklch(0.929 0.013 255.508)` | Texte sur fond secondary               |
-| `--border`                     | `#334155` | `oklch(0.372 0.044 257.287)` | Bordures, séparateurs                  |
-| `--input`                      | `#334155` | `oklch(0.372 0.044 257.287)` | Bordure des champs de formulaire       |
-| `--ring`                       | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Focus ring                             |
-| `--destructive`                | `#EF4444` | `oklch(0.637 0.237 25.331)`  | Erreurs                                |
-| `--destructive-foreground`     | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur fond destructive             |
-| `--accent`                     | `#1E293B` | `oklch(0.328 0.041 260.031)` | Hover sur ghost buttons, items de menu |
-| `--accent-foreground`          | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte sur fond accent                  |
-| `--popover`                    | `#1E293B` | `oklch(0.279 0.041 260.031)` | Fond dropdowns, tooltips, popovers     |
-| `--popover-foreground`         | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte dans les popovers                |
-| `--chart-1`                    | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Série 1 — blue-500                     |
-| `--chart-2`                    | `#38BDF8` | `oklch(0.769 0.133 223.603)` | Série 2 — sky-400                      |
-| `--chart-3`                    | `#34D399` | `oklch(0.797 0.154 163.223)` | Série 3 — emerald-400                  |
-| `--chart-4`                    | `#FCD34D` | `oklch(0.879 0.169 91.605)`  | Série 4 — amber-300                    |
-| `--chart-5`                    | `#A78BFA` | `oklch(0.702 0.183 293.541)` | Série 5 — violet-400                   |
-| `--sidebar`                    | `#1E293B` | `oklch(0.279 0.041 260.031)` | Fond de la sidebar                     |
-| `--sidebar-foreground`         | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte dans la sidebar                  |
-| `--sidebar-primary`            | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Item actif / sélectionné               |
-| `--sidebar-primary-foreground` | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur item actif sidebar           |
-| `--sidebar-accent`             | `#334155` | `oklch(0.328 0.041 260.031)` | Hover sur items de la sidebar          |
-| `--sidebar-accent-foreground`  | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte sur hover sidebar                |
-| `--sidebar-border`             | `#334155` | `oklch(0.372 0.044 257.287)` | Bordure de la sidebar                  |
-| `--sidebar-ring`               | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Focus ring dans la sidebar             |
+| Token sémantique               | Hex       | OKLCH                        | Usage                                                          |
+| ------------------------------ | --------- | ---------------------------- | -------------------------------------------------------------- |
+| `--background`                 | `#0F172A` | `oklch(0.208 0.042 264.695)` | Fond principal                                                 |
+| `--foreground`                 | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte principal                                                |
+| `--muted`                      | `#1E293B` | `oklch(0.279 0.041 260.031)` | Fond sections alternées                                        |
+| `--muted-foreground`           | `#94A3B8` | `oklch(0.704 0.04 256.788)`  | Texte secondaire                                               |
+| `--card`                       | `#293548` | `oklch(0.32 0.041 260.031)`  | Fond des cards (légèrement éclairci par rapport au background) |
+| `--card-foreground`            | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte dans les cards                                           |
+| `--primary`                    | `#3b82f6` | `oklch(0.661 0.214 264.052)` | CTA principaux (légèrement plus clair)                         |
+| `--primary-foreground`         | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur fond primary                                         |
+| `--secondary`                  | `#1E293B` | `oklch(0.279 0.041 260.031)` | Boutons secondaires                                            |
+| `--secondary-foreground`       | `#E2E8F0` | `oklch(0.929 0.013 255.508)` | Texte sur fond secondary                                       |
+| `--border`                     | `#334155` | `oklch(0.372 0.044 257.287)` | Bordures, séparateurs                                          |
+| `--input`                      | `#334155` | `oklch(0.372 0.044 257.287)` | Bordure des champs de formulaire                               |
+| `--ring`                       | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Focus ring                                                     |
+| `--destructive`                | `#EF4444` | `oklch(0.637 0.237 25.331)`  | Erreurs                                                        |
+| `--destructive-foreground`     | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur fond destructive                                     |
+| `--accent`                     | `#1E293B` | `oklch(0.328 0.041 260.031)` | Hover sur ghost buttons, items de menu                         |
+| `--accent-foreground`          | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte sur fond accent                                          |
+| `--popover`                    | `#293548` | `oklch(0.32 0.041 260.031)`  | Fond dropdowns, tooltips, popovers                             |
+| `--popover-foreground`         | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte dans les popovers                                        |
+| `--chart-1`                    | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Série 1 — blue-500                                             |
+| `--chart-2`                    | `#38BDF8` | `oklch(0.769 0.133 223.603)` | Série 2 — sky-400                                              |
+| `--chart-3`                    | `#34D399` | `oklch(0.797 0.154 163.223)` | Série 3 — emerald-400                                          |
+| `--chart-4`                    | `#FCD34D` | `oklch(0.879 0.169 91.605)`  | Série 4 — amber-300                                            |
+| `--chart-5`                    | `#A78BFA` | `oklch(0.702 0.183 293.541)` | Série 5 — violet-400                                           |
+| `--sidebar`                    | `#1E293B` | `oklch(0.279 0.041 260.031)` | Fond de la sidebar                                             |
+| `--sidebar-foreground`         | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte dans la sidebar                                          |
+| `--sidebar-primary`            | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Item actif / sélectionné                                       |
+| `--sidebar-primary-foreground` | `#FFFFFF` | `oklch(1 0 0)`               | Texte sur item actif sidebar                                   |
+| `--sidebar-accent`             | `#334155` | `oklch(0.328 0.041 260.031)` | Hover sur items de la sidebar                                  |
+| `--sidebar-accent-foreground`  | `#F8FAFC` | `oklch(0.984 0.003 247.858)` | Texte sur hover sidebar                                        |
+| `--sidebar-border`             | `#334155` | `oklch(0.372 0.044 257.287)` | Bordure de la sidebar                                          |
+| `--sidebar-ring`               | `#3b82f6` | `oklch(0.661 0.214 264.052)` | Focus ring dans la sidebar                                     |
 
-### Couleurs utilitaires (Tailwind custom)
+### Couleurs utilitaires
 
-À déclarer dans `tailwind.config.ts` pour usage direct dans les classes :
+Avec Tailwind 4, on n'étend plus la palette via un fichier de config. Toutes les couleurs de marque passent par les **tokens sémantiques** ci-dessus (utiliser `bg-primary`, `text-foreground`, `text-muted-foreground`, etc.). Les valeurs brutes pour information :
 
-| Nom           | Hex light | Hex dark  | Usage                        |
-| ------------- | --------- | --------- | ---------------------------- |
-| `navy`        | `#0F172A` | `#F8FAFC` | Couleur de marque principale |
-| `blue`        | `#2563eb` | `#3b82f6` | Couleur d'accent principale  |
-| `slate-muted` | `#64748B` | `#94A3B8` | Texte secondaire             |
+| Rôle                         | Hex light | Hex dark  | Token à utiliser                |
+| ---------------------------- | --------- | --------- | ------------------------------- |
+| Couleur de marque principale | `#0F172A` | `#F8FAFC` | `--foreground` / `--background` |
+| Couleur d'accent principale  | `#2563eb` | `#3b82f6` | `--primary` / `--ring`          |
+| Texte secondaire             | `#4B5B6E` | `#94A3B8` | `--muted-foreground`            |
 
 ---
 
@@ -110,10 +111,11 @@ Les couleurs sont définies en tant que variables CSS au format **OKLCH** (utili
 | Rôle   | Police                | Source       | Variable CSS     |
 | ------ | --------------------- | ------------ | ---------------- |
 | Titres | **Plus Jakarta Sans** | Google Fonts | `--font-heading` |
-| Corps  | **DM sans**           | Google Fonts | `--font-body`    |
-| Code   | **JetBrains Mono**    | Google Fonts | `--font-mono`    |
+| Corps  | **DM Sans**           | Google Fonts | `--font-sans`    |
 
-> Chargement via `next/font/google` — pas de FOUT, optimisé pour les performances.
+> Chargement via `next/font/google` dans [src/app/layout.tsx](src/app/layout.tsx) — pas de FOUT, optimisé pour les performances.
+> Les variables sont exposées à Tailwind dans `@theme inline` ([src/app/globals.css](src/app/globals.css)) sous les tokens `font-sans` et `font-heading`.
+> Pas de police monospace dans la v1 (aucun bloc de code dans le contenu) — à ajouter si besoin futur.
 
 ### Échelle typographique
 
@@ -127,7 +129,7 @@ Les couleurs sont définies en tant que variables CSS au format **OKLCH** (utili
 | Small / label | `0.875rem` (14px) | `0.875rem`        | 400     | 1.5        |
 | Caption       | `0.75rem` (12px)  | `0.75rem`         | 400     | 1.4        |
 
-> Tous les titres utilisent **Plus Jakarta Sans**, le reste **DM sans**.
+> Tous les titres utilisent **Plus Jakarta Sans**, le reste **DM Sans**.
 
 ---
 
@@ -166,12 +168,14 @@ Système basé sur le **8pt grid** — tous les espacements sont des multiples d
 
 ### Radius global
 
-| Token ShadcnUI | Valeur  | Usage                         |
-| -------------- | ------- | ----------------------------- |
-| `--radius`     | `6px`   | Base pour tous les composants |
-| Cards          | `12px`  | `rounded-xl`                  |
-| Badges / tags  | `999px` | `rounded-full` (pill)         |
-| Inputs         | `6px`   | `rounded-md`                  |
+| Token ShadcnUI | Valeur           | Usage                         |
+| -------------- | ---------------- | ----------------------------- |
+| `--radius`     | `0.375rem` (6px) | Base pour tous les composants |
+| Cards          | `12px`           | `rounded-xl`                  |
+| Badges / tags  | `999px`          | `rounded-full` (pill)         |
+| Inputs         | `6px`            | `rounded-md`                  |
+
+> Tailwind 4 dérive `radius-sm/md/lg/xl` à partir de `--radius` (cf. `@theme inline` dans `globals.css`).
 
 ---
 
@@ -205,6 +209,7 @@ Système basé sur le **8pt grid** — tous les espacements sont des multiples d
 - Pas de fond
 
 > Tous les boutons ont un `focus-visible:ring-2 ring-primary` pour l'accessibilité.
+> Implémentation : ce projet utilise `@base-ui/react/button` (pas Radix) — pas de prop `asChild`. Pattern bouton-lien : `<Link className={cn(buttonVariants({ ... }))}>`.
 
 ---
 
@@ -264,13 +269,20 @@ Système basé sur le **8pt grid** — tous les espacements sont des multiples d
 
 ## 5. Ombres
 
-| Nom         | Valeur CSS                    | Usage             |
-| ----------- | ----------------------------- | ----------------- |
-| `shadow-sm` | `0 1px 3px rgba(0,0,0,0.08)`  | Cards au repos    |
-| `shadow-md` | `0 4px 12px rgba(0,0,0,0.12)` | Cards au hover    |
-| `shadow-lg` | `0 8px 24px rgba(0,0,0,0.16)` | Modals, dropdowns |
+Échelle complète générée via tweakcn (cf. `globals.css`). Toutes les ombres utilisent `hsl(0 0% 0% / α)` :
 
-> En dark mode : opacité légèrement réduite, les ombres sont moins visibles sur fond sombre — compenser avec une légère bordure (`border border-border`).
+| Token        | Valeur CSS                                     | Usage                        |
+| ------------ | ---------------------------------------------- | ---------------------------- |
+| `shadow-2xs` | `0 1px 3px 0px / 0.05`                         | Élévation minime             |
+| `shadow-xs`  | `0 1px 3px 0px / 0.05`                         | Inputs, séparations subtiles |
+| `shadow-sm`  | `0 1px 3px 0px / 0.10, 0 1px 2px -1px / 0.10`  | Cards au repos               |
+| `shadow`     | `0 1px 3px 0px / 0.10, 0 1px 2px -1px / 0.10`  | Élévation par défaut         |
+| `shadow-md`  | `0 1px 3px 0px / 0.10, 0 2px 4px -1px / 0.10`  | Cards au hover               |
+| `shadow-lg`  | `0 1px 3px 0px / 0.10, 0 4px 6px -1px / 0.10`  | Modals, dropdowns            |
+| `shadow-xl`  | `0 1px 3px 0px / 0.10, 0 8px 10px -1px / 0.10` | Sheets, drawers              |
+| `shadow-2xl` | `0 1px 3px 0px / 0.25`                         | Élévation maximale           |
+
+> En dark mode : mêmes valeurs (les ombres restent peu visibles sur fond sombre — compenser avec une légère bordure `border border-border`).
 
 ---
 
@@ -313,25 +325,37 @@ Bibliothèque : **Lucide React** (`lucide-react`)
 
 ### Configuration ShadcnUI
 
-Fichier `components.json` :
+Fichier [components.json](components.json) (état actuel) :
 
 ```json
 {
-  "style": "default",
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-vega",
   "rsc": true,
   "tsx": true,
   "tailwind": {
-    "config": "tailwind.config.ts",
+    "config": "",
     "css": "src/app/globals.css",
-    "baseColor": "slate",
-    "cssVariables": true
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
   },
+  "iconLibrary": "lucide",
+  "rtl": false,
   "aliases": {
     "components": "@/components",
-    "utils": "@/lib/utils"
-  }
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "menuColor": "default",
+  "menuAccent": "subtle",
+  "registries": {}
 }
 ```
+
+> `tailwind.config: ""` est volontaire (Tailwind 4 — toute la config est dans `globals.css` via `@theme inline`).
 
 ### Workflow tweakcn
 
@@ -341,14 +365,13 @@ Fichier `components.json` :
 
 ### Dark mode
 
-Stratégie : `class` (Tailwind) + `next-themes`
+Stratégie : `class` + `next-themes`. Avec Tailwind 4, le mode sombre n'est plus déclaré dans un fichier de config mais via une custom variant CSS dans [src/app/globals.css](src/app/globals.css) :
 
-```js
-// tailwind.config.ts
-darkMode: "class";
+```css
+@custom-variant dark (&:is(.dark *));
 ```
 
-Le toggle dark/light est géré via `next-themes` (`ThemeProvider` dans le layout racine).
+Le toggle dark/light est géré via `next-themes` (`ThemeProvider` dans [src/app/layout.tsx](src/app/layout.tsx)).
 
 ---
 
@@ -356,6 +379,6 @@ Le toggle dark/light est géré via `next-themes` (`ThemeProvider` dans le layou
 
 - [ ] Valider la palette avec un outil de contraste (ratio WCAG AA minimum : 4.5:1 pour le texte)
 - [ ] Générer le thème ShadcnUI via tweakcn avec les tokens de ce fichier
-- [ ] Configurer `tailwind.config.ts` avec les couleurs custom et les fonts
+- [ ] Vérifier que les tokens sont bien exposés dans `@theme inline` de `globals.css`
 - [ ] Vérifier le rendu dark mode sur les cards et la navbar
 - [ ] Tester les focus ring sur tous les éléments interactifs

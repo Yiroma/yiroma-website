@@ -4,7 +4,7 @@ Contact: contact@yiroma.fr
 Location: Châteauneuf-sur-Loire, Loiret (45), France
 
 /* SITE */
-Last update: 2026-03
+Last update: 2026-10
 Language: French
 Doctype: HTML5
 IDE: Visual Studio Code
