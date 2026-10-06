@@ -116,8 +116,9 @@ export default function MentionsLegales() {
           {userContact.lastname} décline toute responsabilité quant au contenu de ces sites tiers.
         </p>
         <p className="text-muted-foreground mt-3 leading-relaxed">
-          Toute création de lien hypertexte vers ce site doit faire l'objet d'une autorisation
-          préalable et écrite de {userContact.firstname} {userContact.lastname}.
+          Les liens hypertextes vers ce site sont libres, à condition qu'ils ne portent pas atteinte
+          à l'image de {userContact.firstname} {userContact.lastname}, qu'ils n'induisent pas en
+          erreur sur l'origine du contenu et qu'ils n'en donnent pas une présentation dénaturée.
         </p>
       </section>
 
