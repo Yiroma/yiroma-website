@@ -115,6 +115,7 @@ export const addonPlans: PricingPlan[] = [
       "Typographies & règles d'usage",
       "Éléments graphiques secondaires",
       "Guide d'utilisation (PDF)",
+      "3 allers-retours inclus",
     ],
     delay: "1 à 2 semaines",
     cta: "Demander un devis",

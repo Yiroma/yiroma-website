@@ -8,7 +8,8 @@ export const metadata: Metadata = cgvMetadata;
 export default function CGV() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-20 lg:px-12">
-      <h1 className="mb-4 text-3xl font-bold">Conditions Générales de Vente</h1>
+      <h1 className="mb-2 text-3xl font-bold">Conditions Générales de Vente</h1>
+      <p className="text-muted-foreground mb-8 text-sm">Dernière mise à jour : octobre 2026</p>
 
       <section className="mb-10">
         <h2 className="mb-4 text-xl font-semibold">Définitions</h2>
@@ -42,7 +43,8 @@ export default function CGV() {
           de la consommation. Toute commande passée auprès du Prestataire implique l'acceptation
           pleine et entière des présentes CGV. Celles-ci prévalent sur tout autre document, sauf
           dérogation expresse convenue entre les parties. Le Client reconnaît avoir pris
-          connaissance des CGV avant de signer le devis ou tout autre document contractuel.
+          connaissance des CGV avant de signer le devis ou tout autre document contractuel. Les CGV
+          applicables sont celles en vigueur à la date de signature du devis.
         </p>
       </section>
 
@@ -51,7 +53,8 @@ export default function CGV() {
         <p className="text-muted-foreground leading-relaxed">
           Ces prestations incluent, sans s'y limiter : la création et la refonte de sites web
           (landing page, site vitrine, e-commerce, CMS), la conception d'identité visuelle et de
-          charte graphique (logo, typographies, maquettes), l'audit SEO et de visibilité GEO, ainsi
+          charte graphique (logo, typographies, maquettes), la rédaction de contenus, le
+          référencement local, les versions multilingues, l'audit SEO et de visibilité GEO, ainsi
           que le développement d'applications métier sur mesure (application web, API, back-office).
         </p>
         <p className="text-muted-foreground mt-3 leading-relaxed">
@@ -64,9 +67,13 @@ export default function CGV() {
         <h2 className="mb-4 text-xl font-semibold">3. Devis et Commande</h2>
         <p className="text-muted-foreground mb-3 leading-relaxed">
           <span className="text-foreground font-medium">3.1. Devis :</span> Les prestations de
-          services font l'objet d'un devis gratuit. Le devis a une durée de validité de 30 jours à
-          compter de sa date d'émission. La commande est considérée comme acceptée dès lors que le
-          Client a signé le devis ou donné son accord par écrit (courrier électronique ou autre).
+          services font l'objet d'un devis gratuit. Sauf mention contraire sur le devis, celui-ci a
+          une durée de validité de 30 jours à compter de sa date d'émission. La commande est
+          considérée comme acceptée dès lors que le Client a signé le devis ou donné son accord par
+          écrit (courrier électronique ou autre) sur un devis définitif. Une estimation ou un devis
+          expressément désigné « à titre informatif » ne constitue ni une offre ferme ni une
+          commande : seul un devis définitif, signé ou accepté par écrit par le Client, engage les
+          parties.
         </p>
         <p className="text-muted-foreground leading-relaxed">
           <span className="text-foreground font-medium">3.2. Commande :</span> Toute commande est
@@ -80,9 +87,10 @@ export default function CGV() {
         <h2 className="mb-4 text-xl font-semibold">4. Prix et Modalités de Paiement</h2>
         <p className="text-muted-foreground mb-3 leading-relaxed">
           <span className="text-foreground font-medium">4.1. Prix :</span> Les prix des services
-          sont indiqués en euros, hors taxes (TVA non applicable, article 293B du CGI). Le prix
-          indiqué sur le devis est ferme et définitif, sauf en cas de modifications substantielles
-          demandées par le Client après signature du devis.
+          sont indiqués en euros, hors taxes (TVA non applicable en application du régime de la
+          franchise en base ; la référence légale exacte figure sur chaque devis et facture). Le
+          prix indiqué sur le devis est ferme et définitif, sauf en cas de modifications
+          substantielles demandées par le Client après signature du devis.
         </p>
         <p className="text-muted-foreground mb-3 leading-relaxed">
           <span className="text-foreground font-medium">4.2. Paiement :</span> Un acompte de 30 % du
@@ -105,10 +113,11 @@ export default function CGV() {
         <h2 className="mb-4 text-xl font-semibold">5. Livraison des Prestations</h2>
         <p className="text-muted-foreground mb-3 leading-relaxed">
           <span className="text-foreground font-medium">5.1. Délais :</span> Le Prestataire s'engage
-          à respecter les délais de livraison indiqués sur le devis. Toutefois, les délais sont
-          donnés à titre indicatif et peuvent être modifiés en cas de force majeure ou de retard
-          imputable au Client (retard dans la transmission des éléments nécessaires par le Client,
-          par exemple).
+          à mettre en œuvre les moyens nécessaires pour respecter les délais de livraison. Ceux-ci
+          sont indiqués à titre estimatif sur le devis ; un calendrier précis est communiqué à la
+          signature. Ils courent à compter de la réception de l'acompte et de tous les éléments
+          nécessaires à la réalisation de la prestation (informations, logo, textes, validations).
+          Ils peuvent être modifiés en cas de force majeure ou de retard imputable au Client.
         </p>
         <p className="text-muted-foreground leading-relaxed">
           <span className="text-foreground font-medium">5.2. Livraison :</span> Les prestations sont
@@ -121,12 +130,15 @@ export default function CGV() {
         <h2 className="mb-4 text-xl font-semibold">6. Modifications et Révisions</h2>
         <p className="text-muted-foreground leading-relaxed">
           Le nombre d'allers-retours inclus est précisé dans le devis ou le forfait retenu (entre 2
-          et 4 selon la prestation, illimités pour le forfait Sur-mesure). Tout aller-retour
+          et 4 selon la prestation, illimités pour le forfait Sur-mesure). À défaut de précision
+          dans le devis, 2 allers-retours sont inclus. Un aller-retour correspond à une série de
+          retours regroupés et transmis en une seule fois par le Client. Tout aller-retour
           supplémentaire au-delà du nombre prévu sera facturé selon les tarifs en vigueur.
         </p>
         <p className="text-muted-foreground mt-3 leading-relaxed">
           <span className="text-foreground font-medium">Post-livraison :</span> Toute modification
-          demandée après la livraison finale fera l'objet d'un devis complémentaire.
+          demandée après la livraison finale fera l'objet d'un devis complémentaire, sous réserve de
+          la période de maintenance d'un mois prévue à l'article 9.
         </p>
       </section>
 
@@ -139,13 +151,25 @@ export default function CGV() {
           toutefois le droit moral sur ses créations, et se réserve le droit de mentionner les
           projets réalisés dans son portfolio ou à des fins promotionnelles.
         </p>
+        <p className="text-muted-foreground mt-3 leading-relaxed">
+          Les éléments fournis par le Client (logo, textes, photos, etc.) restent la propriété du
+          Client ou de leurs titulaires. Le Client garantit détenir les droits nécessaires à leur
+          utilisation et dégage le Prestataire de toute responsabilité en cas de réclamation d'un
+          tiers. Les éléments de tiers intégrés à la prestation (polices, images libres de droit,
+          bibliothèques et composants open source) restent soumis à leurs licences respectives. Le
+          Prestataire ne garantit pas la protection juridique d'un contenu (logo, texte, image)
+          généré par intelligence artificielle et fourni par le Client.
+        </p>
       </section>
 
       <section className="mb-10">
         <h2 className="mb-4 text-xl font-semibold">8. Hébergement et Nom de Domaine</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Le Prestataire peut proposer des services d'hébergement web et d'achat de nom de domaine,
-          en partenariat avec des prestataires tiers.
+          Sauf mention contraire dans le devis, le nom de domaine et l'hébergement sont souscrits
+          directement par le Client, à son nom et à ses frais ; ils ne sont pas inclus dans le prix
+          des prestations. Le Prestataire accompagne le Client dans leur choix et leur
+          configuration. Le Prestataire peut, si le devis le prévoit expressément, proposer ces
+          services en partenariat avec des prestataires tiers.
         </p>
         <ul className="text-muted-foreground mt-3 list-disc space-y-2 pl-5 leading-relaxed">
           <li>
@@ -164,8 +188,8 @@ export default function CGV() {
       <section className="mb-10">
         <h2 className="mb-4 text-xl font-semibold">9. Maintenance et Support</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Le Prestataire peut proposer des services de maintenance après la mise en ligne du site
-          web ou la livraison de la prestation. La maintenance couvre les points suivants :
+          Après la mise en ligne du site web ou la livraison de la prestation, le Prestataire assure
+          une maintenance d'un mois, limitée aux points suivants :
         </p>
         <ul className="text-muted-foreground mt-3 list-disc space-y-1 pl-5 leading-relaxed">
           <li>
@@ -180,8 +204,9 @@ export default function CGV() {
         <p className="text-muted-foreground mt-3 leading-relaxed">
           Pendant les <strong>30 jours suivant la livraison finale</strong>, le Prestataire corrige
           sans frais supplémentaires tout dysfonctionnement directement imputable à la prestation
-          livrée. Au-delà de cette période, la maintenance est disponible à la demande et fera
-          l'objet d'un devis complémentaire. Aucun abonnement n'est imposé par défaut.
+          livrée et réalise les petites modifications de ce type. Toute demande qui dépasse ce
+          périmètre (nouvelle page, nouvelle fonctionnalité, refonte, etc.) ou intervient au-delà de
+          cette période fait l'objet d'un nouveau devis. Aucun abonnement n'est imposé.
         </p>
       </section>
 
@@ -191,7 +216,9 @@ export default function CGV() {
           <span className="text-foreground font-medium">10.1. Obligations du Prestataire :</span> Le
           Prestataire s'engage à fournir les services décrits dans le devis avec le soin et la
           compétence appropriés. Il n'est tenu qu'à une obligation de moyens, et non de résultat,
-          sauf stipulation contraire explicite.
+          sauf stipulation contraire explicite. Le Prestataire ne garantit notamment ni le
+          positionnement du site dans les moteurs de recherche, ni sa visibilité dans les moteurs de
+          réponse fondés sur l'intelligence artificielle, ni un volume de contacts ou de ventes.
         </p>
         <p className="text-muted-foreground mb-3 leading-relaxed">
           <span className="text-foreground font-medium">10.2. Obligations du Client :</span> Le
@@ -319,9 +346,8 @@ export default function CGV() {
         <h2 className="mb-4 text-xl font-semibold">16. Litiges et Droit Applicable</h2>
         <p className="text-muted-foreground leading-relaxed">
           Les présentes CGV sont régies par le droit français. En cas de litige, les parties
-          s'engagent à rechercher une solution amiable avant de recourir aux tribunaux compétents.
-          Si aucune solution amiable n'est trouvée, le litige sera porté devant les tribunaux
-          compétents du ressort du siège social du Prestataire.
+          s'engagent à rechercher une solution amiable avant de recourir aux tribunaux. Si aucune
+          solution amiable n'est trouvée, les tribunaux français seront seuls compétents.
         </p>
       </section>
     </main>
